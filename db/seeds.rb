@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create{[{ name: "Star Wars" }, { name: "Lord of the Rings" }]}
 #   Character.create(name: "Luke", movie: movies.first)
+  Activity.destroy_all
 
   Activity.create!(
     average_rating: 4.6,
