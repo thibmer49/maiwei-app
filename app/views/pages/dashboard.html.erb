@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="d-flex">
+    <div class="first-column">
+      <ul>
+        <li>Mon dashboard</li>
+        <li>Mes informations personnelles</li>
+      </ul>
+    </div>
+    <div class="second-column">
+      <h1>Hello Anaïs 👋🏻</h1>
+      <div class="second-column-trips">
+        <h5>Mes voyages sauvegardés</h5>
+        <%# ITERATION SUR CHAQUE TRIP %>
+        <div class="d-flex">
+          <p>Voyage 1</p>
+          <i class="fa-regular fa-pen-to-square"></i>
+          <i class="fa-regular fa-trash-can"></i>
+        </div>
+        <%# FIN ITERATION %>
+      </div>
+    </div>
+      <div class="third-column">
+        <h2><%= @time %></h2>
+        <h5><%= @date %></h5>
+        <div style="width: 100%; height: 300px;"
+          data-controller="map"
+          data-map-markers-value="<%= @markers.to_json %>"
+          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
+        </div>
+      </div>
+  </div>
+</div>
