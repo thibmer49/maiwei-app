@@ -9,7 +9,7 @@
  <ul class="navbar-nav me-auto">
         <%# if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "Accueil", "#", class: "nav-link" %>
+            <%= link_to "Accueil", root_path, class: "nav-link" %>
           </li>
             <li class="nav-item">
             <%= link_to "Activitiés", "#", class: "nav-link" %>
@@ -20,7 +20,7 @@
           <li class="nav-item dropdown">
             <%= image_tag "UserPhoto.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Mon tableau de bord", "#", class: "dropdown-item" %>
+              <%= link_to "Mon tableau de bord", dashboard_path, class: "dropdown-item" %>
               <%= link_to "Mes infos", "#", class: "dropdown-item" %>
               <%= link_to "Se déconnecter", "#", class: "dropdown-item", data: {turbo_method: :delete} %>
             </div>
