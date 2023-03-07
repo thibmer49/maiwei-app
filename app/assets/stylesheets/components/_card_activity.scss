@@ -1,0 +1,35 @@
+.card_activity {
+  overflow: hidden;
+  background: #16697A;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  color: black;
+
+}
+
+.card_activity:hover {
+  opacity: 0.65;
+}
+
+#ccard_activity_link {
+  text-decoration: none;
+  color: black;
+}
+
+.card_activity > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card_activity h5 {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card_activity h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+}
