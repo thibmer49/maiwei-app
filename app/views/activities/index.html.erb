@@ -1,0 +1,27 @@
+
+<div class="container my-3">
+  <h1 class="text-center">Où souhaitez-vous aller ?</h1>
+    <%# SEARCH BAR %>
+    <%= form_with url: activities_path, method: :get, class: "d-flex mt-3" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control h-50",
+        placeholder: "Votre prochaine destination"
+      %>
+      <%= submit_tag "Recherchez", class: "btn btn-primary" %>
+    <% end %>
+    <%# FIN SEARCH BAR %>
+    <div class="cards my-4">
+      <% @activities.each do |activity| %>
+      <div class="card_activity p-2">
+      <img src="https://www.okvoyage.com/wp-content/uploads/2019/10/visiter-Madrid.jpg" alt="Madrid">
+        <div class="mt-2">
+          <h3><%= activity.name %></h3>
+        </div>
+        <div class="text-decoration-none">
+          <p class="text-center"><em><%= link_to "Plus de détails", activity_path(activity) %></em><p>
+        </div>
+      </div>
+      <% end %>
+    </div>
+</div>

@@ -1,6 +1,6 @@
 class ActivitiesController < ApplicationController
   before_action :set_activity, only: %i[show destroy]
-  skip_before_action :authenticate_user!, only: %i[index show]
+  # skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
     @activities = Activity.all
