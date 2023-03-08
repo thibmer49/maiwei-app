@@ -1,0 +1,8 @@
+<h1>Parlez moi de votre futur séjour</h1>
+<h2>Quel type d'activités souhaitez-vous faire ?</h2>
+<%= simple_form_for [@trip, @activity]  do |f| %>
+            <%= f.association :category,
+                  as: :check_boxes,
+                  input_html: { class: "tag-selector" },
+                  item_wrapper_class: 'tag-item' %>
+          <% end %>
