@@ -5,27 +5,34 @@
 #
 #   movies = Movie.create{[{ name: "Star Wars" }, { name: "Lord of the Rings" }]}
 #   Character.create(name: "Luke", movie: movies.first)
+  puts "Deleting activities..."
   Activity.destroy_all
-
-  Activity.create!(
+  puts "Creating activity #1..."
+  activity1 = Activity.create!(
     average_rating: 4.6,
     name: "Plaza Mayor",
     address: "Pl. Mayor, 28012 Madrid, Espagne",
     description: "La Plaza Mayor (en français, équivalent de «grand-place») est une place de la ville de Madrid, en Espagne.",
     city: "Madrid",
-    country: "Espagne"
+    country: "Espagne",
   )
+  activity1.category_list.add("Sites historiques", "Monuments et points d'intérêt")
+  activity1.save
 
-  Activity.create!(
+  puts "Creating activity #2"
+  activity2 = Activity.create!(
     average_rating: 4.8,
     name: "Parc du Retiro",
     address: "28009 Madrid, Espagne",
     description: "Le parc du Retiro est un grand parc de 125 hectares et plus de 15 000 arbres situé à Madrid. Il fut créé entre 1630 et 1640.",
     city: "Madrid",
-    country: "Espagne"
+    country: "Espagne",
   )
+  activity2.category_list.add("Parcs et jardins")
+  activity2.save
 
-  Activity.create!(
+  puts "Creating activity #3"
+  activity3 = Activity.create!(
     average_rating: 4.7,
     price_per_visitor: 15,
     name: "Musée du Prado",
@@ -34,10 +41,13 @@
     phone_number: "+34 913 30 28 00",
     website: "https://www.museodelprado.es/",
     city: "Madrid",
-    country: "Espagne"
+    country: "Espagne",
   )
+  activity3.category_list.add("Musées")
+  activity3.save
 
-  Activity.create!(
+  puts "Creating activity #4"
+  activity4 = Activity.create!(
     average_rating: 4.6,
     price_per_visitor: 12,
     name: "Palais Royal de Madrid",
@@ -46,11 +56,13 @@
     phone_number: "+34 914 54 87 00",
     website: "https://www.patrimonionacional.es/visita/palacio-real-de-madrid",
     city: "Madrid",
-    country: "Espagne"
+    country: "Espagne",
   )
+  activity4.category_list.add("Sites historiques", "Monuments et points d'intérêt")
+  activity4.save
 
-  Activity.create!(
-
+  puts "Creating activity #5"
+  activity5 = Activity.create!(
     average_rating: 4.4,
     name: "Marché de San Miguel",
     address: "Pl. de San Miguel, s/n, 28005 Madrid, Espagne",
@@ -58,10 +70,13 @@
     phone_number: "34 915 42 49 36",
     website: "https://www.madrid.fr/marche-san-miguel",
     city: "Madrid",
-    country: "Espagne"
+    country: "Espagne",
   )
+  activity5.category_list.add("Marchés", "Monuments et points d'intérêt")
+  activity5.save
 
-  Activity.create!(
+  puts "Creating activity #6"
+  activity6 = Activity.create!(
     average_rating: 4.5,
     price_per_visitor: 12,
     closed_day: 2,
@@ -71,10 +86,13 @@
     phone_number: "+34 917 74 10 00",
     website: "https://www.museoreinasofia.es/",
     city: "Madrid",
-    country: "Espagne"
+    country: "Espagne",
   )
+  activity6.category_list.add("Musées")
+  activity6.save
 
-  Activity.create!(
+  puts "Creating activity #7"
+  activity7 = Activity.create!(
     average_rating: 4.7,
     price_per_visitor: 3,
     closed_day: 1,
@@ -84,19 +102,25 @@
     phone_number: "+34 913 10 15 84",
     website: "https://www.culturaydeporte.gob.es/msorolla/inicio.html",
     city: "Madrid",
-    country: "Espagne"
+    country: "Espagne",
   )
+  activity7.category_list.add("Musées")
+  activity7.save
 
-  Activity.create!(
+  puts "Creating activity #8"
+  activity8 = Activity.create!(
     average_rating: 4.6,
     name: "Puerta del Sol",
     address: "PlazaPuerta del Sol, 28013",
     description: "La Puerta del Sol est l'une des places les plus connues et les plus animées de Madrid, en Espagne.",
     city: "Madrid",
-    country: "Espagne"
+    country: "Espagne",
   )
+  activity8.category_list.add("Monuments et points d'intérêt", "Sites historiques")
+  activity8.save
 
-  Activity.create!(
+  puts "Creating activity #9"
+  activity9 = Activity.create!(
     average_rating: 4.6,
     price_per_visitor: 1,
     name: "Cathédrale de la Almudena",
@@ -105,10 +129,13 @@
     phone_number: "+34 915 42 22 00",
     website: "https://catedraldelaalmudena.es/",
     city: "Madrid",
-    country: "Espagne"
+    country: "Espagne",
   )
+  activity9.category_list.add("Monuments et points d'intérêt", "Sites historiques")
+  activity9.save
 
-  Activity.create!(
+  puts "Creating activity #10"
+  activity10 = Activity.create!(
     average_rating: 4.3,
     price_per_visitor: 6,
     name: "Jardin botanique royal de Madrid",
@@ -117,5 +144,7 @@
     phone_number: "+34 914 20 30 17",
     website: "https://rjb.csic.es/",
     city: "Madrid",
-    country: "Espagne"
+    country: "Espagne",
   )
+  activity10.category_list.add("Monuments et points d'intérêt", "Sites historiques", "Parcs et jardins")
+  activity10.save
