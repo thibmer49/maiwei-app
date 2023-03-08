@@ -1,60 +1,43 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://images.pexels.com/photos/335393/pexels-photo-335393.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);">
-  <div class="container p-5">
-    <div class="card-body">
-      <h1>MAIWEI</h1>
-      <h2>Vous ne voyagerez plus de la même façon !</h2>
-      <h4><em>Organisez votre voyage pour optimiser vos déplacements et découvrez des lieux incroyables...<em>
-      </h4>
+<div class="bg-white">
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://images.pexels.com/photos/335393/pexels-photo-335393.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);">
+    <div class="container p-5">
+      <div class="card-body">
+        <h1>MAIWEI</h1>
+        <h2>Vous ne voyagerez plus de la même façon !</h2>
+        <h4><em>Organisez votre voyage pour optimiser vos déplacements et découvrez des lieux incroyables...<em>
+        </h4>
+      </div>
+    </div>
+  </div>
+  <div class="container p-4 bg-white">
+    <h2 class="mb-2 text-center">Quelle sera votre prochaine destination?</h2>
+      <%# SEARCH BAR %>
+      <div class="text-center text-decoration-none">
+        <%= submit_tag "Sélectionnez une ville...", class: "btn btn-destination" %>
+      </div>
+
+  </div>
+
+  <div class="bg-white">
+    <div class="container">
+      <h3 class="text-center mb-3 mt-3">Des idées de destinations :</h3>
+       <div class="activity-cards-container">
+        <% @activities.each do |activity| %>
+          <div class="card-activity">
+            <%= link_to new_activity_path(activity), id: "card-link" do %>
+
+             <div class="card_activity">
+               <%= image_tag "madrid.jpg", alt: "Madrid", class:"img-fluid" %>
+               <h5 class="card_activity_titre">Un voyage à votre image</h5>
+               <p><%= truncate(activity.name, length: 40, separator: ' ', omission: '...') %></p>
+               <%= link_to "Plus de détails", "#", class: "btn btn-details"  %>
+             </div>
+            <%end%>
+          </div>
+      <% end %>
+
+     </div>
+      <h3 class="text-center mb-5 mt-5">Partez à la découverte du monde</p>
     </div>
   </div>
 </div>
-
- <div class="bg-white">
-    <div class="container">
-      <h1 class="text-center">Des idées de destinations :</h1>
-      <div class="row justify-content-around my-3">
-        <div class="col-sm-3">
-          <div class="card">
-            <div class="card-body">
-              <%= image_tag "paris.jpg", alt: "Paris", class:"img-fluid", width: 250, height: 100 %>
-              <h5 class="card-title">Faites du bateau sur la seine</h5>
-              <p class="card-text">En Bateaux Mouches, le temps d'une soirée ou en journée, admirez les plus beaux monuments de Paris : Le Pont de l’Alma, la Tour Eiffel, le Trocadéro, le Louvre...</p>
-              <%= link_to "Plus de détails", "#", class: "btn btn-primary"  %>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="card">
-            <div class="card-body">
-              <%= image_tag "paris.jpg", alt: "Paris", class:"img-fluid", width: 250, height: 100 %>
-              <h5 class="card-title">Faites du bateau sur la seine</h5>
-              <p class="card-text">En Bateaux Mouches, le temps d'une soirée ou en journée, admirez les plus beaux monuments de Paris : Le Pont de l’Alma, la Tour Eiffel, le Trocadéro, le Louvre...</p>
-              <a href="#" class="btn btn-primary">Plus de détails</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Un voyage à votre image</h5>
-              <p class="card-text">composez votre voyages sur mesure avec les activités et les visites sélectionnées, selon les goûts, votre rythme et vos envies</p>
-              <a href="#" class="btn btn-primary">Plus de détails</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="card">
-            <div class="card-body">
-              <%= image_tag "paris.jpg", alt: "Paris", class:"img-fluid", width: 250, height: 100 %>
-              <h5 class="card-title">Faites du bateau sur la seine</h5>
-              <p class="card-text">En Bateaux Mouches, le temps d'une soirée ou en journée, admirez les plus beaux monuments de Paris : Le Pont de l’Alma, la Tour Eiffel, le Trocadéro, le Louvre...</p>
-              <a href="#" class="btn btn-primary">Plus de détails</a>
-            </div>
-          </div>
-          </div>
-        </div>
-      </div>
-      <p class="text-center">Partez à la découverte du monde</p>
-
-    </div>
-  </div>

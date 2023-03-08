@@ -5,8 +5,11 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+puts "Deleting activities..."
 Activity.destroy_all
 
+puts "Creating user..."
 User.create(
   first_name: "Amélie",
   last_name: "Poulain",
@@ -14,7 +17,8 @@ User.create(
   password: "1234567"
 )
 
-Activity.create!(
+puts "Creating activity #1..."
+activity1 = Activity.create!(
   average_rating: 4.6,
   name: "Plaza Mayor",
   address: "Pl. Mayor, 28012 Madrid, Espagne",
@@ -23,7 +27,8 @@ Activity.create!(
   country: "Espagne"
 )
 
-Activity.create!(
+puts "Creating activity #2..."
+activity2 = Activity.create!(
   average_rating: 4.8,
   name: "Parc du Retiro",
   address: "28009 Madrid, Espagne",
@@ -32,7 +37,8 @@ Activity.create!(
   country: "Espagne"
 )
 
-Activity.create!(
+puts "Creating activity #3..."
+activity3 = Activity.create!(
   average_rating: 4.7,
   price_per_visitor: 15,
   name: "Musée du Prado",
@@ -44,7 +50,8 @@ Activity.create!(
   country: "Espagne"
 )
 
-Activity.create!(
+puts "Creating activity #4..."
+activity4 = Activity.create!(
   average_rating: 4.6,
   price_per_visitor: 12,
   name: "Palais Royal de Madrid",
@@ -56,7 +63,8 @@ Activity.create!(
   country: "Espagne"
 )
 
-Activity.create!(
+puts "Creating activity #5..."
+activity5 = Activity.create!(
   average_rating: 4.4,
   name: "Marché de San Miguel",
   address: "Pl. de San Miguel, s/n, 28005 Madrid, Espagne",
@@ -67,7 +75,8 @@ Activity.create!(
   country: "Espagne"
 )
 
-Activity.create!(
+puts "Creating activity #6..."
+activity6 = Activity.create!(
   average_rating: 4.5,
   price_per_visitor: 12,
   closed_day: 2,
@@ -80,7 +89,8 @@ Activity.create!(
   country: "Espagne"
 )
 
-Activity.create!(
+puts "Creating activity #7..."
+activity7 = Activity.create!(
   average_rating: 4.7,
   price_per_visitor: 3,
   closed_day: 1,
@@ -93,7 +103,8 @@ Activity.create!(
   country: "Espagne"
 )
 
-Activity.create!(
+puts "Creating activity #8..."
+activity8 = Activity.create!(
   average_rating: 4.6,
   name: "Puerta del Sol",
   address: "PlazaPuerta del Sol, 28013",
@@ -102,7 +113,8 @@ Activity.create!(
   country: "Espagne"
 )
 
-Activity.create!(
+puts "Creating activity #9..."
+activity9 = Activity.create!(
   average_rating: 4.6,
   price_per_visitor: 1,
   name: "Cathédrale de la Almudena",
@@ -114,7 +126,8 @@ Activity.create!(
   country: "Espagne"
 )
 
-Activity.create!(
+puts "Creating activity #10..."
+activity10 = Activity.create!(
   average_rating: 4.3,
   price_per_visitor: 6,
   name: "Jardin botanique royal de Madrid",
@@ -125,19 +138,9 @@ Activity.create!(
   city: "Madrid",
   country: "Espagne"
 )
-Activity.create!(
-  average_rating: 4.5,
-  price_per_visitor: 30,
-  name: "Palais de Buckingham",
-  address: "London SW1A 1AA, Royaume-Uni",
-  description: "Le Palais de Buckingham (Buckingham Palace) est la résidence officielle de la Famille Royale Britannique à Londres depuis 1837.  Actuellement, le roi Charles III y réside.",
-  phone_number: "+44 303 123 7300",
-  website: "https://www.rct.uk/visit/buckingham-palace",
-  city: "Londres",
-  country: "Angleterre"
-)
 
-Activity.create!(
+puts "Creating activity #11..."
+activity11 = Activity.create!(
   average_rating: 4.5,
   price_per_visitor: 30,
   name: "Palais de Buckingham",
@@ -149,7 +152,8 @@ Activity.create!(
   country: "Royaume-Uni"
 )
 
-Activity.create!(
+puts "Creating activity #12..."
+activity12 = Activity.create!(
   average_rating: 4.5,
   name: "Covent Garden",
   address: "Covent Garden, Londres, Royaume-Uni",
@@ -160,7 +164,8 @@ Activity.create!(
   country: "Royaume-Uni"
 )
 
-Activity.create!(
+puts "Creating activity #13..."
+activity13 = Activity.create!(
   average_rating: 4.7,
   name: "Hyde Park",
   address: "Hyde Park, Londres, Royaume-Uni",
@@ -170,7 +175,8 @@ Activity.create!(
   country: "Royaume-Uni"
 )
 
-Activity.create!(
+puts "Creating activity #14..."
+activity14 = Activity.create!(
   average_rating: 4.4,
   name: "Madame Tussauds",
   address: "Marylebone Rd, London NW1 5LR, Royaume-Uni",
@@ -180,3 +186,32 @@ Activity.create!(
   city: "Londres",
   country: "Royaume-Uni"
 )
+
+  activity1.category_list.add("Sites historiques", "Monuments et points d'intérêt")
+  activity1.save
+  activity2.category_list.add("Parcs et jardins")
+  activity2.save
+  activity3.category_list.add("Musées")
+  activity3.save
+  activity4.category_list.add("Sites historiques", "Monuments et points d'intérêt")
+  activity4.save
+  activity5.category_list.add("Marchés", "Monuments et points d'intérêt")
+  activity5.save
+  activity6.category_list.add("Musées")
+  activity6.save
+  activity7.category_list.add("Musées")
+  activity7.save
+  activity8.category_list.add("Monuments et points d'intérêt", "Sites historiques")
+  activity8.save
+  activity9.category_list.add("Monuments et points d'intérêt", "Sites historiques")
+  activity9.save
+  activity10.category_list.add("Monuments et points d'intérêt", "Sites historiques", "Parcs et jardins")
+  activity10.save
+  activity11.category_list.add("Monuments et points d'intérêt", "Sites historiques")
+  activity11.save
+  activity12.category_list.add("Monuments et points d'intérêt", "Sites historiques")
+  activity12.save
+  activity13.category_list.add("Monuments et points d'intérêt", "Parcs et jardins")
+  activity13.save
+  activity14.category_list.add("Musées")
+  activity14.save

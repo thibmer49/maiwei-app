@@ -17,8 +17,10 @@
           <li class="nav-item">
             <%= link_to "Activités", activities_path, class: "nav-link" %>
           </li>
+
           <li class="nav-item">
-            <%= link_to "Créer un nouveau séjour", "#", class: "nav-link" %>
+            <%= link_to "Créer un nouveau séjour", new_trip_path, class: "nav-link" %>
+
           </li>
           <li class="nav-item dropdown">
             <%= image_tag "UserPhoto.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
