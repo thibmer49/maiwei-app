@@ -1,10 +1,11 @@
 .card_activity {
   overflow: hidden;
-  background: #16697A;
+  background: #82C0CC;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 5px;
-  color: black;
-
+  color: white;
+  display: flex;
+  flex-direction: column;
 }
 
 .card_activity:hover {
@@ -13,23 +14,37 @@
 
 #card_activity_link {
   text-decoration: none;
-  color: black;
+  color: rgb(217, 147, 16);
+ }
+
+.card_activity_link {
+  text-decoration: none;
+  color: rgb(217, 147, 16);
 }
 
 .card_activity > img {
-  height: 200px;
+  height: 150px;
   width: 100%;
   object-fit: cover;
 }
 
 .card_activity h5 {
-  font-size: 14px;
-  font-weight: bold;
+  font-size: 20px;
+  font-weight: normal;
   margin: 0;
+
 }
 
-.card_activity h2 {
-  font-size: 20px;
-  font-weight: bold;
+.card_activity p {
+  font-size: 14px;
+  font-weight: normal;
   margin: 0;
+  flex-grow: 1;
+  padding : 1rem;
 }
+
+.body_card_activity {
+  font-family: Helvetica;
+  text-align: center;
+}
+
