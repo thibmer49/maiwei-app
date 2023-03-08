@@ -11,7 +11,7 @@
     </div>
     <div class="second-column">
       <% @user = User.last %>
-      <%# <h1>Hello <%= @user.first_name %> 👋🏻</h1> %>
+      <h1>Hello <%= @user.first_name %> 👋🏻</h1>
       <h2><%= @time %> <%= @date %></h2>
       <div class="second-column-trips">
         <h5>Mes voyages sauvegardés</h5>
@@ -40,7 +40,6 @@
       data-controller="map"
       data-map-markers-value="<%= @markers.to_json %>"
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-      </div>
     </div>
   </div>
 </div>
