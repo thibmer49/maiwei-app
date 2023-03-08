@@ -8,7 +8,7 @@
 
 puts "Deleting activities..."
 Activity.destroy_all
-  
+
 puts "Creating user..."
 User.create(
   first_name: "Amélie",
@@ -18,7 +18,7 @@ User.create(
 )
 
 puts "Creating activity #1..."
-Activity.create!(
+activity1 = Activity.create!(
   average_rating: 4.6,
   name: "Plaza Mayor",
   address: "Pl. Mayor, 28012 Madrid, Espagne",
@@ -28,7 +28,7 @@ Activity.create!(
 )
 
 puts "Creating activity #2..."
-Activity.create!(
+activity2 = Activity.create!(
   average_rating: 4.8,
   name: "Parc du Retiro",
   address: "28009 Madrid, Espagne",
@@ -38,7 +38,7 @@ Activity.create!(
 )
 
 puts "Creating activity #3..."
-Activity.create!(
+activity3 = Activity.create!(
   average_rating: 4.7,
   price_per_visitor: 15,
   name: "Musée du Prado",
@@ -51,7 +51,7 @@ Activity.create!(
 )
 
 puts "Creating activity #4..."
-Activity.create!(
+activity4 = Activity.create!(
   average_rating: 4.6,
   price_per_visitor: 12,
   name: "Palais Royal de Madrid",
@@ -64,7 +64,7 @@ Activity.create!(
 )
 
 puts "Creating activity #5..."
-Activity.create!(
+activity5 = Activity.create!(
   average_rating: 4.4,
   name: "Marché de San Miguel",
   address: "Pl. de San Miguel, s/n, 28005 Madrid, Espagne",
@@ -76,7 +76,7 @@ Activity.create!(
 )
 
 puts "Creating activity #6..."
-Activity.create!(
+activity6 = Activity.create!(
   average_rating: 4.5,
   price_per_visitor: 12,
   closed_day: 2,
@@ -90,7 +90,7 @@ Activity.create!(
 )
 
 puts "Creating activity #7..."
-Activity.create!(
+activity7 = Activity.create!(
   average_rating: 4.7,
   price_per_visitor: 3,
   closed_day: 1,
@@ -104,7 +104,7 @@ Activity.create!(
 )
 
 puts "Creating activity #8..."
-Activity.create!(
+activity8 = Activity.create!(
   average_rating: 4.6,
   name: "Puerta del Sol",
   address: "PlazaPuerta del Sol, 28013",
@@ -114,7 +114,7 @@ Activity.create!(
 )
 
 puts "Creating activity #9..."
-Activity.create!(
+activity9 = Activity.create!(
   average_rating: 4.6,
   price_per_visitor: 1,
   name: "Cathédrale de la Almudena",
@@ -127,7 +127,7 @@ Activity.create!(
 )
 
 puts "Creating activity #10..."
-Activity.create!(
+activity10 = Activity.create!(
   average_rating: 4.3,
   price_per_visitor: 6,
   name: "Jardin botanique royal de Madrid",
@@ -140,7 +140,7 @@ Activity.create!(
 )
 
 puts "Creating activity #11..."
-Activity.create!(
+activity11 = Activity.create!(
   average_rating: 4.5,
   price_per_visitor: 30,
   name: "Palais de Buckingham",
@@ -153,7 +153,7 @@ Activity.create!(
 )
 
 puts "Creating activity #12..."
-Activity.create!(
+activity12 = Activity.create!(
   average_rating: 4.5,
   name: "Covent Garden",
   address: "Covent Garden, Londres, Royaume-Uni",
@@ -165,7 +165,7 @@ Activity.create!(
 )
 
 puts "Creating activity #13..."
-Activity.create!(
+activity13 = Activity.create!(
   average_rating: 4.7,
   name: "Hyde Park",
   address: "Hyde Park, Londres, Royaume-Uni",
@@ -176,7 +176,7 @@ Activity.create!(
 )
 
 puts "Creating activity #14..."
-Activity.create!(
+activity14 = Activity.create!(
   average_rating: 4.4,
   name: "Madame Tussauds",
   address: "Marylebone Rd, London NW1 5LR, Royaume-Uni",
