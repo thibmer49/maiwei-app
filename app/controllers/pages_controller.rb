@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   def home
+    @activities = Activity.all.sample(4)
   end
 
   def dashboard

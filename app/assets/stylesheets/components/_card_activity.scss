@@ -23,10 +23,12 @@
   object-fit: cover;
 }
 
-.card_activity h5 {
+.card_activity_titre {
   font-size: 20px;
   font-weight: normal;
-  margin: 0;
+  margin: 5px;
+  text-align: center;
+
 
 }
 
@@ -38,8 +40,12 @@
   padding : 1rem;
 }
 
+.card_activity a {
+  text-decoration: none;
+  color: white;
+}
+
 .body_card_activity {
   font-family: Helvetica;
   text-align: center;
 }
-
