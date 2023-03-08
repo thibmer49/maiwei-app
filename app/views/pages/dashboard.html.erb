@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="d-flex">
+    <div class="first-column">
+      <img src="https://img.freepik.com/photos-gratuite/gros-plan-jolie-femme-dents-parfaites-peau-propre-foncee-se-reposant-interieur-souriant-joyeusement-apres-avoir-recu-bonnes-nouvelles-positives_273609-1248.jpg" alt="portrait" class="rounded-circle" style="width: 50px; height: 50px; object-fit: cover">
+      <ul>
+        <li></li>
+        <li></li>
+      </ul>
+      <h5>Mon dashboard</h5>
+      <h5>Mes informations personnelles</h5>
+    </div>
+    <div class="second-column">
+      <% @user = User.last %>
+      <h1>Hello <%= @user.first_name %> 👋🏻</h1>
+      <h2><%= @time %> <%= @date %></h2>
+      <div class="second-column-trips">
+        <h5>Mes voyages sauvegardés</h5>
+        <%# ITERATION SUR CHAQUE TRIP USER %>
+        <div class="second-column-trip">
+          <div class="card-trip">
+            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+            <div class="card-trip-infos">
+              <div>
+                <h2>Paris</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+              </div>
+              <h2 class="card-trip-pricing">£99.99</h2>
+            </div>
+          </div>
+          <div class="d-flex mt-3 justify-content-end">
+            <i class="fa-regular fa-pen-to-square pr-4"></i>
+            <i class="fa-regular fa-trash-can"></i>
+          </div>
+        </div>
+        <%# FIN ITERATION %>
+      </div>
+    </div>
+    <div class="third-column">
+    <div style="width: 100%; height: 600px;"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+    </div>
+  </div>
+</div>

@@ -5,6 +5,13 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+Activity.destroy_all
+
+User.create(
+
+
+)
+
 
 Activity.create!(
   opening_hour:
@@ -92,8 +99,8 @@ Activity.create!(
 )
 
 Activity.create!(
-  opening_hour:
-  closing_hour:
+  opening_hour: DateTime.new(2023, 1, 1, 9)
+  closing_hour: DateTime.new(2023, 1, 1, 20)
   average_rating: 4.5
   latitude:
   longitude:
@@ -258,4 +265,36 @@ Activity.create!(
   website: "https://www.madametussauds.com/london/"
   city: "Londres"
   country: "Royaume-Uni"
+)
+Activity.create!(
+  opening_hour:
+  closing_hour:
+  average_rating: 4.4
+  latitude:
+  longitude:
+  price_per_visitor:
+  closed_day:
+  name: "Madame Tussauds"
+  address: "Marylebone Rd, London NW1 5LR, Royaume-Uni"
+  description: "Découvrez des visages célèbres au musée Madame Tussauds London, un musée interactif qui expose plus de 190 figures de cire plus vraies que nature."
+  phone_number: "+44 20 7487 0351"
+  website: "https://www.madametussauds.com/london/"
+  city: "Londres"
+  country: "Royaume-Uni"
+)
+Activity.create!(
+  opening_hour:
+  closing_hour:
+  average_rating:
+  latitude:
+  longitude:
+  price_per_visitor:
+  closed_day:
+  name:
+  address:
+  description:
+  phone_number:
+  website:
+  city: "Paris"
+  country: "France"
 )
