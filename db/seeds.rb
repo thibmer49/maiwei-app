@@ -22,7 +22,6 @@ Activity.create!(
   city: "Madrid"
   country: "Espagne"
 )
-end
 
 Activity.create!(
   opening_hour:
@@ -40,7 +39,6 @@ Activity.create!(
   city: "Madrid"
   country: "Espagne"
 )
-end
 
 Activity.create!(
   opening_hour:
@@ -58,7 +56,6 @@ Activity.create!(
   city: "Madrid"
   country: "Espagne"
 )
-end
 
 Activity.create!(
   opening_hour:
@@ -76,7 +73,6 @@ Activity.create!(
   city: "Madrid"
   country: "Espagne"
 )
-end
 
 Activity.create!(
   opening_hour:
@@ -94,7 +90,6 @@ Activity.create!(
   city: "Madrid"
   country: "Espagne"
 )
-end
 
 Activity.create!(
   opening_hour:
@@ -112,7 +107,6 @@ Activity.create!(
   city: "Madrid"
   country: "Espagne"
 )
-end
 
 Activity.create!(
   opening_hour:
@@ -130,7 +124,6 @@ Activity.create!(
   city: "Madrid"
   country: "Espagne"
 )
-end
 
 Activity.create!(
   opening_hour:
@@ -148,7 +141,6 @@ Activity.create!(
   city: "Madrid"
   country: "Espagne"
 )
-end
 
 Activity.create!(
   opening_hour:
@@ -162,19 +154,18 @@ Activity.create!(
   address: "C. de Bailén, 10, 28013 Madrid, Espagne"
   description: "La cathédrale Santa María la Real de la Almudena est la toute récente cathédrale de Madrid, capitale du royaume d'Espagne, construite face au palais royal au cours du XXᵉ siècle. Elle est le siège épiscopal du diocèse de la capitale."
   phone_number: "+34 915 42 22 00"
-  website: : "https://catedraldelaalmudena.es/"
+  website: "https://catedraldelaalmudena.es/"
   city: "Madrid"
   country: "Espagne"
 )
-end
 
 Activity.create!(
-  opening_hour: :
-  closing_hour: :
+  opening_hour:
+  closing_hour:
   average_rating: 4.3
   latitude:
   longitude:
-  price_per_visitor: : 6
+  price_per_visitor: 6
   closed_day:
   name: "Jardin botanique royal de Madrid"
   address: "Pl. Murillo, 2, 28014 Madrid, Espagne"
@@ -184,4 +175,87 @@ Activity.create!(
   city: "Madrid"
   country: "Espagne"
 )
-end
+Activity.create!(
+  opening_hour:
+  closing_hour:
+  average_rating: 4.5
+  latitude:
+  longitude:
+  price_per_visitor: 30
+  closed_day:
+  name: "Palais de Buckingham"
+  address: "London SW1A 1AA, Royaume-Uni"
+  description: "Le Palais de Buckingham (Buckingham Palace) est la résidence officielle de la Famille Royale Britannique à Londres depuis 1837.  Actuellement, le roi Charles III y réside."
+  phone_number: "+44 303 123 7300"
+  website: "https://www.rct.uk/visit/buckingham-palace"
+  city: "Londres"
+  country: "Angleterre"
+)
+
+Activity.create!(
+  opening_hour:
+  closing_hour:
+  average_rating: 4.5
+  latitude:
+  longitude:
+  price_per_visitor: 30
+  closed_day:
+  name: "Palais de Buckingham"
+  address: "London SW1A 1AA, Royaume-Uni"
+  description: "Le Palais de Buckingham (Buckingham Palace) est la résidence officielle de la Famille Royale Britannique à Londres depuis 1837.  Actuellement, le roi Charles III y réside."
+  phone_number: "+44 303 123 7300"
+  website: "https://www.rct.uk/visit/buckingham-palace"
+  city: "Londres"
+  country: "Royaume-Uni"
+)
+
+Activity.create!(
+  opening_hour:
+  closing_hour:
+  average_rating: 4.5
+  latitude:
+  longitude:
+  price_per_visitor:
+  closed_day:
+  name: "Covent Garden"
+  address: "Covent Garden, Londres, Royaume-Uni"
+  description: "Situé dans le West End, Covent Garden est le principal quartier londonien des théâtres et des loisirs. Les touristes sont nombreux sur l'élégante Piazza, une place piétonne avec des boutiques de mode, le marché artisanal Apple Market et le Royal Opera House."
+  phone_number: "+44 (0)20 7420 5856"
+  website: "https://www.coventgarden.london/"
+  city: "Londres"
+  country: "Royaume-Uni"
+)
+
+Activity.create!(
+  opening_hour:
+  closing_hour:
+  average_rating: 4.7
+  latitude:
+  longitude:
+  price_per_visitor:
+  closed_day:
+  name: "Hyde Park"
+  address: "Hyde Park, Londres, Royaume-Uni"
+  description: "Avec une superficie de 140 hectares, Hyde Park est le plus grand parc du centre de Londres. Cet immense poumon situé au cœur de la ville sert de lieu de détente pour les Londoniens et touristes."
+  phone_number:
+  website: "https://www.royalparks.org.uk/parks/hyde-park"
+  city: "Londres"
+  country: "Royaume-Uni"
+)
+
+Activity.create!(
+  opening_hour:
+  closing_hour:
+  average_rating: 4.4
+  latitude:
+  longitude:
+  price_per_visitor:
+  closed_day:
+  name: "Madame Tussauds"
+  address: "Marylebone Rd, London NW1 5LR, Royaume-Uni"
+  description: "Découvrez des visages célèbres au musée Madame Tussauds London, un musée interactif qui expose plus de 190 figures de cire plus vraies que nature."
+  phone_number: "+44 20 7487 0351"
+  website: "https://www.madametussauds.com/london/"
+  city: "Londres"
+  country: "Royaume-Uni"
+)
