@@ -2,6 +2,11 @@
   display: inline-block;
 }
 
+.tag-selector:hover + label {
+  background-color: #7E73FF;
+  color: #ECEAFF;
+}
+
 .tag-selector {
   position: absolute;
   transform: scale(0);
