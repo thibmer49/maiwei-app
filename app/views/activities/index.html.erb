@@ -18,8 +18,8 @@
         <div class="mt-2">
           <h3><%= activity.name %></h3>
         </div>
-        <div class="text-decoration-none">
-          <p class="text-center"><em><%= link_to "Plus de détails", activity_path(activity) %></em><p>
+        <div>
+          <p><em><%= link_to "Plus de détails", activity_path(activity),id: "ccard_activity_link" %></em><p>
         </div>
       </div>
       <% end %>
