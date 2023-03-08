@@ -6,7 +6,18 @@
 // External libraries
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome";
+@import "https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.css";
 
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1 0 auto;
+}
