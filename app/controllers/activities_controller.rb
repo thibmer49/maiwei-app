@@ -3,17 +3,16 @@ class ActivitiesController < ApplicationController
   # skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-    @activities = Activity.all
-
+    if params[:query].present?
+      # Je recherche toutes les activités qui ont lieu dans la ville donnée
+      @activities = Activity.where(city: params[:query].capitalize)
+    else
+      @activities = Activity.all
+    end
   end
 
   def show
-    # authorize @activity
-    @activity = Activity.find(params[:id])
-    @marker = [{
-      lat: @activity.latitude,
-      lng: @activity.longitude
-    }]
+    authorize @activity
   end
 
   def edit
@@ -58,6 +57,6 @@ class ActivitiesController < ApplicationController
   end
 
   def activity_params
-    params.require(:activity).permit(:price_per_day, :name, :description, :category, :address, :beginning_date, :end_date, :photo, :category_list)
+    params.require(:activity).permit(:price_per_day, :name, :description, :category, :address, :beginning_date, :end_date, :photo)
   end
 end

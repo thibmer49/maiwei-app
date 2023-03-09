@@ -4,4 +4,9 @@ class Activity < ApplicationRecord
   acts_as_taggable_on :categories
   has_one_attached :photo
   has_many :trip_activities, dependent: :destroy
+
+  
+  def to_s
+    name
+  end
 end
