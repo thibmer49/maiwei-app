@@ -3,11 +3,9 @@
     <div class="first-column">
       <img src="https://img.freepik.com/photos-gratuite/gros-plan-jolie-femme-dents-parfaites-peau-propre-foncee-se-reposant-interieur-souriant-joyeusement-apres-avoir-recu-bonnes-nouvelles-positives_273609-1248.jpg" alt="portrait" class="rounded-circle" style="width: 50px; height: 50px; object-fit: cover">
       <ul>
-        <li></li>
-        <li></li>
+      <li><h5><%= link_to "Mon dashbord", "#"%></h5></li>
+      <li><h5><%= link_to "Mes informations personnelles", "#"%></h5></li>
       </ul>
-      <h5>Mon dashboard</h5>
-      <h5>Mes informations personnelles</h5>
     </div>
     <div class="second-column">
       <% @user = User.last %>
