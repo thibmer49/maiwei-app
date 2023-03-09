@@ -10,7 +10,6 @@ class TripsController < ApplicationController
     @categories = @trip.category_list
     # 1. Filtrer les activités en fonction de @categories
     @filtered_activities = @activities.tagged_with(@categories, :any => true)
-
   end
 
   def create

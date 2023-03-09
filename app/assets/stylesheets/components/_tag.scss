@@ -29,3 +29,7 @@
   background-color: #7E73FF;
   color: white;
 }
+
+.tag-selector:checked + label > .card_activity {
+  border: 2px solid yellow
+}
