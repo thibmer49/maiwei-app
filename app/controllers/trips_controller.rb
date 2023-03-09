@@ -2,9 +2,15 @@ class TripsController < ApplicationController
   before_action :set_booking, only: %i[show destroy]
 
   def new
+
     @trip = Trip.new
     @activities = Activity.all
     # authorize @trip
+    @trip.category_list.add(params[:activity][:categories]) if params[:activity].present?
+    @categories = @trip.category_list
+    # 1. Filtrer les activités en fonction de @categories
+    @filtered_activities = @activities.tagged_with(@categories, :any => true)
+
   end
 
   def create
@@ -12,13 +18,16 @@ class TripsController < ApplicationController
     # authorize @trip
     if @trip.save
       raise
-      redirect_to trip_path
+      redirect_to trip_path(set_trip)
     else
       render :new, status: :unprocessable_entity
     end
   end
 
   def show
+    set_trip
+    # authorize @trip
+    @trip_activities = Trip_activity.all { |trip_activity| trip_activity.activity }
   end
 
   # def destroy
@@ -34,6 +43,6 @@ class TripsController < ApplicationController
   end
 
   def trip_params
-    params.require(:trip).permit(:user_id, :budget, :strating_date, :ending_date, :category_list)
+    params.require(:trip).permit(:user_id, :budget, :starting_date, :ending_date, :category_list)
   end
 end
