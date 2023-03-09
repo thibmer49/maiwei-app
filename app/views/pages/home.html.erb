@@ -1,43 +1,50 @@
 <div class="bg-white">
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://images.pexels.com/photos/335393/pexels-photo-335393.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);">
+
     <div class="container p-5">
-      <div class="card-body">
+      <div class="body_card_activity">
         <h1>MAIWEI</h1>
         <h2>Vous ne voyagerez plus de la même façon !</h2>
-        <h4><em>Organisez votre voyage pour optimiser vos déplacements et découvrez des lieux incroyables...<em>
+        <h4>
+          <em>
+            Organisez votre voyage pour optimiser vos déplacements et découvrez des lieux incroyables..
+          </em>
         </h4>
+          <%# SEARCH BAR %>
+          <div class="container p-4">
+            <div class="form-search mt-6">
+              <%= form_with url: "./activities", method: :get, class: "d-flex" do %>
+               <%= text_field_tag :query,
+               params[:query],
+               class: "form-control",
+               placeholder: "Quelle sera votre prochaine destination" %>
+               <%= submit_tag "Recherchez", class: "btn-destination" %>
+              <% end %>*
+            </div>
+          </div>
+          <%# END SEARCH BAR %>
       </div>
     </div>
   </div>
-  <div class="container p-4 bg-white">
-    <h2 class="mb-2 text-center">Quelle sera votre prochaine destination?</h2>
-      <%# SEARCH BAR %>
-      <div class="text-center text-decoration-none">
-        <%= submit_tag "Sélectionnez une ville...", class: "btn btn-destination" %>
-      </div>
+  <%# END SEARCH BAR %>
 
-  </div>
-
-  <div class="bg-white">
-    <div class="container">
-      <h3 class="text-center mb-3 mt-3">Des idées de destinations :</h3>
-       <div class="activity-cards-container">
-        <% @activities.each do |activity| %>
-          <div class="card-activity">
-            <%= link_to new_activity_path(activity), id: "card-link" do %>
-
-             <div class="card_activity">
-               <%= image_tag "madrid.jpg", alt: "Madrid", class:"img-fluid" %>
-               <h5 class="card_activity_titre">Un voyage à votre image</h5>
-               <p><%= truncate(activity.name, length: 40, separator: ' ', omission: '...') %></p>
-               <%= link_to "Plus de détails", "#", class: "btn btn-details"  %>
-             </div>
-            <%end%>
-          </div>
-      <% end %>
-
-     </div>
-      <h3 class="text-center mb-5 mt-5">Partez à la découverte du monde</p>
+  <div class="bg-white p-4 mt-3">
+     <div class="activity-cards-container">
+       <% @activities.each do |activity| %>
+        <div class="card-activity">
+          <%= link_to new_activity_path(activity), id: "card-link" do %>
+           <div class="card_activity">
+              <%= image_tag "madrid.jpg", alt: "Madrid", class:"img-fluid" %>
+              <h5><%= truncate(activity.name, length: 40, separator: ' ', omission: '...') %></h5>
+              <p><%= truncate(activity.description, length: 40, separator: ' ', omission: '...') %></p>
+              <%= link_to "Plus de détails", "#", class: "btn btn-details"  %>
+            </div>
+          <%end%>
+        </div>
+       <% end %>
+    </div>
+    <div class="bg-white">
+      <h3 class="card_activity_h3">Partez à la découverte du monde</p>
     </div>
   </div>
 </div>
