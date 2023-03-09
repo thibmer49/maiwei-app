@@ -3,7 +3,12 @@ class ActivitiesController < ApplicationController
   # skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-    @activities = Activity.all
+    if params[:query].present?
+      # Je recherche toutes les activités qui ont lieu dans la ville donnée
+      @activities = Activity.where(city: params[:query].capitalize)
+    else
+      @activities = Activity.all
+    end
   end
 
   def show
