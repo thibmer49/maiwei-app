@@ -19,8 +19,8 @@ User.create(
   password: "1234567"
 )
 
-puts "Creating trip..."
-Trip.create(
+puts "Creating trip #1..."
+trip1 = Trip.create!(
   user: User.first,
   trip_name: "Madrid",
   starting_date: '2023-01-05',
@@ -28,6 +28,32 @@ Trip.create(
   budget: 200
 )
 
+puts "Creating trip #2..."
+trip2 = Trip.create!(
+  user: User.first,
+  trip_name: "Paris",
+  starting_date: '2023-03-02',
+  ending_date: '2023-03-07',
+  budget: 500
+)
+
+puts "Creating trip #3..."
+trip3 = Trip.create!(
+  user: User.first,
+  trip_name: "Londres",
+  starting_date: '2023-02-10',
+  ending_date: '2023-02-17',
+  budget: 2000
+)
+
+puts "Creating trip #4..."
+trip4 = Trip.create!(
+  user: User.first,
+  trip_name: "Venise",
+  starting_date: '2023-01-10',
+  ending_date: '2023-01-15',
+  budget: 1000
+)
 
 
 puts "Creating activity #1..."
@@ -289,19 +315,19 @@ puts "#{Activity.all.count} activities created"
 
 puts "Creating activity of the trip..."
 TripActivity.create!(
-  trip: Trip.first,
+  trip: trip1,
   activity: activity1
 )
 
 puts "Creating activity of the trip..."
 TripActivity.create!(
-  trip: Trip.first,
+  trip: trip1,
   activity: activity2
 )
 
 puts "Creating activity of the trip..."
 TripActivity.create!(
-  trip: Trip.first,
+  trip: trip1,
   activity: activity3
 )
 

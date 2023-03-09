@@ -4,31 +4,30 @@
   <h5>Quel type d'activités souhaitez-vous faire ?</h5>
 
   <%= form_tag new_trip_path, method: :get do %>
-    <%= collection_check_boxes(:activity, :categories, ActsAsTaggableOn::Tag.for_context(:categories), :name, :name, { include_hidden: false }) %>
+    <%= collection_check_boxes(:activity, :categories, ActsAsTaggableOn::Tag.for_context(:categories), :name, :name, { include_hidden: false }, { class: "tag-selector" }) %>
     <%= button_tag "valid", type: "submit", class: "btn btn-default" %>
   <% end %>
 
 
-
-
   <%= simple_form_for @trip, data: { controller: 'flatpickr' } do |f| %>
-    <%= f.association :categories,
-      as: :check_boxes,
-      input_html: { class: "tag-selector" },
-      item_wrapper_class: 'tag-item' %>
+
     <%= f.input :starting_date, as: :string, input_html: { id: "starting_date", data: { flatpickr_target: "startingDate" } }, wrapper_html: { class: 'flatpickr-input' } %>
     <%= f.input :ending_date, as: :string, input_html: { id: "ending_date",  data: { flatpickr_target: "endingDate" } }, wrapper_html: { class: 'flatpickr-input' } %>
     <%= f.input :budget, label: 'Budget', placeholder: 'Quel budget souhaitez-vous ne pas dépasser ?' %>
+    <%= f.association :activities,
+      as: :check_boxes,
+      collection: @filtered_activities,
+      label: false,
+      label_method: lambda { |activity|
+        "#{render "activity_options", activity: activity}".html_safe
+      },
+      input_html: { class: "tag-selector" },
+      item_wrapper_class: 'tag-item' %>
 
+    <%# Création des cards ici %>
     <div class="cards">
-      <% @filtered_activities.each do |activity| %>
-        <div class="card_activity p-2">
-          <img src="https://www.okvoyage.com/wp-content/uploads/2019/10/visiter-Madrid.jpg" alt="Madrid">
-          <div class="mt-2">
-            <h3><%= activity.name %></h3>
-          </div>
-          <p class="text-center"><em><%= link_to "Plus de détails", activity_path(activity) %></em><p>
-        </div>
+      <% @activities.each do |activity| %>
+
       <% end %>
     </div>
     <%= f.submit "GO" %>

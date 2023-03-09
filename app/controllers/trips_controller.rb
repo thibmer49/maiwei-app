@@ -1,5 +1,5 @@
 class TripsController < ApplicationController
-  before_action :set_booking, only: %i[show destroy]
+  before_action :set_trip, only: %i[show destroy]
 
   def new
 
@@ -10,7 +10,6 @@ class TripsController < ApplicationController
     @categories = @trip.category_list
     # 1. Filtrer les activités en fonction de @categories
     @filtered_activities = @activities.tagged_with(@categories, :any => true)
-
   end
 
   def create
@@ -18,16 +17,21 @@ class TripsController < ApplicationController
     # authorize @trip
     if @trip.save
       raise
-      redirect_to trip_path(set_trip)
+      redirect_to trip_path
     else
       render :new, status: :unprocessable_entity
     end
   end
 
   def show
-    set_trip
+    @trip = Trip.find(params[:id])
+    @markers = @trip.activities.geocoded.map do |activity|
+      {
+        lat: activity.latitude,
+        lng: activity.longitude
+      }
+    end
     # authorize @trip
-    @trip_activities = Trip_activity.all { |trip_activity| trip_activity.activity }
   end
 
   # def destroy
