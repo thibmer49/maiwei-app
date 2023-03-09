@@ -7,8 +7,9 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require "open-uri"
 
-puts "Deleting activities..."
+puts "Deleting all instances..."
 Activity.destroy_all
+User.destroy_all
 
 puts "Creating user..."
 User.create(
@@ -17,6 +18,43 @@ User.create(
   email: "amelie.poulain@test.com",
   password: "1234567"
 )
+
+puts "Creating trip #1..."
+trip1 = Trip.create!(
+  user: User.first,
+  trip_name: "Madrid",
+  starting_date: '2023-01-05',
+  ending_date: '2023-01-06',
+  budget: 200
+)
+
+puts "Creating trip #2..."
+trip2 = Trip.create!(
+  user: User.first,
+  trip_name: "Paris",
+  starting_date: '2023-03-02',
+  ending_date: '2023-03-07',
+  budget: 500
+)
+
+puts "Creating trip #3..."
+trip3 = Trip.create!(
+  user: User.first,
+  trip_name: "Londres",
+  starting_date: '2023-02-10',
+  ending_date: '2023-02-17',
+  budget: 2000
+)
+
+puts "Creating trip #4..."
+trip4 = Trip.create!(
+  user: User.first,
+  trip_name: "Venise",
+  starting_date: '2023-01-10',
+  ending_date: '2023-01-15',
+  budget: 1000
+)
+
 
 puts "Creating activity #1..."
 activity1 = Activity.create!(
@@ -228,6 +266,20 @@ file = URI.open("https://www.montcalm.co.uk/blog/wp-content/uploads/2018/01/Mada
 activity14.photo.attach(io: file, filename: "MadameTrussauds.jpg", content_type: "image/jpeg")
 
 
+puts "Creating activity #15..."
+activity15 = Activity.create!(
+  average_rating: 4.7,
+  name: "British Museum",
+  address: "Great Russell St, Londres, Royaume-Uni",
+  description: "Le British Museum est un musée de l'histoire et de la culture humaine, situé dans le quartier de Bloomsbury à Londres, au Royaume-Uni. Ses collections, constituées de plus de sept millions d'objets, sont parmi les plus importantes du monde et proviennent de tous les continents. Elles illustrent l'histoire humaine de ses débuts à aujourd'hui.",
+  website: "https://www.britishmuseum.org/",
+  city: "Londres",
+  country: "Royaume-Uni"
+)
+  file = URI.open("https://www.themontcalm.com/blog/wp-content/uploads/2015/04/Your-Guide-To-The-British-Museum-London.jpg")
+activity15.photo.attach(io: file, filename: "BritishMuseum.jpg", content_type: "image/jpeg")
+
+
   activity1.category_list.add("Sites historiques", "Monuments et points d'intérêt")
   activity1.save
   activity2.category_list.add("Parcs et jardins")
@@ -256,3 +308,27 @@ activity14.photo.attach(io: file, filename: "MadameTrussauds.jpg", content_type:
   activity13.save
   activity14.category_list.add("Musées")
   activity14.save
+  activity15.category_list.add("Musées")
+  activity15.save
+
+puts "#{Activity.all.count} activities created"
+
+puts "Creating activity of the trip..."
+TripActivity.create!(
+  trip: trip1,
+  activity: activity1
+)
+
+puts "Creating activity of the trip..."
+TripActivity.create!(
+  trip: trip1,
+  activity: activity2
+)
+
+puts "Creating activity of the trip..."
+TripActivity.create!(
+  trip: trip1,
+  activity: activity3
+)
+
+puts "#{Trip.first.activities.count} activities created for #{Trip.first.trip_name}"
