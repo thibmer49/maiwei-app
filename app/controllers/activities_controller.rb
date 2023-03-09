@@ -4,10 +4,16 @@ class ActivitiesController < ApplicationController
 
   def index
     @activities = Activity.all
+
   end
 
   def show
-    authorize @activity
+    # authorize @activity
+    @activity = Activity.find(params[:id])
+    @marker = [{
+      lat: @activity.latitude,
+      lng: @activity.longitude
+    }]
   end
 
   def edit
