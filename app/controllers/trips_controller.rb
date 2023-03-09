@@ -2,9 +2,15 @@ class TripsController < ApplicationController
   before_action :set_booking, only: %i[show destroy]
 
   def new
+
     @trip = Trip.new
     @activities = Activity.all
     # authorize @trip
+    @trip.category_list.add(params[:activity][:categories]) if params[:activity].present?
+    @categories = @trip.category_list
+    # 1. Filtrer les activités en fonction de @categories
+    @filtered_activities = @activities.tagged_with(@categories, :any => true)
+
   end
 
   def create

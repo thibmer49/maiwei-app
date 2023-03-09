@@ -4,16 +4,10 @@ class ActivitiesController < ApplicationController
 
   def index
     @activities = Activity.all
-
   end
 
   def show
-    # authorize @activity
-    @activity = Activity.find(params[:id])
-    @marker = [{
-      lat: @activity.latitude,
-      lng: @activity.longitude
-    }]
+    authorize @activity
   end
 
   def edit
@@ -58,6 +52,6 @@ class ActivitiesController < ApplicationController
   end
 
   def activity_params
-    params.require(:activity).permit(:price_per_day, :name, :description, :category, :address, :beginning_date, :end_date, :photo, :category_list)
+    params.require(:activity).permit(:price_per_day, :name, :description, :category, :address, :beginning_date, :end_date, :photo)
   end
 end
