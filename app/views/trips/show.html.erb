@@ -1,9 +1,9 @@
 <h1><%=@trip.name%></h1>
 <h4>Du<%= @trip.starting_date %> jusqu'au <%=@trip.ending_date %></h4>
 <% @trip_activities.each do |trip_activity| %>
+<p><%= trip_activity.start_at %></p>
 <p><%= trip_activity.activity.name %></p>
 <p><%= trip_activity.activity.address %></p>
 <p><%= trip_activity.activity.price_per_visitor %></p>
-<p><%= trip_activity.start_at %></p>
 <p><%= trip_activity.end_at %></p>
 <% end %>
