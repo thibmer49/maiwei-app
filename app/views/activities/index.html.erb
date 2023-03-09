@@ -13,7 +13,7 @@
   <div class="cards my-4">
     <% @activities.each do |activity| %>
       <div class="card_activity p-2" data-bs-toggle="modal" data-bs-target=<%= "#activity-#{activity.id}" %> >
-        <img src="https://www.okvoyage.com/wp-content/uploads/2019/10/visiter-Madrid.jpg" alt="Madrid">
+          <%= cl_image_tag activity.photo.key, height: 300, width: 400, crop: :fill %>
         <h3 class="mt-2"><%= activity.name %></h3>
       </div>
       <div class="modal fade modal-activity-show" id=<%= "activity-#{activity.id}"%> tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
