@@ -18,13 +18,16 @@ class TripsController < ApplicationController
     # authorize @trip
     if @trip.save
       raise
-      redirect_to trip_path
+      redirect_to trip_path(set_trip)
     else
       render :new, status: :unprocessable_entity
     end
   end
 
   def show
+    set_trip
+    # authorize @trip
+    @trip_activities = Trip_activity.all { |trip_activity| trip_activity.activity }
   end
 
   # def destroy
@@ -40,6 +43,6 @@ class TripsController < ApplicationController
   end
 
   def trip_params
-    params.require(:trip).permit(:user_id, :budget, :strating_date, :ending_date, :category_list)
+    params.require(:trip).permit(:user_id, :budget, :starting_date, :ending_date, :category_list)
   end
 end
