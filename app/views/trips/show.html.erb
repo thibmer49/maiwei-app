@@ -1,9 +1,28 @@
-<h1><%=@trip.name%></h1>
-<h4>Du<%= @trip.starting_date %> jusqu'au <%=@trip.ending_date %></h4>
-<% @trip_activities.each do |trip_activity| %>
-<p><%= trip_activity.start_at %></p>
-<p><%= trip_activity.activity.name %></p>
-<p><%= trip_activity.activity.address %></p>
-<p><%= trip_activity.activity.price_per_visitor %></p>
-<p><%= trip_activity.end_at %></p>
-<% end %>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+        <h1>Votre séjour à <%= @trip.trip_name %></h1>
+        <h4>Du <%= @trip.starting_date %> au <%= @trip.ending_date %>
+    <div class="d-flex">
+      <div class="first_column">
+        <% @trip.activities.each do |activity| %>
+        <div class="card-trip-show">
+          <div class="d-flex">
+            <%= cl_image_tag activity.photo.key, height: 50, width: 150, crop: :fill, class:"img-fluid" %>
+            <div class="card-trip-show-info">
+              <h3><%= activity.name %></h3>
+              <p><%= activity.address %></p>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+      <div class="second_column">
+        <div style="width: 500px; height: 500px;"
+              data-controller="map"
+              data-map-markers-value="<%= @markers.to_json %>"
+              data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
