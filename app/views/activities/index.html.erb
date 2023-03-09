@@ -14,7 +14,7 @@
     <div class="cards my-4">
       <% @activities.each do |activity| %>
       <div class="card_activity p-2">
-      <img src="https://www.okvoyage.com/wp-content/uploads/2019/10/visiter-Madrid.jpg" alt="Madrid">
+      <%= cl_image_tag activity.photo.key, height: 300, width: 400, crop: :fill %>
         <div class="mt-2">
           <h3><%= activity.name %></h3>
         </div>
