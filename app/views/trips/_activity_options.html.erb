@@ -1,4 +1,4 @@
-<div class='card_activity'>
+<div class='card_activity p-2'>
   <%= cl_image_tag activity.photo.key, height: 300, width: 400, crop: :fill %>
   <h3 class='mt-2'><%= activity.name %></h3>
   <%= link_to 'Voir plus de détail', activity_path(activity), data: { bs_toggle: 'modal', bs_target: '#activity-#{activity.id}' } %>
