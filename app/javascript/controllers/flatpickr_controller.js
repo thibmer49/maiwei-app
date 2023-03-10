@@ -9,17 +9,13 @@ export default class extends Controller {
   connect() {
     flatpickr(this.startingDateTarget, {
       enableDate: true,
-      altInput: true,
-      altFormat: "j F Y",
-      dateFormat: "Y-m-d",
+
 
       // Provide an id for the plugin to work
       plugins: [new rangePlugin({ input: "#ending_date"})]})
     flatpickr(this.endingDateTarget, {
       enableDate: true,
-      altInput: true,
-      altFormat: "j F Y",
-      dateFormat: "Y-m-d",
+
     })
     }
   }

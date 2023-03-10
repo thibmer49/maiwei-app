@@ -19,7 +19,7 @@
                class: "form-control",
                placeholder: "Quelle sera votre prochaine destination" %>
                <%= submit_tag "Recherchez", class: "btn-destination" %>
-              <% end %>
+              <% end %>*
             </div>
           </div>
           <%# END SEARCH BAR %>
@@ -32,12 +32,12 @@
      <div class="activity-cards-container">
        <% @activities.each do |activity| %>
         <div class="card-activity">
-          <%= link_to activity_path(activity), id: "card-link" do %>
+          <%= link_to new_activity_path(activity), id: "card-link" do %>
            <div class="card_activity">
-              <%= cl_image_tag(activity.photo.key, height: 300, width: 400, crop: :fill, class:"img-fluid") %>
+              <%= cl_image_tag activity.photo.key, height: 300, width: 400, crop: :fill, class:"img-fluid" %>
               <h5><%= truncate(activity.name, length: 40, separator: ' ', omission: '...') %></h5>
               <p><%= truncate(activity.description, length: 40, separator: ' ', omission: '...') %></p>
-              <%= link_to "Découvrez cette destination", "#", class: "btn btn-details"  %>
+              <%= link_to "Plus de détails", "#", class: "btn btn-details"  %>
             </div>
           <%end%>
         </div>
