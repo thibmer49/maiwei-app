@@ -165,7 +165,7 @@ GEM
       net-protocol
     netrc (0.11.0)
     nio4r (2.5.8)
-    nokogiri (1.14.2-arm64-darwin)
+    nokogiri (1.14.2-x86_64-darwin)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     pg (1.4.6)
@@ -268,8 +268,7 @@ GEM
       nokogiri (~> 1.8)
     zeitwerk (2.6.7)
 
-PLATFORMS
-  arm64-darwin-22
+  x86_64-darwin-21
 
 DEPENDENCIES
   acts-as-taggable-on (~> 9.0)

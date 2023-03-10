@@ -7,7 +7,7 @@
         <% @trip.activities.each do |activity| %>
         <div class="card-trip-show">
           <div class="d-flex">
-            <%= cl_image_tag activity.photo.key, height: 50, width: 150, crop: :fill, class:"img-fluid" %>
+            <%= cl_image_tag activity.photo.key, crop: :fill, class:"img-fluid" %>
             <div class="card-trip-show-info">
               <h3><%= activity.name %></h3>
               <p><%= activity.address %></p>
@@ -17,7 +17,7 @@
         <% end %>
       </div>
       <div class="second_column">
-        <div style="width: 500px; height: 500px;"
+        <div style="width: 450px; height: 450px;"
               data-controller="map"
               data-map-markers-value="<%= @markers.to_json %>"
               data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
