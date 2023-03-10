@@ -41,8 +41,8 @@ puts "Creating trip #3..."
 trip3 = Trip.create!(
   user: User.first,
   trip_name: "Londres",
-  starting_date: '2023-02-10',
-  ending_date: '2023-02-17',
+  starting_date: '2022-12-16',
+  ending_date: '2022-12-18',
   budget: 2000
 )
 
@@ -331,4 +331,81 @@ TripActivity.create!(
   activity: activity3
 )
 
+puts "Creating activity of the trip..."
+TripActivity.create!(
+  trip: trip1,
+  activity: activity4
+)
+
+puts "Creating activity of the trip..."
+TripActivity.create!(
+  trip: trip1,
+  activity: activity5
+)
+
+puts "Creating activity of the trip..."
+TripActivity.create!(
+  trip: trip1,
+  activity: activity9
+)
+
+puts "Creating activity of the trip..."
+TripActivity.create!(
+  trip: trip1,
+  activity: activity6
+)
+
+puts "Creating activity of the trip..."
+TripActivity.create!(
+  trip: trip1,
+  activity: activity7
+)
+
+
+# starting_date: '2022-12-16',
+# ending_date: '2022-12-18',
+
+
+puts "Creating activity of the trip..."
+TripActivity.create!(
+  trip: trip3,
+  activity: activity11,
+  start_at: DateTime.new(2022, 12, 16, 12, 00),
+  end_at: DateTime.new(2023, 1, 5, 11, 00)
+)
+
+puts "Creating activity of the trip..."
+TripActivity.create!(
+  trip: trip3,
+  activity: activity12,
+  start_at: DateTime.new(2022, 12, 16, 12, 00),
+  end_at: DateTime.new(2023, 1, 5, 14, 00)
+)
+
+puts "Creating activity of the trip..."
+TripActivity.create!(
+  trip: trip3,
+  activity: activity15,
+  start_at: DateTime.new(2022, 12, 16, 15, 00),
+  end_at: DateTime.new(2023, 1, 5, 17, 00)
+)
+
+puts "Creating activity of the trip..."
+TripActivity.create!(
+  trip: trip3,
+  activity: activity13,
+  start_at: DateTime.new(2022, 12, 16, 10, 00),
+  end_at: DateTime.new(2023, 1, 5, 12, 00)
+)
+
+puts "Creating activity of the trip..."
+TripActivity.create!(
+  trip: trip3,
+  activity: activity14,
+  start_at: DateTime.new(2022, 12, 16, 14, 00),
+  end_at: DateTime.new(2023, 1, 5, 15, 00)
+)
+
+
 puts "#{Trip.first.activities.count} activities created for #{Trip.first.trip_name}"
+puts "#{Trip.third.activities.count} activities created for #{Trip.third.trip_name}"
