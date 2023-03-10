@@ -4,12 +4,20 @@
   <h5 class="text-blue">Quel type d'activités souhaitez-vous faire ?</h5>
   <%= form_tag new_trip_path, method: :get do %>
     <%= collection_check_boxes(:activity, :categories, ActsAsTaggableOn::Tag.for_context(:categories), :name, :name, { include_hidden: false }, { class: "tag-selector" }) %>
+    <%= label_tag "City" %>
+    <%= text_field_tag :city, params[:city], class: "form-control", placeholder: "Enter city" %>
     <%= button_tag "valid", type: "submit", class: "btn btn-default" %>
+  <% end %>
+
+  <%= simple_form_for @trip  do |f| %>
+    <%= f.input :trip_name, label: 'City', placeholder: 'Choisissez votre destination, i.e : Londres' %>
+    <%= f.submit "GO" %>
   <% end %>
 
 
   <%= simple_form_for @trip, data: { controller: 'flatpickr' } do |f| %>
 
+    <%= f.input :trip_name, label: 'City', placeholder: 'Choisissez votre destination, i.e : Londres' %>
     <%= f.input :starting_date, as: :string, input_html: { id: "starting_date", data: { flatpickr_target: "startingDate" } }, wrapper_html: { class: 'flatpickr-input' } %>
     <%= f.input :ending_date, as: :string, input_html: { id: "ending_date",  data: { flatpickr_target: "endingDate" } }, wrapper_html: { class: 'flatpickr-input' } %>
     <%= f.input :budget, label: 'Budget', placeholder: 'Quel budget souhaitez-vous ne pas dépasser ?' %>
@@ -20,20 +28,9 @@
       label_method: lambda { |activity|
         "#{render "activity_options", activity: activity}".html_safe
       },
-      input_html: { class: "tag-selector" },
-      item_wrapper_class: 'tag-item' %>
-
-    <%# Création des cards ici %>
-    <div class="cards">
-      <% @activities.each do |activity| %>
-
-      <% end %>
-    </div>
+      input_html: { class: "card-selector", include_hidden: false },
+      item_wrapper_class: 'card-item' %>
+    <%= f.hidden_field('activity_ids[]', value: "") %>
     <%= f.submit "GO" %>
   <% end %>
-  <div style="width: 100%; height: 600px;" class="trip-map"
-    data-controller="map"
-    data-map-markers-value="<%= @markers.to_json %>"
-    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
 </div>

@@ -71,6 +71,37 @@
   justify-content: center;
   color: #82C0CC;
 }
+
 .card img {
   object-fit: cover;
+
+///////////// CARDS SUR LA TRIPS#NEW
+.card-item {
+  display: inline-block;
+}
+
+.card-selector:hover + label {
+  color: #ECEAFF;
+}
+
+.card-selector {
+  position: absolute;
+  transform: scale(0);
+}
+
+.card-selector + label {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.7rem;
+  border-radius: 50rem;
+  padding: 0.1rem 0.5rem;
+
+
+
+  margin-right: 0.6rem;
+  margin-bottom: 0.4rem;
+}
+
+.card-selector:checked + label > .card_activity {
+  border: 2px solid #16697A
 }
