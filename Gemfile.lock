@@ -268,8 +268,7 @@ GEM
       nokogiri (~> 1.8)
     zeitwerk (2.6.7)
 
-PLATFORMS
-  x86_64-darwin-22
+  x86_64-darwin-21
 
 DEPENDENCIES
   acts-as-taggable-on (~> 9.0)

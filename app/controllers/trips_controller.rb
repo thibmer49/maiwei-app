@@ -32,6 +32,11 @@ class TripsController < ApplicationController
       }
     end
     # authorize @trip
+    @dates = (@trip.starting_date..@trip.ending_date).to_a
+
+    # [
+    #   ["date du jour", [ la liste des activités que je dois afficher ce jour là]]
+    # ]
   end
 
   # def destroy
