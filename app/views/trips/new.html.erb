@@ -10,15 +10,8 @@
     <%= button_tag "valid", type: "submit", class: "btn btn-default" %>
   <% end %>
 
-  <%= simple_form_for @trip  do |f| %>
-    <%= f.input :trip_name, label: 'City', placeholder: 'Choisissez votre destination, i.e : Londres' %>
-    <%= f.submit "GO" %>
-  <% end %>
-
-
   <%= simple_form_for @trip, data: { controller: 'flatpickr' } do |f| %>
 
-    <%= f.input :trip_name, label: 'City', placeholder: 'Choisissez votre destination, i.e : Londres' %>
     <%= f.input :starting_date, as: :string, input_html: { id: "starting_date", data: { flatpickr_target: "startingDate" } }, wrapper_html: { class: 'flatpickr-input' } %>
     <%= f.input :ending_date, as: :string, input_html: { id: "ending_date",  data: { flatpickr_target: "endingDate" } }, wrapper_html: { class: 'flatpickr-input' } %>
     <%= f.input :budget, label: 'Budget', placeholder: 'Quel budget souhaitez-vous ne pas dépasser ?' %>
