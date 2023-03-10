@@ -74,8 +74,10 @@
 
 .card img {
   object-fit: cover;
+}
 
 ///////////// CARDS SUR LA TRIPS#NEW
+///
 .card-item {
   display: inline-block;
 }
@@ -103,5 +105,5 @@
 }
 
 .card-selector:checked + label > .card_activity {
-  border: 2px solid #16697A
+  border: 2px solid #16697A;
 }
