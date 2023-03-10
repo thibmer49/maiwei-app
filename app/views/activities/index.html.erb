@@ -1,5 +1,5 @@
 <div class="container my-3">
-  <h1 class="text-center">Où souhaitez-vous aller ?</h1>
+  <h1 class="text-center text-blue">Où souhaitez-vous aller ?</h1>
   <%# SEARCH BAR %>
   <%= form_with url: activities_path, method: :get, class: "d-flex mt-3" do %>
     <%= text_field_tag :query,
@@ -10,25 +10,14 @@
     <%= submit_tag "Recherchez", class: "btn-blue" %>
   <% end %>
   <%# FIN SEARCH BAR %>
-  <div class="cards my-4">
+  <div class="cards my-4 mt-3">
     <% @activities.each do |activity| %>
-      <div class="card_activity p-2" data-bs-toggle="modal" data-bs-target=<%= "#activity-#{activity.id}" %> >
-          <%= cl_image_tag activity.photo.key, height: 300, width: 400, crop: :fill %>
-        <h3 class="mt-2"><%= activity.name %></h3>
-      </div>
-      <div class="modal fade modal-activity-show" id=<%= "activity-#{activity.id}"%> tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <%= render "activity-show", activity: activity %>
-            </div>
-          </div>
-        </div>
+      <div class="card_activity">
+        <%= cl_image_tag(activity.photo.key, height: 300, width: 400) %>
+        <h5><%= truncate(activity.name, length: 40, separator: ' ', omission: '...') %></h5>
+        <p><%= truncate(activity.description, length: 450, separator: ' ', omission: '...') %></p>
       </div>
     <% end %>
   </div>
-  <!-- Modal -->
+  <!-- card -->
 </div>

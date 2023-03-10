@@ -1,8 +1,7 @@
 
 <div class="container">
-  <h1>Parlez moi de votre futur séjour</h1>
-  <h5>Quel type d'activités souhaitez-vous faire ?</h5>
-
+  <h1 class="text-blue">Parlez moi de votre futur séjour</h1>
+  <h5 class="text-blue">Quel type d'activités souhaitez-vous faire ?</h5>
   <%= form_tag new_trip_path, method: :get do %>
     <%= collection_check_boxes(:activity, :categories, ActsAsTaggableOn::Tag.for_context(:categories), :name, :name, { include_hidden: false }, { class: "tag-selector" }) %>
     <%= label_tag "City" %>
