@@ -23,8 +23,8 @@ puts "Creating trip #1..."
 trip1 = Trip.create!(
   user: User.first,
   trip_name: "Madrid",
-  starting_date: '2023-01-05',
-  ending_date: '2023-01-06',
+  starting_date: '2023-04-07',
+  ending_date: '2023-04-09',
   budget: 200
 )
 
@@ -331,4 +331,72 @@ TripActivity.create!(
   activity: activity3
 )
 
+puts "Creating activity of the trip..."
+TripActivity.create!(
+  trip: trip1,
+  activity: activity4
+)
+
+puts "Creating activity of the trip..."
+TripActivity.create!(
+  trip: trip1,
+  activity: activity5
+)
+
+puts "Creating activity of the trip..."
+TripActivity.create!(
+  trip: trip1,
+  activity: activity9
+)
+
+puts "Creating activity of the trip..."
+TripActivity.create!(
+  trip: trip1,
+  activity: activity6
+)
+
+puts "Creating activity of the trip..."
+TripActivity.create!(
+  trip: trip1,
+  activity: activity7
+)
+
+puts "Creating activity of the trip..."
+TripActivity.create!(
+  trip: trip3,
+  activity: activity1
+)
+
+puts "Creating activity of the trip..."
+TripActivity.create!(
+  trip: trip3,
+  activity: activity11
+)
+
+puts "Creating activity of the trip..."
+TripActivity.create!(
+  trip: trip3,
+  activity: activity12
+)
+
+puts "Creating activity of the trip..."
+TripActivity.create!(
+  trip: trip3,
+  activity: activity14
+)
+
+puts "Creating activity of the trip..."
+TripActivity.create!(
+  trip: trip3,
+  activity: activity13
+)
+
+puts "Creating activity of the trip..."
+TripActivity.create!(
+  trip: trip3,
+  activity: activity15
+)
+
+
 puts "#{Trip.first.activities.count} activities created for #{Trip.first.trip_name}"
+puts "#{Trip.third.activities.count} activities created for #{Trip.third.trip_name}"
