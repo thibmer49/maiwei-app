@@ -8,16 +8,18 @@ class TripsController < ApplicationController
     # authorize @trip
     @trip.category_list.add(params[:activity][:categories]) if params[:activity].present?
     @categories = @trip.category_list
+
     # 1. Filtrer les activités en fonction de @categories
-    @filtered_activities = @activities.tagged_with(@categories, :any => true)
+    @filtered_activities = Activity.tagged_with(@categories, any: true).where(city: params[:city])
   end
 
   def create
-    @trip = Trip.new(trip_params)
+    @trip = Trip.new(trip_params.merge({ user: current_user }))
+    @activities = Activity.all
+    @filtered_activities = @activities.tagged_with(@categories, :any => true)
     # authorize @trip
     if @trip.save
-      raise
-      redirect_to trip_path
+      redirect_to trip_path(@trip)
     else
       render :new, status: :unprocessable_entity
     end
@@ -52,6 +54,6 @@ class TripsController < ApplicationController
   end
 
   def trip_params
-    params.require(:trip).permit(:user_id, :budget, :starting_date, :ending_date, :category_list)
+    params.require(:trip).permit(:user_id, :budget, :starting_date, :ending_date, :category_list, :photo, activity_ids: [])
   end
 end

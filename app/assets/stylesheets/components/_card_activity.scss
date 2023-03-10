@@ -1,9 +1,9 @@
 .card_activity {
   overflow: hidden;
-  background: #82C0CC;
+  background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 5px;
-  color: white;
+  color: #16697A;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -20,7 +20,7 @@
 
 .card_activity_link {
   text-decoration: none;
-  color: white;
+  color: #16697A;
   padding : 1rem;
   margin: 0;
 }
@@ -32,12 +32,11 @@
 }
 
 .card_activity h5 {
+  color: #16697A;
   font-size: 20px;
   font-weight: normal;
   font-size: 1.25rem;
   text-align: center;
-  margin: 5px;
-  height: 50px;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -49,7 +48,6 @@
   margin: 0;
   flex-grow: 1;
   padding : 1rem;
-  height: 75px;
   display: flex;
   align-items: flex-start;
 }
@@ -65,11 +63,45 @@
 
 .card_activity a {
   text-decoration: none;
-  color: white;
+  color: #16697A;
 }
 
 .body_card_activity {
   font-family: Helvetica;
   justify-content: center;
   color: #82C0CC;
+}
+
+.card img {
+  object-fit: cover;
+
+///////////// CARDS SUR LA TRIPS#NEW
+.card-item {
+  display: inline-block;
+}
+
+.card-selector:hover + label {
+  color: #ECEAFF;
+}
+
+.card-selector {
+  position: absolute;
+  transform: scale(0);
+}
+
+.card-selector + label {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.7rem;
+  border-radius: 50rem;
+  padding: 0.1rem 0.5rem;
+
+
+
+  margin-right: 0.6rem;
+  margin-bottom: 0.4rem;
+}
+
+.card-selector:checked + label > .card_activity {
+  border: 2px solid #16697A
 }

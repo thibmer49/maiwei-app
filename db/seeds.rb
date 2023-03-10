@@ -280,6 +280,20 @@ activity15 = Activity.create!(
 activity15.photo.attach(io: file, filename: "BritishMuseum.jpg", content_type: "image/jpeg")
 
 
+puts "Creating activity #16..."
+activity16 = Activity.create!(
+  average_rating: 4.4,
+  name: "Harrods",
+  address: "87-135 Brompton Rd, Londres, Royaume-Uni",
+  description: "Harrods est un grand magasin de luxe, situé sur Brompton Road dans le quartier de Knightsbridge, à Londres. Harrods est une marque véhiculant une image de luxe que la reine d'Angleterre utilise, apposée sur des produits, et servant d'enseigne à des entreprises et des sites internet.",
+  website: "https://www.harrods.com",
+  city: "Londres",
+  country: "Royaume-Uni"
+)
+  file = URI.open("https://www.theindustry.fashion/wp-content/uploads/2023/01/Harrods-Louis-Vuitton.jpg")
+activity16.photo.attach(io: file, filename: "Harrods.jpg", content_type: "image/jpeg")
+
+
   activity1.category_list.add("Sites historiques", "Monuments et points d'intérêt")
   activity1.save
   activity2.category_list.add("Parcs et jardins")
@@ -310,6 +324,8 @@ activity15.photo.attach(io: file, filename: "BritishMuseum.jpg", content_type: "
   activity14.save
   activity15.category_list.add("Musées")
   activity15.save
+  activity16.category_list.add("Monuments et points d'intérêt")
+  activity16.save
 
 puts "#{Activity.all.count} activities created"
 
@@ -370,8 +386,8 @@ puts "Creating activity of the trip..."
 TripActivity.create!(
   trip: trip3,
   activity: activity11,
-  start_at: DateTime.new(2022, 12, 16, 12, 00),
-  end_at: DateTime.new(2023, 1, 5, 11, 00)
+  start_at: DateTime.new(2022, 12, 16, 11, 00),
+  end_at: DateTime.new(2022, 12, 16, 12, 00)
 )
 
 puts "Creating activity of the trip..."
@@ -379,7 +395,7 @@ TripActivity.create!(
   trip: trip3,
   activity: activity12,
   start_at: DateTime.new(2022, 12, 16, 12, 00),
-  end_at: DateTime.new(2023, 1, 5, 14, 00)
+  end_at: DateTime.new(2022, 12, 16, 14, 00)
 )
 
 puts "Creating activity of the trip..."
@@ -387,25 +403,33 @@ TripActivity.create!(
   trip: trip3,
   activity: activity15,
   start_at: DateTime.new(2022, 12, 16, 15, 00),
-  end_at: DateTime.new(2023, 1, 5, 17, 00)
+  end_at: DateTime.new(2022, 12, 16, 17, 00)
 )
 
 puts "Creating activity of the trip..."
 TripActivity.create!(
   trip: trip3,
   activity: activity13,
-  start_at: DateTime.new(2022, 12, 16, 10, 00),
-  end_at: DateTime.new(2023, 1, 5, 12, 00)
+  start_at: DateTime.new(2022, 12, 17, 10, 00),
+  end_at: DateTime.new(2022, 12, 17, 12, 00)
+)
+
+
+puts "Creating activity of the trip..."
+TripActivity.create!(
+  trip: trip3,
+  activity: activity16,
+  start_at: DateTime.new(2022, 12, 17, 14, 00),
+  end_at: DateTime.new(2022, 12, 17, 15, 00)
 )
 
 puts "Creating activity of the trip..."
 TripActivity.create!(
   trip: trip3,
   activity: activity14,
-  start_at: DateTime.new(2022, 12, 16, 14, 00),
-  end_at: DateTime.new(2023, 1, 5, 15, 00)
+  start_at: DateTime.new(2022, 12, 17, 16, 00),
+  end_at: DateTime.new(2022, 12, 17, 17, 00)
 )
-
 
 puts "#{Trip.first.activities.count} activities created for #{Trip.first.trip_name}"
 puts "#{Trip.third.activities.count} activities created for #{Trip.third.trip_name}"
