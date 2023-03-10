@@ -23,8 +23,8 @@ puts "Creating trip #1..."
 trip1 = Trip.create!(
   user: User.first,
   trip_name: "Madrid",
-  starting_date: '2023-04-07',
-  ending_date: '2023-04-09',
+  starting_date: '2023-01-05',
+  ending_date: '2023-01-06',
   budget: 200
 )
 
@@ -41,8 +41,8 @@ puts "Creating trip #3..."
 trip3 = Trip.create!(
   user: User.first,
   trip_name: "Londres",
-  starting_date: '2023-02-10',
-  ending_date: '2023-02-17',
+  starting_date: '2022-12-16',
+  ending_date: '2022-12-18',
   budget: 2000
 )
 
@@ -361,40 +361,49 @@ TripActivity.create!(
   activity: activity7
 )
 
+
+# starting_date: '2022-12-16',
+# ending_date: '2022-12-18',
+
+
 puts "Creating activity of the trip..."
 TripActivity.create!(
   trip: trip3,
-  activity: activity1
+  activity: activity11,
+  start_at: DateTime.new(2022, 12, 16, 12, 00),
+  end_at: DateTime.new(2023, 1, 5, 11, 00)
 )
 
 puts "Creating activity of the trip..."
 TripActivity.create!(
   trip: trip3,
-  activity: activity11
+  activity: activity12,
+  start_at: DateTime.new(2022, 12, 16, 12, 00),
+  end_at: DateTime.new(2023, 1, 5, 14, 00)
 )
 
 puts "Creating activity of the trip..."
 TripActivity.create!(
   trip: trip3,
-  activity: activity12
+  activity: activity15,
+  start_at: DateTime.new(2022, 12, 16, 15, 00),
+  end_at: DateTime.new(2023, 1, 5, 17, 00)
 )
 
 puts "Creating activity of the trip..."
 TripActivity.create!(
   trip: trip3,
-  activity: activity14
+  activity: activity13,
+  start_at: DateTime.new(2022, 12, 16, 10, 00),
+  end_at: DateTime.new(2023, 1, 5, 12, 00)
 )
 
 puts "Creating activity of the trip..."
 TripActivity.create!(
   trip: trip3,
-  activity: activity13
-)
-
-puts "Creating activity of the trip..."
-TripActivity.create!(
-  trip: trip3,
-  activity: activity15
+  activity: activity14,
+  start_at: DateTime.new(2022, 12, 16, 14, 00),
+  end_at: DateTime.new(2023, 1, 5, 15, 00)
 )
 
 
