@@ -6,8 +6,8 @@
   background-color: white;
   margin-top: 3px;
   margin-bottom: 10px;
-  padding: 10px;
   border-radius: 5px;
+  align-items: center;
 }
 
 .card-trip-show h1, h2, h3, h4, h5 {
@@ -18,6 +18,12 @@
   font-size: smaller;
 }
 
+.card-trip-show-info {
+  padding: 10px;
+}
+
 .card-trip-show img {
-  scroll-margin-right: 4px;
+  object-fit: cover;
+  width: 165px;
+  height: 100%;
 }

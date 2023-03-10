@@ -1,39 +1,30 @@
 <div class="container">
   <div class="d-flex">
     <div class="first-column">
-      <img src="https://img.freepik.com/photos-gratuite/gros-plan-jolie-femme-dents-parfaites-peau-propre-foncee-se-reposant-interieur-souriant-joyeusement-apres-avoir-recu-bonnes-nouvelles-positives_273609-1248.jpg" alt="portrait" class="rounded-circle" style="width: 50px; height: 50px; object-fit: cover">
-      <ul>
-      <li><h5><%= link_to "Mon dashbord", "#"%></h5></li>
-      <li><h5><%= link_to "Mes informations personnelles", "#"%></h5></li>
+      <img src="UserPhoto.png" class="rounded-circle" style="width: 50px; height: 50px; object-fit: cover">
+      <ul class="list-inline">
+        <li><h5>Mes voyages</h5></li>
+        <li><h5>Mes informations personnelles</h5></li>
       </ul>
     </div>
     <div class="second-column">
-      <% @user = User.last %>
-      <h1>Hello <%= @user.first_name %> 👋🏻</h1>
-      <h2><%= @time %> <%= @date %></h2>
-    </div>
-    <div class="d-flex">
-      <div class="first-column">
-        <img src="UserPhoto.png" class="rounded-circle" style="width: 50px; height: 50px; object-fit: cover">
-        <ul>
-          <li></li>
-          <li></li>
-        </ul>
+      <div class="second-column-trips">
         <h5>Mes voyages</h5>
-        <h5>Mes informations personnelles</h5>
-      </div>
-      <div class="second-column">
-        <div class="second-column-trips">
-          <h5>Mes voyages</h5>
-          <%# FIN ITERATION %>
+          <% @trips.each do |trip| %>
+          <div class="card-trip-show mt-4">
+            <div class="card-trip-show-info">
+              <h3><%= trip.trip_name %></h3>
+              <p><%= trip.budget %>€</p>
+              <p>Du<%= trip.starting_date %>au <%= trip.ending_date %></p>
+            </div>
+            <p><%= link_to "Détail du voyage", trip_path(trip) %></p>
+            <% end %>
+          </div>
         </div>
+      <h6>Mes futurs voyages</h6>
+      <h6>Mes voyages passés</h6>
+        <%# FIN ITERATION %>
       </div>
-      <div class="third-column">
-        <div style="width: 500px; height: 600px;"
-          data-controller="map"
-          data-map-markers-value="<%= @markers.to_json %>"
-          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-        </div>
-      </div>
+    </div>
   </div>
 </div>

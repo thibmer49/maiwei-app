@@ -16,7 +16,7 @@
                class: "form-control",
                placeholder: "Quelle sera votre prochaine destination" %>
                <%= submit_tag "Recherchez", class: "btn-destination" %>
-              <% end %>
+              <% end %>*
             </div>
           </div>
           <%# END SEARCH BAR %>
@@ -24,6 +24,7 @@
     </div>
   </div>
   <%# END SEARCH BAR %>
+
 
   <div class="bg-white p-4">
     <div class="activity-cards-container">
@@ -35,6 +36,7 @@
             <p><%= truncate(activity.description, length: 60, separator: ' ', omission: '...') %></p>
             <%= link_to "Découvrez cette destination", "#", class: "btn btn-details"  %>
           </div>
+
         </div>
       <% end %>
     </div>
