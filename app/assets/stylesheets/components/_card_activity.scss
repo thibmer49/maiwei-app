@@ -33,7 +33,19 @@
 
 .card_activity h5 {
   color: #16697A;
-  font-size: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  font-size: 1.25rem;
+  text-align: center;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+.card_activity h6 {
+  color: #16697A;
+  font-size: 10px;
   font-weight: normal;
   font-size: 1.25rem;
   text-align: center;
@@ -42,12 +54,11 @@
   justify-content: center;
 }
 
-.card_activity p {
-  font-size: 14px;
+  .card_activity p {
   font-weight: normal;
   margin: 0;
   flex-grow: 1;
-  padding : 1rem;
+  padding : 3px;
   display: flex;
   align-items: flex-start;
 }
