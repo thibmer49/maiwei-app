@@ -9,7 +9,6 @@ export default class extends Controller {
   }
 
   connect() {
-    console.log('coucou');
     mapboxgl.accessToken = this.apiKeyValue
 
     this.map = new mapboxgl.Map({
@@ -22,8 +21,6 @@ export default class extends Controller {
   }
 
   #addMarkersToMap() {
-    console.log('markers');
-    console.log(this.markersValue);
     this.markersValue.forEach((marker) => {
       const popup = new mapboxgl.Popup().setHTML(marker.info_window_html)
       new mapboxgl.Marker()
