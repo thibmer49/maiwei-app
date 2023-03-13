@@ -6,13 +6,12 @@
   <div class="activity_description">
     <div>
       <p class="rating"><i class="fa-solid fa-star"></i>Note: <%= activity.average_rating%>/5</p>
-      <p class="duration"><i class="fa-solid fa-stopwatch"></i>Durée: <%= activity.duration%></p>
+      <p class="duration"><i class="fa-solid fa-stopwatch"></i>Durée: <%= activity.duration%>h</p>
       <p class="price"><i class="fa-solid fa-coins"></i> <%= activity.price_per_visitor%>€</p>
     </div>
     <p class="address"><i class="fa-solid fa-location-pin"></i><%= activity.address %></p>
     <p class="description"><%= activity.description %></p>
     <%# <p><%= truncate(activity.description, length: 110, separator: ' ', omission: '...') %>
-  <%= link_to "Sélectionner l'offre", "#", class: 'btn btn-primary'%>
   </div>
 
 </div>
