@@ -3,13 +3,11 @@
   <h1 class="text-blue mt-3">Parlez moi de votre futur séjour</h1>
   <h5 class="text-blue">Quel type d'activités souhaitez-vous faire ?</h5>
 
-  <%= form_tag new_trip_path, method: :get do %>
-  <% end %>
-
   <%= form_with url: activities_path, method: :get, html: {class:
     "mb-4", data: {activities_update_target: "form"}} do |f| %>
     <%= collection_check_boxes(:activity, :categories, ActsAsTaggableOn::Tag.for_context(:categories), :name, :name, { include_hidden: false }, { class: "tag-selector", data: { action: "change->activities-update#update"} }) %>
-    <%= f.label "Choisissez votre destination ✈️" %>
+    <br>
+    <%= f.label "Choisissez votre destination ✈️", id: "label-destination"%>
     <%= f.text_field :query, class: "form-control", placeholder:
                       "Entrez le nom d'une ville", value: params[:query],
                       data: {
