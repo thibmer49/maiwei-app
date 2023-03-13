@@ -44,11 +44,25 @@ class TripsController < ApplicationController
     # ]
   end
 
-  # def destroy
-  #   # authorize @trip
-  #   @trip.destroy
-  #   redirect_to dashboard_path
-  # end
+  def edit
+    @trip = Trip.find(params[:id])
+    @starting_date = @trip.starting_date.strftime('%A %-d %B %Y')
+    @ending_date = @trip.ending_date.strftime('%A %-d %B %Y')
+    @activities = Activity.all
+    @trip.category_list.add(params[:activity][:categories]) if params[:activity].present?
+    @categories = @trip.category_list
+    @filtered_activities = Activity.tagged_with(@categories, any: true).where(city: params[:city])
+    # authorize @trip
+  end
+
+  def update
+    @trip = Trip.find(params[:id])
+    @starting_date = @trip.starting_date.strftime('%A %-d %B %Y')
+    @ending_date = @trip.ending_date.strftime('%A %-d %B %Y')
+    @trip.update(trip_params)
+    redirect_to trip_path(@trip)
+    # authorize @trip
+  end
 
   private
 

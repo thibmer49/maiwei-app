@@ -1,0 +1,30 @@
+<div class="container">
+  <h1 class="text-blue mt-3">Parlez moi de votre futur séjour</h1>
+  <h5 class="text-blue">Quel type d'activités souhaitez-vous faire ?</h5>
+  <%= form_tag new_trip_path, method: :get do %>
+    <%= collection_check_boxes(:activity, :categories, ActsAsTaggableOn::Tag.for_context(:categories), :name, :name, { include_hidden: false }, { class: "tag-selector" }) %>
+    <div class="label-city">
+      <%= label_tag "Choisissez votre destination ✈️" %>
+      <%= text_field_tag :city, params[:city], class: "form-control", placeholder: "Enter city" %>
+    </div>
+    <%= button_tag "Suggère moi des activités", type: "submit", class: "label-city-btn" %>
+  <% end %>
+
+  <%= simple_form_for @trip, data: { controller: 'flatpickr' } do |f| %>
+
+    <%= f.input :starting_date, label: "A partir du :", as: :string, input_html: { id: "starting_date", data: { flatpickr_target: "startingDate" } }, wrapper_html: { class: 'flatpickr-input' } %>
+    <%= f.input :ending_date, label: "Jusqu'au :", as: :string, input_html: { id: "ending_date", data: { flatpickr_target: "endingDate" } }, wrapper_html: { class: 'flatpickr-input' } %>
+    <%= f.input :budget, label: 'Quel budget souhaitez-vous ne pas dépasser ?', placeholder: '300€' %>
+    <%= f.association :activities,
+      as: :check_boxes,
+      collection: @filtered_activities,
+      label: false,
+      label_method: lambda { |activity|
+        "#{render "activity_options", activity: activity}".html_safe
+      },
+      input_html: { class: "card-selector", include_hidden: false },
+      item_wrapper_class: 'card-item' %>
+    <%= f.hidden_field('activity_ids[]', value: "") %>
+    <%= f.submit "Confirmer les modifications", button_html: { class: "submit-button" } %>
+  <% end %>
+</div>
