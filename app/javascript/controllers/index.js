@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import ActivitiesUpdateController from "./activities_update_controller"
+application.register("activities-update", ActivitiesUpdateController)
+
 import FlatpickrController from "./flatpickr_controller"
 application.register("flatpickr", FlatpickrController)
 
@@ -12,3 +15,6 @@ application.register("hello", HelloController)
 
 import MapController from "./map_controller"
 application.register("map", MapController)
+
+import SortableController from "./sortable_controller"
+application.register("sortable", SortableController)

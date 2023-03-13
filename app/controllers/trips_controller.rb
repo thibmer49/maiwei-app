@@ -18,20 +18,27 @@ class TripsController < ApplicationController
     @activities = Activity.all
     @filtered_activities = @activities.tagged_with(@categories, :any => true)
     # authorize @trip
-    if @trip.save
-      redirect_to trip_path(@trip)
-    else
-      render :new, status: :unprocessable_entity
+    respond_to do |format|
+      if @trip.save
+        format.html redirect_to trip_path(@trip)
+        format.text { render partial: "activity_list", locals: { activities: @activities }, formats: [:html] }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.text
+      end
     end
   end
 
   def show
     @trip = Trip.find(params[:id])
+    @starting_date = @trip.starting_date.strftime('%A %-d %B %Y')
+    @ending_date = @trip.ending_date.strftime('%A %-d %B %Y')
     @markers = @trip.activities.geocoded.map do |activity|
       {
         lat: activity.latitude,
-        lng: activity.longitude
-      }
+        lng: activity.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {activity: activity})
+    }
     end
     # authorize @trip
     @dates = (@trip.starting_date..@trip.ending_date).to_a

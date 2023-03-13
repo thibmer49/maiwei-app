@@ -3,11 +3,12 @@ class ActivitiesController < ApplicationController
   # skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-    if params[:query].present?
+    @activities = Activity.all
+    if params[:query].present? || params.dig(:activity, :categories).present?
       # Je recherche toutes les activités qui ont lieu dans la ville donnée
-      @activities = Activity.where(city: params[:query].capitalize)
-    else
-      @activities = Activity.all
+      @activities = @activities.where(city: params[:query].capitalize) if params[:query].present?
+      @activities = @activities.tagged_with(params.dig(:activity, :categories), :any => true) if params.dig(:activity, :categories).present?
+      render partial: "trips/activity_list", locals: { filtered_activities: @activities }, layout: false, formats: :html
     end
   end
 
