@@ -10,7 +10,6 @@ class ActivitiesController < ApplicationController
       @activities = @activities.tagged_with(params.dig(:activity, :categories), :any => true) if params.dig(:activity, :categories).present?
       render partial: "trips/activity_list", locals: { filtered_activities: @activities }, layout: false, formats: :html
     else
-
     end
   end
 
