@@ -63,7 +63,8 @@ activity1 = Activity.create!(
   address: "Pl. Mayor, 28012 Madrid, Espagne",
   description: "La Plaza Mayor (en français, équivalent de «grand-place») est une place de la ville de Madrid, en Espagne.",
   city: "Madrid",
-  country: "Espagne"
+  country: "Espagne",
+  duration: 1.5
 )
 file = URI.open("https://photo620x400.mnstatic.com/37b45dfad008ade38c1986be2e30a158/plaza-mayor.jpg")
 activity1.photo.attach(io: file, filename: "PlazaMayor.jpg", content_type: "image/jpeg")
@@ -76,7 +77,8 @@ activity2 = Activity.create!(
   address: "28009 Madrid, Espagne",
   description: "Le parc du Retiro est un grand parc de 125 hectares et plus de 15 000 arbres situé à Madrid. Il fut créé entre 1630 et 1640.",
   city: "Madrid",
-  country: "Espagne"
+  country: "Espagne",
+  duration: 4.0
 )
 file = URI.open("https://photo620x400.mnstatic.com/63b94c01337b9c7cad49217264b406d2/parc-du-retiro.jpg")
 activity2.photo.attach(io: file, filename: "ParcDuRetiro.jpg", content_type: "image/jpeg")
@@ -92,7 +94,8 @@ activity3 = Activity.create!(
   phone_number: "+34 913 30 28 00",
   website: "https://www.museodelprado.es/",
   city: "Madrid",
-  country: "Espagne"
+  country: "Espagne",
+  duration: 3.5
 )
 file = URI.open("https://cdn.generationvoyage.fr/2017/03/interieur-musee-prado-madrid.jpg")
 activity3.photo.attach(io: file, filename: "MuseeDuPrado.jpg", content_type: "image/jpeg")
@@ -108,7 +111,8 @@ activity4 = Activity.create!(
   phone_number: "+34 914 54 87 00",
   website: "https://www.patrimonionacional.es/visita/palacio-real-de-madrid",
   city: "Madrid",
-  country: "Espagne"
+  country: "Espagne",
+  duration: 1.5
 )
 file = URI.open("https://www.antoon.fr/wp-content/uploads/2022/04/palais-royal-madrid.jpg")
 activity4.photo.attach(io: file, filename: "PalaisRoyal.jpg", content_type: "image/jpeg")
@@ -123,7 +127,8 @@ activity5 = Activity.create!(
   phone_number: "34 915 42 49 36",
   website: "https://www.madrid.fr/marche-san-miguel",
   city: "Madrid",
-  country: "Espagne"
+  country: "Espagne",
+  duration: 1.5
 )
 file = URI.open("https://guias-viajar.com/madrid/wp-content/uploads/sites/7/2018/04/madrid-mercado-san-miguel-17.jpg")
 activity5.photo.attach(io: file, filename: "MarcheSanMiguel.jpg", content_type: "image/jpeg")
@@ -140,7 +145,8 @@ activity6 = Activity.create!(
   phone_number: "+34 917 74 10 00",
   website: "https://www.museoreinasofia.es/",
   city: "Madrid",
-  country: "Espagne"
+  country: "Espagne",
+  duration: 2.5
 )
 file = URI.open("https://cdn-imgix.headout.com/tour/29151/TOUR-IMAGE/d074498b-a347-4558-bf6b-ea991d7f8034-15563-madrid-reina-sofi-a-museum-guided-tour-with-proffesional-guide-01.jpg")
 activity6.photo.attach(io: file, filename: "MuseeReinaSofia.jpg", content_type: "image/jpeg")
@@ -157,7 +163,8 @@ activity7 = Activity.create!(
   phone_number: "+34 913 10 15 84",
   website: "https://www.culturaydeporte.gob.es/msorolla/inicio.html",
   city: "Madrid",
-  country: "Espagne"
+  country: "Espagne",
+  duration: 1.5
 )
 file = URI.open("https://espagnefascinante.fr/wp-content/uploads/shutterstock_1223904955-1.jpg")
 activity7.photo.attach(io: file, filename: "MuseeScorolla.jpg", content_type: "image/jpeg")
@@ -169,7 +176,8 @@ activity8 = Activity.create!(
   address: "PlazaPuerta del Sol, 28013",
   description: "La Puerta del Sol est l'une des places les plus connues et les plus animées de Madrid, en Espagne.",
   city: "Madrid",
-  country: "Espagne"
+  country: "Espagne",
+  duration: 2
 )
 file = URI.open("https://fotografias.lasexta.com/clipping/cmsimages01/2021/11/22/80443BD5-CFE6-4395-8585-D36F147B3053/98.jpg")
 activity8.photo.attach(io: file, filename: "PuertaDelSol.jpg", content_type: "image/jpeg")
@@ -185,7 +193,8 @@ activity9 = Activity.create!(
   phone_number: "+34 915 42 22 00",
   website: "https://catedraldelaalmudena.es/",
   city: "Madrid",
-  country: "Espagne"
+  country: "Espagne",
+  duration: 1
 )
 file = URI.open("https://a.travel-assets.com/findyours-php/viewfinder/images/res70/348000/348735-Almudena-Cathedral.jpg")
 activity9.photo.attach(io: file, filename: "CathedraleAlmudena.jpg", content_type: "image/jpeg")
@@ -201,7 +210,8 @@ activity10 = Activity.create!(
   phone_number: "+34 914 20 30 17",
   website: "https://rjb.csic.es/",
   city: "Madrid",
-  country: "Espagne"
+  country: "Espagne",
+  duration: 2.5
 )
 file = URI.open("https://www.spain.info/export/sites/segtur/.content/imagenes/cabeceras-grandes/madrid/general-jardin-botanico-10-c-foto-rjb.jpg")
 activity10.photo.attach(io: file, filename: "JardinBotanique.jpg", content_type: "image/jpeg")
@@ -217,7 +227,8 @@ activity11 = Activity.create!(
   phone_number: "+44 303 123 7300",
   website: "https://www.rct.uk/visit/buckingham-palace",
   city: "Londres",
-  country: "Royaume-Uni"
+  country: "Royaume-Uni",
+  duration: 2.5
 )
 file = URI.open("https://cdn.mos.cms.futurecdn.net/pGNC93VDpzqKQHPgRkDXnB-1920-80.jpg")
 activity11.photo.attach(io: file, filename: "PalaisBuckingham.jpg", content_type: "image/jpeg")
@@ -232,7 +243,8 @@ activity12 = Activity.create!(
   phone_number: "+44 (0)20 7420 5856",
   website: "https://www.coventgarden.london/",
   city: "Londres",
-  country: "Royaume-Uni"
+  country: "Royaume-Uni",
+  duration: 2.0
 )
 file = URI.open("https://a.cdn-hotels.com/gdcs/production107/d879/5fbac677-8a47-456a-9549-c4386914cd27.jpg")
 activity12.photo.attach(io: file, filename: "CoventGarden.jpg", content_type: "image/jpeg")
@@ -245,7 +257,8 @@ activity13 = Activity.create!(
   description: "Avec une superficie de 140 hectares, Hyde Park est le plus grand parc du centre de Londres. Cet immense poumon situé au cœur de la ville sert de lieu de détente pour les Londoniens et touristes.",
   website: "https://www.royalparks.org.uk/parks/hyde-park",
   city: "Londres",
-  country: "Royaume-Uni"
+  country: "Royaume-Uni",
+  duration: 2.5
 )
 file = URI.open("https://cdn.jumeirah.com/-/mediadh/dh/hospitality/jumeirah/article/stories/london/a-guide-to-hyde-park/herooo.jpg?h=1080&w=1620")
 activity13.photo.attach(io: file, filename: "HydePark.jpg", content_type: "image/jpeg")
@@ -254,13 +267,15 @@ activity13.photo.attach(io: file, filename: "HydePark.jpg", content_type: "image
 puts "Creating activity #14..."
 activity14 = Activity.create!(
   average_rating: 4.4,
+  price_per_visitor: 36,
   name: "Madame Tussauds",
   address: "Marylebone Rd, London NW1 5LR, Royaume-Uni",
   description: "Découvrez des visages célèbres au musée Madame Tussauds London, un musée interactif qui expose plus de 190 figures de cire plus vraies que nature.",
   phone_number: "+44 20 7487 0351",
   website: "https://www.madametussauds.com/london/",
   city: "Londres",
-  country: "Royaume-Uni"
+  country: "Royaume-Uni",
+  duration: 2.0
 )
 file = URI.open("https://www.montcalm.co.uk/blog/wp-content/uploads/2018/01/Madame-Tussauds-Museum-London.jpg")
 activity14.photo.attach(io: file, filename: "MadameTrussauds.jpg", content_type: "image/jpeg")
@@ -274,7 +289,8 @@ activity15 = Activity.create!(
   description: "Le British Museum est un musée de l'histoire et de la culture humaine, situé dans le quartier de Bloomsbury à Londres, au Royaume-Uni. Ses collections, constituées de plus de sept millions d'objets, sont parmi les plus importantes du monde et proviennent de tous les continents. Elles illustrent l'histoire humaine de ses débuts à aujourd'hui.",
   website: "https://www.britishmuseum.org/",
   city: "Londres",
-  country: "Royaume-Uni"
+  country: "Royaume-Uni",
+  duration: 3.5
 )
   file = URI.open("https://www.themontcalm.com/blog/wp-content/uploads/2015/04/Your-Guide-To-The-British-Museum-London.jpg")
 activity15.photo.attach(io: file, filename: "BritishMuseum.jpg", content_type: "image/jpeg")
@@ -288,11 +304,28 @@ activity16 = Activity.create!(
   description: "Harrods est un grand magasin de luxe, situé sur Brompton Road dans le quartier de Knightsbridge, à Londres. Harrods est une marque véhiculant une image de luxe que la reine d'Angleterre utilise, apposée sur des produits, et servant d'enseigne à des entreprises et des sites internet.",
   website: "https://www.harrods.com",
   city: "Londres",
-  country: "Royaume-Uni"
+  country: "Royaume-Uni",
+  duration: 2.5
 )
   file = URI.open("https://www.theindustry.fashion/wp-content/uploads/2023/01/Harrods-Louis-Vuitton.jpg")
 activity16.photo.attach(io: file, filename: "Harrods.jpg", content_type: "image/jpeg")
 
+puts "Creating activity #17..."
+activity17 = Activity.create!(
+  average_rating: 4.9,
+  price_per_visitor: 25,
+  closed_day: [1, 2, 3, 4, 7],
+  name: "Flamenco Torres Bermejas",
+  address: "Mesonero Romanos,11, 28013, Madrid, Espagne",
+  description: "Spectacle de flamenco à Madrid: découvrez une activité incontournable de tout voyage en Espagne et profitez du spectacle donné par des musiciens et danseurs passionnés.",
+  website: "https://www.flamencotorresbermejas.com",
+  city: "Madrid",
+  country: "Espagne",
+  duration: 1.0
+)
+
+  file = URI.open("https://monbarcelone.com/wp-content/uploads/2022/07/Flamenco_03.jpeg")
+activity17.photo.attach(io: file, filename: "Flamenco.jpg", content_type: "image/jpeg")
 
   activity1.category_list.add("Sites historiques", "Monuments et points d'intérêt")
   activity1.save
@@ -326,6 +359,8 @@ activity16.photo.attach(io: file, filename: "Harrods.jpg", content_type: "image/
   activity15.save
   activity16.category_list.add("Monuments et points d'intérêt")
   activity16.save
+  activity17.category_list.add("Monuments et points d'intérêt", "Théâtres")
+  activity17.save
 
 puts "#{Activity.all.count} activities created"
 
@@ -338,13 +373,19 @@ TripActivity.create!(
 puts "Creating activity of the trip..."
 TripActivity.create!(
   trip: trip1,
+  activity: activity3
+)
+
+puts "Creating activity of the trip..."
+TripActivity.create!(
+  trip: trip1,
   activity: activity2
 )
 
 puts "Creating activity of the trip..."
 TripActivity.create!(
   trip: trip1,
-  activity: activity3
+  activity: activity17
 )
 
 puts "Creating activity of the trip..."
@@ -368,7 +409,7 @@ TripActivity.create!(
 puts "Creating activity of the trip..."
 TripActivity.create!(
   trip: trip1,
-  activity: activity6
+  activity: activity10
 )
 
 puts "Creating activity of the trip..."
@@ -377,33 +418,28 @@ TripActivity.create!(
   activity: activity7
 )
 
-
-# starting_date: '2022-12-16',
-# ending_date: '2022-12-18',
-
-
 puts "Creating activity of the trip..."
 TripActivity.create!(
   trip: trip3,
   activity: activity11,
-  start_at: DateTime.new(2022, 12, 16, 11, 00),
-  end_at: DateTime.new(2022, 12, 16, 12, 00)
+  start_at: DateTime.new(2022, 12, 16, 10, 00),
+  end_at: DateTime.new(2022, 12, 16, 12, 30)
 )
 
 puts "Creating activity of the trip..."
 TripActivity.create!(
   trip: trip3,
   activity: activity12,
-  start_at: DateTime.new(2022, 12, 16, 12, 00),
-  end_at: DateTime.new(2022, 12, 16, 14, 00)
+  start_at: DateTime.new(2022, 12, 16, 13, 30),
+  end_at: DateTime.new(2022, 12, 16, 15, 30)
 )
 
 puts "Creating activity of the trip..."
 TripActivity.create!(
   trip: trip3,
   activity: activity15,
-  start_at: DateTime.new(2022, 12, 16, 15, 00),
-  end_at: DateTime.new(2022, 12, 16, 17, 00)
+  start_at: DateTime.new(2022, 12, 16, 15, 30),
+  end_at: DateTime.new(2022, 12, 16, 19, 00)
 )
 
 puts "Creating activity of the trip..."
@@ -411,7 +447,7 @@ TripActivity.create!(
   trip: trip3,
   activity: activity13,
   start_at: DateTime.new(2022, 12, 17, 10, 00),
-  end_at: DateTime.new(2022, 12, 17, 12, 00)
+  end_at: DateTime.new(2022, 12, 17, 12, 30)
 )
 
 
@@ -419,16 +455,16 @@ puts "Creating activity of the trip..."
 TripActivity.create!(
   trip: trip3,
   activity: activity16,
-  start_at: DateTime.new(2022, 12, 17, 14, 00),
-  end_at: DateTime.new(2022, 12, 17, 15, 00)
+  start_at: DateTime.new(2022, 12, 17, 13, 30),
+  end_at: DateTime.new(2022, 12, 17, 16, 00)
 )
 
 puts "Creating activity of the trip..."
 TripActivity.create!(
   trip: trip3,
   activity: activity14,
-  start_at: DateTime.new(2022, 12, 17, 16, 00),
-  end_at: DateTime.new(2022, 12, 17, 17, 00)
+  start_at: DateTime.new(2022, 12, 17, 16, 30),
+  end_at: DateTime.new(2022, 12, 17, 18, 30)
 )
 
 puts "#{Trip.first.activities.count} activities created for #{Trip.first.trip_name}"
