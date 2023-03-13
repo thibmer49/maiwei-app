@@ -3,7 +3,7 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 5px;
-  color: #16697A;
+  color: black;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -20,7 +20,7 @@
 
 .card_activity_link {
   text-decoration: none;
-  color: #16697A;
+  color: black;
   padding : 1rem;
   margin: 0;
 }
@@ -32,7 +32,7 @@
 }
 
 .card_activity h5 {
-  color: #16697A;
+  color: black;
   font-size: 16px;
   font-weight: bold;
   font-size: 1.25rem;
@@ -44,7 +44,7 @@
 }
 
 .card_activity h6 {
-  color: #16697A;
+  color: black;
   font-size: 10px;
   font-weight: normal;
   font-size: 1.25rem;
@@ -68,19 +68,19 @@
   font-size: 25px;
   font-weight: normal;
   margin-top: 25px;
-  color: #16697A;
+  color: black;
   text-align: center;
 }
 
 .card_activity a {
   text-decoration: none;
-  color: #16697A;
+  color: black;
 }
 
 .body_card_activity {
   font-family: Helvetica;
   justify-content: center;
-  color: #82C0CC;
+  color: black;
 }
 
 .card img {
