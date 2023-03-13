@@ -21,7 +21,7 @@
         <div class="activity_description">
           <div>
           <p class="rating"><i class="fa-solid fa-star"></i><%= activity.average_rating%>/5</p>
-          <p class="duration"><i class="fa-solid fa-stopwatch"></i><%= activity.average_rating%>min</p>
+          <p class="duration"><i class="fa-solid fa-stopwatch"></i><%= activity.duration%>h</p>
           <p class="price"><i class="fa-solid fa-coins"></i> <%= activity.price_per_visitor %>€</p>
           </div>
           <p class="address"><i class="fa-solid fa-location-pin"></i><%= truncate(activity.address, length: 80, separator: ' ', omission: '...') %></p>
