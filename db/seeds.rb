@@ -59,6 +59,8 @@ trip4 = Trip.create!(
 puts "Creating activity #1..."
 activity1 = Activity.create!(
   average_rating: 4.6,
+  opening_hour: DateTime.now.beginning_of_day,
+  closing_hour: DateTime.now.end_of_day,
   name: "Plaza Mayor",
   address: "Pl. Mayor, 28012 Madrid, Espagne",
   description: "La Plaza Mayor (en français, équivalent de «grand-place») est une place de la ville de Madrid, en Espagne.",
@@ -73,6 +75,8 @@ activity1.photo.attach(io: file, filename: "PlazaMayor.jpg", content_type: "imag
 puts "Creating activity #2..."
 activity2 = Activity.create!(
   average_rating: 4.8,
+  opening_hour: DateTime.now.beginning_of_day + 5.hour,
+  closing_hour: DateTime.now.beginning_of_day + 21.hour,
   name: "Parc du Retiro",
   address: "28009 Madrid, Espagne",
   description: "Le parc du Retiro est un grand parc de 125 hectares et plus de 15 000 arbres situé à Madrid. Il fut créé entre 1630 et 1640.",
@@ -88,6 +92,8 @@ puts "Creating activity #3..."
 activity3 = Activity.create!(
   average_rating: 4.7,
   price_per_visitor: 15,
+  opening_hour: DateTime.now.beginning_of_day + 9.hour,
+  closing_hour: DateTime.now.beginning_of_day + 19.hour,
   name: "Musée du Prado",
   address: "C. de Ruiz de Alarcón, 23, 28014 Madrid, Espagne",
   description: "Le Musée du Prado est le musée le plus célèbre de Madrid et un des musées d'art les plus importants du monde. Il a été construit par Juan de Villanueva et a été inauguré en 1819.",
