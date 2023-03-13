@@ -27,11 +27,14 @@ class TripsController < ApplicationController
 
   def show
     @trip = Trip.find(params[:id])
+    @starting_date = @trip.starting_date.strftime('%A %-d %B %Y')
+    @ending_date = @trip.ending_date.strftime('%A %-d %B %Y')
     @markers = @trip.activities.geocoded.map do |activity|
       {
         lat: activity.latitude,
-        lng: activity.longitude
-      }
+        lng: activity.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {activity: activity})
+    }
     end
     # authorize @trip
     @dates = (@trip.starting_date..@trip.ending_date).to_a
