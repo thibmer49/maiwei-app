@@ -1,7 +1,10 @@
 <div class="bg-white">
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://pixabay.com/fr/videos/monaco-rue-ville-gens-auto-route-31661/);">
 
-    <div class="container p-5">
+  <div class="banner position-relative">
+    <%= video_tag("monaco-31661.mp4", autoplay: true, loop: true, muted: true, playsinline: true, style: "width: 100%; object-fit: cover;") %>
+
+
+    <div class="container p-5 position-absolute">
       <div class="body_card_activity">
         <h1>maïweï</h1>
         <h2>Vous ne voyagerez plus de la même façon !</h2>
