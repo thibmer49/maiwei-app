@@ -28,21 +28,43 @@
 
 
   <div class="bg-white p-4">
-    <div class="container p-5">
       <h3 class="card_activity_h3" >Partez à la découverte du monde</h3>
-      <div class="activity-cards-container">
-        <% @activities.each do |activity| %>
-          <div class="card_activity">
-            <div class="card_name">
-              <%= cl_image_tag(activity.photo.key, height: 300, width: 400, crop: :fill, class:"img-fluid") %>
-              <h5><%= truncate(activity.name, length: 40, separator: ' ', omission: '...') %></h5>
-            </div>
-            <div class="activity_description">
-              <p><%= truncate(activity.description, length: 60, separator: ' ', omission: '...') %></p>
-              <%= link_to "Découvrez cette destination", "#", class: "btn btn-details"  %>
-            </div>
-          </div>
-        <% end %>
+    <div class="activity-cards-container p-4">
+      <div class="card_activity_tuto">
+        <div class="card_name">
+          <%= image_tag "mapemonde.jpg", alt: "Mapemonde", class:"img-fluid" %>
+          <h5>Étape 1</h5>
+        </div>
+        <div class="activity_tuto_description">
+          <p>Choisissez votre destination</p>
+        </div>
+      </div>
+      <div class="card_activity_tuto">
+        <div class="card_name">
+          <%= image_tag "paris.jpg", alt: "Paris", class:"img-fluid" %>
+          <h5>Étape 2</h5>
+        </div>
+        <div class="activity_tuto_description">
+          <p>Renseignez les informations de votre séjour et sélectionnez vos activités </p>
+        </div>
+      </div>
+      <div class="card_activity_tuto">
+        <div class="card_name">
+          <%= image_tag "planning.jpg", alt: "Planning", class:"img-fluid" %>
+          <h5>Étape 3</h5>
+        </div>
+        <div class="activity_tuto_description">
+            <p>Créez votre programme</p>
+        </div>
+      </div>
+      <div class="card_activity_tuto">
+        <div class="card_name">
+          <%= image_tag "avion.jpg", alt: "Avion", class:"img-fluid" %>
+          <h5>Étape 4</h5>
+        </div>
+        <div class="activity_tuto_description">
+          <p>Vous êtes prêt à partir... Bon voyage ! </p>
+        </div>
       </div>
     </div>
   </div>
