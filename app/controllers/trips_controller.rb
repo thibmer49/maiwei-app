@@ -18,10 +18,14 @@ class TripsController < ApplicationController
     @activities = Activity.all
     @filtered_activities = @activities.tagged_with(@categories, :any => true)
     # authorize @trip
-    if @trip.save
-      redirect_to trip_path(@trip)
-    else
-      render :new, status: :unprocessable_entity
+    respond_to do |format|
+      if @trip.save
+        format.html redirect_to trip_path(@trip)
+        format.text { render partial: "activity_list", locals: { activities: @activities }, formats: [:html] }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.text
+      end
     end
   end
 

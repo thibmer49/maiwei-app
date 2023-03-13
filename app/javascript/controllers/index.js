@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import ActivitiesUpdateController from "./activities_update_controller"
+application.register("activities-update", ActivitiesUpdateController)
+
 import FlatpickrController from "./flatpickr_controller"
 application.register("flatpickr", FlatpickrController)
 

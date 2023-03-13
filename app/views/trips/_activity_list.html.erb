@@ -1,0 +1,12 @@
+<div data-activities-update-target="list">
+  <fieldset class="mb-3 check_boxes optional trip_activities" >
+    <legend class="col-form-label pt-0">Activities</legend><input type="hidden" name="trip[activity_ids][]" value="" autocomplete="off">
+    <% filtered_activities.each do |activity| %>
+      <div class="card-item"><input class="form-check-input check_boxes optional card-selector" data-target="activitySelector" type="checkbox" value="<%= activity.id %>" name="trip[activity_ids][]" id="trip_activity_ids_<%= activity.id %>">
+        <label class="form-check-label collection_check_boxes" for="trip_activity_ids_<%= activity.id %>">
+        <%= render "trips/activity_options", activity: activity %>
+        </label>
+      </div>
+    <% end %>
+  </fieldset>
+</div>
