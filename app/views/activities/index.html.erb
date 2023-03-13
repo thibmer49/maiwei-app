@@ -17,7 +17,7 @@
         <h5><%= truncate(activity.name, length: 40, separator: ' ', omission: '...') %></h5>
         <p>Note: <%= activity.average_rating%></p>
         <p><%= truncate(activity.address, length: 80, separator: ' ', omission: '...') %></p>
-        <p><em><%= truncate(activity.description, length: 250, separator: ' ', omission: '...') %></em></p>
+        <p><%= truncate(activity.description, length: 250, separator: ' ', omission: '...') %></p>
       </div>
     <% end %>
   </div>
