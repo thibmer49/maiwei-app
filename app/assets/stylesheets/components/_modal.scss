@@ -1,4 +1,31 @@
-.modal-activity-show .modal-dialog {
-  width: 80vw;
-  max-width: unset !important;
+.modal-activity-show {
+  .modal-dialog {
+    width: 40vw;
+    max-width: unset !important;
+  }
+
+  .modal-content {
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  .modal-body {
+    padding: 0;
+
+    .card_name img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  .close-modal {
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+  }
 }
