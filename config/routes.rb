@@ -7,8 +7,9 @@ Rails.application.routes.draw do
   # root "articles#index"
   get :dashboard, to: 'pages#dashboard', as: "dashboard"
   resources :activities, only: %i[index show new create edit update destroy]
-  resources :trips, only: %i[new create show edit update] do
-    # resources :activities
-  end
+  resources :trips, only: %i[index new create show edit update] do
+    collection do
+      get :filter_activities
+    end
   resources :trip_activities, only: [:update]
 end

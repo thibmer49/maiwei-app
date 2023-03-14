@@ -7,9 +7,11 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome";
 @import "flatpickr/dist/flatpickr.css";
+@import 'nouislider/dist/nouislider';
 
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
 @import "components/layout";
 @import "components/button";
+@import "trips/index"

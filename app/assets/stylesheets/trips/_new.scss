@@ -34,5 +34,34 @@
 }
 
 #label-destination {
-  margin: 15px 0px;
+  margin-bottom: 10px;
+}
+
+.form-control {
+  width: 100%;
+}
+
+.activities-options {
+  .card-selector + label {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+  }
+  .card-item {
+    display: block;
+
+  }
+
+  fieldset {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1em;
+  }
+
+  input {
+    #trip_query {
+    margin-bottom: 10px;
+    }
+  }
 }

@@ -1,7 +1,24 @@
 .cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
+  // display: grid;
+  // grid-template-columns: 1fr 1fr 1fr;
+  // grid-gap: 16px;
+  display: flex;
+  align-items: stretch;
+  gap: 16px;
+  overflow-x: scroll;
+  padding: 16px;
+  width: calc(100% + 32px);
+  margin-left: -16px;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  > .cards-child {
+    min-width: 285px;
+    max-width: 285px;
+    height: auto;
+  }
 }
 
 // Smallest device
