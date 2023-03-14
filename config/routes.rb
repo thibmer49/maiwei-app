@@ -11,8 +11,7 @@ Rails.application.routes.draw do
     collection do
       get :filter_activities
     end
-    resources :activities, only: %i[] do
-      resources :trip_activities, only: [:update]
-    end
   end
+  resources :trip_activities, only: [:update]
 end
+
