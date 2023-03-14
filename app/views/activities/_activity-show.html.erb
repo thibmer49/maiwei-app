@@ -22,6 +22,8 @@
       </button>
     </div>
     <h5><%= activity.name %></h5>
+    <%= cl_image_tag(activity.photos.key, height: 300, width: 400) %>
+    <h5><%= activity.name%></h5>
   </div>
   <div class="activity_description">
     <div>
