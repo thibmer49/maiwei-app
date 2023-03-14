@@ -30,7 +30,14 @@
 
 
 .activity_description {
-  padding: 30px 20px 10px;
+  padding: 30px 20px 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  > div {
+    flex-grow: 1;
+  }
+
   .address, .duration, .rating, .price {
     color: rgb(66, 66, 66);
     font-weight: 100;
@@ -39,7 +46,7 @@
     margin-right: 10px;
   }
 
-  > div {
+  > div > div {
     display: flex;
     justify-content: space-between;
 
@@ -122,8 +129,6 @@
   object-fit: cover;
 }
 
-///////////// CARDS SUR LA TRIPS#NEW
-///
 .card-item {
   display: inline-block;
 }
@@ -143,9 +148,6 @@
   font-size: 0.7rem;
   border-radius: 50rem;
   padding: 0.1rem 0.5rem;
-
-
-
   margin-right: 0.6rem;
   margin-bottom: 0.4rem;
 }
@@ -160,7 +162,7 @@
   justify-content: center;
   opacity: 0.8;
 }
-///////////////////
+
 
 .card_activity_tuto {
   overflow: hidden;
