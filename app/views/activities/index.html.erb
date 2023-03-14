@@ -1,15 +1,21 @@
 <div class="container my-3 mt-4">
   <h1 class="text-center">Que souhaitez-vous découvrir ?</h1>
   <%# SEARCH BAR %>
-  <%= form_with url: activities_path, method: :get, class: "d-flex justify-content-center mt-3 mb-4" do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Renseignez la ville à visiter et découvrez les activités"
-    %>
-    <%= submit_tag "Recherchez", class: "btn-destination" %>
-  <% end %>
-  <%# FIN SEARCH BAR %>
+  <div class="container my-3 mt-4">
+    <div class="d-flex justify-content-between mt-3 mb-4">
+      <%= form_with url: activities_path, method: :get, class: "d-flex justify-content-start mt-3 mb-4" do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Ville à visiter"
+        %>
+        <%= submit_tag "Recherchez", class: "btn btn-destination" %>
+      <% end %>
+      <div class="d-flex justify-content-end mt-3 mb-4">
+        <%= link_to "Créez votre séjour", new_trip_path, class: "btn btn-destination" %>
+    </div>
+  </div>
+    <%# FIN SEARCH BAR %>
   <%# Modal%>
   <div class="container my-3 mt-4">
     <div class="category-selected my-4">
