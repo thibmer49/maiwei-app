@@ -3,13 +3,13 @@
     <div id="carousel-<%= activity.id %>" class="carousel slide">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <%= cl_image_tag(activity.photo.key, height: 300, width: 400) %>
+          <%= cl_image_tag(activity.photos.first.key, height: 300, width: 400) %>
         </div>
-        <div class="carousel-item">
-          <%= cl_image_tag(activity.photo.key, height: 300, width: 400) %>
+        <div class="carousel-item active">
+          <%= cl_image_tag(activity.photos.second.key, height: 300, width: 400) %>
         </div>
-        <div class="carousel-item">
-          <%= cl_image_tag(activity.photo.key, height: 300, width: 400) %>
+        <div class="carousel-item active">
+          <%= cl_image_tag(activity.photos.third.key, height: 300, width: 400) %>
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carousel-<%= activity.id %>" data-bs-slide="prev">
@@ -22,8 +22,6 @@
       </button>
     </div>
     <h5><%= activity.name %></h5>
-    <%= cl_image_tag(activity.photos.key, height: 300, width: 400) %>
-    <h5><%= activity.name%></h5>
   </div>
   <div class="activity_description">
     <div>
