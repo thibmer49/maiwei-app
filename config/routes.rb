@@ -11,5 +11,6 @@ Rails.application.routes.draw do
     collection do
       get :filter_activities
     end
+  end
   resources :trip_activities, only: [:update]
 end
