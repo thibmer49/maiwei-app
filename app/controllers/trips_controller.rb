@@ -23,7 +23,6 @@ class TripsController < ApplicationController
       @activities = @activities.tagged_with(categories, any: true)
     end
     render partial: "trips/activity_list", locals: { filtered_activities: @activities }, layout: false, formats: :html
-
   end
 
   def new
