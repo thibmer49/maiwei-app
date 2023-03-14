@@ -1,32 +1,53 @@
 class TripActivitiesController < ApplicationController
   def update
-
-    @activity = Activity.find(params[:activity_id])
-    @trip = Trip.find(params[:trip_id])
-    @trip_activity = TripActivity.find_by(trip_id: params[:trip_id], activity: params[:activity_id])
-    @trip_activity.start_at = TripActivity.can_start_at.first
+    @trip_activity = TripActivity.find(params[:id])
+    @trip = @trip_activity.trip
+    @activity = @trip_activity.activity
     # 1. Je dois récupérer l'info sur la journée sélectionnée - params[:date] _ DateTime.parse(params[:date])
-    @dates = (@trip.starting_date..@trip.ending_date).to_a
+    @date = DateTime.parse(params[:date])
 
     # 2. Je checked si à cette date j'ai déjà des trips activities
-    date_trip_activities = TripActivity.find_trip_activities(@trip.id, params[:date])
+    date_trip_activities = TripActivity.find_trip_activities(@trip.id, params[:date]).to_a
+    if date_trip_activities.include?(@trip_activity)
+      date_trip_activities.delete_at(date_trip_activities.index(@trip_activity))
+    end
     # 3. Si aucune, je précise que la trip_activity commencera le matin
-    if nil
-      @trip_activity.start_at.beginning_of_day + 8.hours
+    if date_trip_activities.blank?
+      @trip_activity.start_at = @date.beginning_of_day + 8.hours
     else
       # 4. Si il y en a, Je dois vérifie s'il y a de la place sur ce jour
-      @trip_activity.insertable_in_day?
+      remaining_hours = remaining_hours(date_trip_activities)
+      if @trip_activity.insertable_in_day?(remaining_hours)
+        # 6. Si insertable_in_day? est true, récupérer le premier créneau disponible -> can_start_at.first
+        # 6a. Je dois raffiner les créneaux de can_start_at en fonction de l'open hours et closing hours de l'activity
+        @trip_activity.start_at = @trip_activity.can_start_at(remaining_hours).first
+      else
+        # 5. Si insertable_in_day? est false, j'envoie une alerte en disant pas possible de faire ça !
+        puts "Navré, mais tu ne peux pas réserver"
+      end
     end
-
-    # 5. Si insertable_in_day? est false, j'envoie une alerte en disant pas possible de faire ça !
-    if @trip_activity.insertable_in_day? == false
-      puts "Navré, mais tu ne peux pas réserver"
-    else
-    # 6. Si insertable_in_day? est true, récupérer le premier créneau disponible -> can_start_at.first
-      @trip_activity.can_start_at.first
-    end
-    # 6a. Je dois raffiner les créneaux de can_start_at en fonction de l'open hours et closing hours de l'activity
     @trip_activity.end_at = @trip_activity.start_at + @activity.duration.hours
+
     @trip_activity.save
+
+    respond_to do |format|
+      format.html # Follow regular flow of Rails
+      format.text { render partial: , locals: {trip_activity: @trip_activity}, formats: [:html] }
+    end
   end
+
+  private
+
+  def remaining_hours(date_trip_activities)
+    all_day_hours - date_trip_activities.map{|trip_activity| trip_activity.scheduled_hours}.flatten
+  end
+
+  def all_day_hours
+    get_hours(@date.beginning_of_day + 8.hours, @date.beginning_of_day + 21.hours)
+  end
+
+  def get_hours(start_at, end_at)
+    (start_at.to_i..end_at.to_i).step(30.minutes).to_a.map{|date| Time.at(date).to_datetime }
+  end
+
 end
