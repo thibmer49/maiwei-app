@@ -1,7 +1,27 @@
 <div class="bg-white">
   <div class="card_name">
-    <%= cl_image_tag(activity.photo.key, height: 300, width: 400) %>
-    <h5><%= activity.name%></h5>
+    <div id="carousel-<%= activity.id %>" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <%= cl_image_tag(activity.photo.key, height: 300, width: 400) %>
+        </div>
+        <div class="carousel-item">
+          <%= cl_image_tag(activity.photo.key, height: 300, width: 400) %>
+        </div>
+        <div class="carousel-item">
+          <%= cl_image_tag(activity.photo.key, height: 300, width: 400) %>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carousel-<%= activity.id %>" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carousel-<%= activity.id %>" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <h5><%= activity.name %></h5>
   </div>
   <div class="activity_description">
     <div>
@@ -13,5 +33,4 @@
     <p class="description"><%= activity.description %></p>
     <%# <p><%= truncate(activity.description, length: 110, separator: ' ', omission: '...') %>
   </div>
-
 </div>
