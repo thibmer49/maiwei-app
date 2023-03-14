@@ -1,6 +1,8 @@
 <div class="bg-white">
   <div class="card_name">
-    <%= cl_image_tag(activity.photos.key, height: 300, width: 400) %>
+      <% activity.photos.each do |photo| %>
+          <%= cl_image_tag(photo.key, height: 300, width: 400) %>
+          <% end %>
     <h5><%= activity.name%></h5>
   </div>
   <div class="activity_description">
