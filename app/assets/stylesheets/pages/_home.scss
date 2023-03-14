@@ -5,3 +5,22 @@
   grid-gap: 1em;
 
 }
+
+// VIDEO BANNER
+
+.wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.wrapper::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 99%;
+  content: '';
+  background-image: linear-gradient(to top, rgba(53, 92, 125, 0.35), rgba(108, 91, 123, 0.35), rgba(192, 108, 132, 0.35));
+
+
+}

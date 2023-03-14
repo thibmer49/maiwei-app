@@ -8,6 +8,7 @@
   flex-direction: column;
   height: 100%;
   cursor: pointer;
+  position:relative;
 }
 
 .card_activity:hover {
@@ -37,6 +38,7 @@
     flex-grow: 1;
   }
 
+  padding: 30px 20px 10px;
   .address, .duration, .rating, .price {
     color: rgb(66, 66, 66);
     font-weight: 100;
@@ -159,6 +161,14 @@
 .card-selector:checked + label > .card_activity {
   border: 3px solid #16697A;
 }
+
+.cards-tag {
+  position: absolute;
+  top: 15px;
+  justify-content: center;
+  opacity: 0.8;
+}
+///////////////////
 
 .card_activity_tuto {
   overflow: hidden;

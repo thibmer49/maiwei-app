@@ -1,7 +1,6 @@
 <div data-activities-update-target="list">
-  <div class="cards my-4">
+  <div class="activities-options my-4">
     <fieldset class="mb-3 check_boxes optional trip_activities" >
-      <legend class="col-form-label pt-0">Activities</legend>
       <input type="hidden" name="trip[activity_ids][]" value="" autocomplete="off">
       <% filtered_activities.each do |activity| %>
         <div class="card-item">
@@ -20,6 +19,9 @@
                 </div>
                 <p class="address"><i class="fa-solid fa-location-pin"></i><%= truncate(activity.address, length: 80, separator: ' ', omission: '...') %></p>
                 <p class="description"><%= activity.description %></p>
+                <div class="cards-tag">
+                  <%= collection_check_boxes(:activity, :categories, activity.categories, :name, :name, { include_hidden: false }, { class: "tag-selector", data: { activities_update_target: "checkbox", action: "change->activities-update#update"} }) %>
+                </div>
               </div>
             </div>
           </label>
