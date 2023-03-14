@@ -15,7 +15,7 @@
     <% @activities.each do |activity| %>
       <div class="card_activity" data-bs-toggle="modal" data-bs-target=<%= "#activity-#{activity.id}" %> >
         <div class="card_name">
-          <%= cl_image_tag(activity.photo.key, height: 300, width: 400) %>
+          <%= cl_image_tag(activity.photos.key, height: 300, width: 400) %>
           <h5><%= truncate(activity.name, length: 40, separator: ' ', omission: '...') %></h5>
         </div>
         <div class="activity_description">
