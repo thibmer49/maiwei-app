@@ -82,7 +82,7 @@ activity2 = Activity.create!(
   description: "Le parc du Retiro est un grand parc de 125 hectares et plus de 15 000 arbres situé à Madrid. Il fut créé entre 1630 et 1640.",
   city: "Madrid",
   country: "Espagne",
-  duration: 4.0
+  duration: 4
 )
 file = URI.open("https://photo620x400.mnstatic.com/63b94c01337b9c7cad49217264b406d2/parc-du-retiro.jpg")
 activity2.photo.attach(io: file, filename: "ParcDuRetiro.jpg", content_type: "image/jpeg")
@@ -111,6 +111,8 @@ puts "Creating activity #4..."
 activity4 = Activity.create!(
   average_rating: 4.6,
   price_per_visitor: 12,
+  opening_hour: DateTime.now.beginning_of_day + 9.hour,
+  closing_hour: DateTime.now.beginning_of_day + 17.hour,
   name: "Palais Royal de Madrid",
   address: "C. de Bailén, s/n, 28071 Madrid, Espagne",
   description: "Le palais royal de Madrid (Palacio Real de Madrid) est la résidence officielle du roi d'Espagne. Les rois actuels ne résident pas en son sein, mais plutôt au palais de la Zarzuela. Le palais royal est utilisé pour des fonctions protocolaires.»",
@@ -127,6 +129,8 @@ activity4.photo.attach(io: file, filename: "PalaisRoyal.jpg", content_type: "ima
 puts "Creating activity #5..."
 activity5 = Activity.create!(
   average_rating: 4.4,
+  opening_hour: DateTime.now.beginning_of_day,
+  closing_hour: DateTime.now.end_of_day,
   name: "Marché de San Miguel",
   address: "Pl. de San Miguel, s/n, 28005 Madrid, Espagne",
   description: "Situé sur la Place de San Miguel, juste à côté la Place Mayor, le Marché de San Miguel est un agréable marché gastronomique qui conserve sa structure originale en fer, datant du début du XXe siècle.",
@@ -144,6 +148,8 @@ puts "Creating activity #6..."
 activity6 = Activity.create!(
   average_rating: 4.5,
   price_per_visitor: 12,
+  opening_hour: DateTime.now.beginning_of_day + 9.hour,
+  closing_hour: DateTime.now.beginning_of_day + 20.hour,
   closed_day: 2,
   name: "Musée Reina Sofia",
   address: "C. de Sta. Isabel, 52, 28012 Madrid, Espagne",
@@ -162,6 +168,8 @@ puts "Creating activity #7..."
 activity7 = Activity.create!(
   average_rating: 4.7,
   price_per_visitor: 3,
+  opening_hour: DateTime.now.beginning_of_day + 9.hour,
+  closing_hour: DateTime.now.beginning_of_day + 19.hour,
   closed_day: 1,
   name: "Musée Sorolla",
   address: "P.º del Gral. Martínez Campos, 37, 28010 Madrid, Espagne",
@@ -178,6 +186,8 @@ activity7.photo.attach(io: file, filename: "MuseeScorolla.jpg", content_type: "i
 puts "Creating activity #8..."
 activity8 = Activity.create!(
   average_rating: 4.6,
+  opening_hour: DateTime.now.beginning_of_day,
+  closing_hour: DateTime.now.end_of_day,
   name: "Puerta del Sol",
   address: "PlazaPuerta del Sol, 28013",
   description: "La Puerta del Sol est l'une des places les plus connues et les plus animées de Madrid, en Espagne.",
@@ -193,6 +203,8 @@ puts "Creating activity #9..."
 activity9 = Activity.create!(
   average_rating: 4.6,
   price_per_visitor: 1,
+  opening_hour: DateTime.now.beginning_of_day + 9.hour,
+  closing_hour: DateTime.now.beginning_of_day + 19.hour,
   name: "Cathédrale de la Almudena",
   address: "C. de Bailén, 10, 28013 Madrid, Espagne",
   description: "La cathédrale Santa María la Real de la Almudena est la toute récente cathédrale de Madrid, capitale du royaume d'Espagne, construite face au palais royal au cours du XXᵉ siècle. Elle est le siège épiscopal du diocèse de la capitale.",
@@ -210,6 +222,8 @@ puts "Creating activity #10..."
 activity10 = Activity.create!(
   average_rating: 4.3,
   price_per_visitor: 6,
+  opening_hour: DateTime.now.beginning_of_day + 9.hour,
+  closing_hour: DateTime.now.beginning_of_day + 17.hour,
   name: "Jardin botanique royal de Madrid",
   address: "Pl. Murillo, 2, 28014 Madrid, Espagne",
   description: "Avec plus de 5 000 différentes espèces de plantes réparties sur une terrasse de 4 niveaux, le Jardin Royal Botanique de Madrid est un agréable poumon vert, situé juste à côté du Musée du Prado.",
@@ -227,6 +241,8 @@ puts "Creating activity #11..."
 activity11 = Activity.create!(
   average_rating: 4.5,
   price_per_visitor: 30,
+  opening_hour: DateTime.now.beginning_of_day + 9.hour,
+  closing_hour: DateTime.now.beginning_of_day + 16.hour,
   name: "Palais de Buckingham",
   address: "London SW1A 1AA, Royaume-Uni",
   description: "Le Palais de Buckingham (Buckingham Palace) est la résidence officielle de la Famille Royale Britannique à Londres depuis 1837.  Actuellement, le roi Charles III y réside.",
@@ -243,6 +259,8 @@ activity11.photo.attach(io: file, filename: "PalaisBuckingham.jpg", content_type
 puts "Creating activity #12..."
 activity12 = Activity.create!(
   average_rating: 4.5,
+  opening_hour: DateTime.now.beginning_of_day,
+  closing_hour: DateTime.now.end_of_day,
   name: "Covent Garden",
   address: "Covent Garden, Londres, Royaume-Uni",
   description: "Situé dans le West End, Covent Garden est le principal quartier londonien des théâtres et des loisirs. Les touristes sont nombreux sur l'élégante Piazza, une place piétonne avec des boutiques de mode, le marché artisanal Apple Market et le Royal Opera House.",
@@ -258,6 +276,8 @@ activity12.photo.attach(io: file, filename: "CoventGarden.jpg", content_type: "i
 puts "Creating activity #13..."
 activity13 = Activity.create!(
   average_rating: 4.7,
+  opening_hour: DateTime.now.beginning_of_day + 4.hour,
+  closing_hour: DateTime.now.end_of_day,
   name: "Hyde Park",
   address: "Hyde Park, Londres, Royaume-Uni",
   description: "Avec une superficie de 140 hectares, Hyde Park est le plus grand parc du centre de Londres. Cet immense poumon situé au cœur de la ville sert de lieu de détente pour les Londoniens et touristes.",
@@ -274,6 +294,8 @@ puts "Creating activity #14..."
 activity14 = Activity.create!(
   average_rating: 4.4,
   price_per_visitor: 36,
+  opening_hour: DateTime.now.beginning_of_day + 9.hour,
+  closing_hour: DateTime.now.beginning_of_day + 14.hour,
   name: "Madame Tussauds",
   address: "Marylebone Rd, London NW1 5LR, Royaume-Uni",
   description: "Découvrez des visages célèbres au musée Madame Tussauds London, un musée interactif qui expose plus de 190 figures de cire plus vraies que nature.",
@@ -290,6 +312,8 @@ activity14.photo.attach(io: file, filename: "MadameTrussauds.jpg", content_type:
 puts "Creating activity #15..."
 activity15 = Activity.create!(
   average_rating: 4.7,
+  opening_hour: DateTime.now.beginning_of_day + 9.hour,
+  closing_hour: DateTime.now.beginning_of_day + 16.hour,
   name: "British Museum",
   address: "Great Russell St, Londres, Royaume-Uni",
   description: "Le British Museum est un musée de l'histoire et de la culture humaine, situé dans le quartier de Bloomsbury à Londres, au Royaume-Uni. Ses collections, constituées de plus de sept millions d'objets, sont parmi les plus importantes du monde et proviennent de tous les continents. Elles illustrent l'histoire humaine de ses débuts à aujourd'hui.",
@@ -305,6 +329,8 @@ activity15.photo.attach(io: file, filename: "BritishMuseum.jpg", content_type: "
 puts "Creating activity #16..."
 activity16 = Activity.create!(
   average_rating: 4.4,
+  opening_hour: DateTime.now.beginning_of_day + 9.hour,
+  closing_hour: DateTime.now.beginning_of_day + 20.hour,
   name: "Harrods",
   address: "87-135 Brompton Rd, Londres, Royaume-Uni",
   description: "Harrods est un grand magasin de luxe, situé sur Brompton Road dans le quartier de Knightsbridge, à Londres. Harrods est une marque véhiculant une image de luxe que la reine d'Angleterre utilise, apposée sur des produits, et servant d'enseigne à des entreprises et des sites internet.",
@@ -320,6 +346,8 @@ puts "Creating activity #17..."
 activity17 = Activity.create!(
   average_rating: 4.9,
   price_per_visitor: 25,
+  opening_hour: DateTime.now.beginning_of_day + 19.hour,
+  closing_hour: DateTime.now.beginning_of_day + 21.hour,
   closed_day: [1, 2, 3, 4, 7],
   name: "Flamenco Torres Bermejas",
   address: "Mesonero Romanos,11, 28013, Madrid, Espagne",
