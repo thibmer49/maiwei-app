@@ -9,7 +9,7 @@
           <label class="form-check-label collection_check_boxes" for="trip_activity_ids_<%= activity.id %>">
             <div class="card_activity">
               <div class="card_name">
-                <%= cl_image_tag(activity.photo.key, height: 300, width: 400) %>
+                <%= cl_image_tag(activity.photos.key, height: 300, width: 400) %>
                 <h5><%= truncate(activity.name, length: 40, separator: ' ', omission: '...') %></h5>
               </div>
               <div class="activity_description">

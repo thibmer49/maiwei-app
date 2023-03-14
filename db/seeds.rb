@@ -68,8 +68,21 @@ activity1 = Activity.create!(
   country: "Espagne",
   duration: 1.5
 )
-file = URI.open("https://photo620x400.mnstatic.com/37b45dfad008ade38c1986be2e30a158/plaza-mayor.jpg")
-activity1.photo.attach(io: file, filename: "PlazaMayor.jpg", content_type: "image/jpeg")
+
+["https://photo620x400.mnstatic.com/37b45dfad008ade38c1986be2e30a158/plaza-mayor.jpg",
+  "https://img.theculturetrip.com/1440x807/smart/wp-content/uploads/2017/03/1024px-plaza_mayor_de_madrid_06.jpg",
+  "https://traveldigg.com/wp-content/uploads/2016/09/Plaza-Mayor-Cafe.jpg"].each_with_index do |image_url, index|
+  file = URI.open(image_url)
+  activity1.photos.attach(io: file, filename: "#{activity1.name.downcase.gsub(' ', '_')}_#{index + 1}.jpg", content_type: "image/jpeg")
+end
+
+# file1 = URI.open("https://photo620x400.mnstatic.com/37b45dfad008ade38c1986be2e30a158/plaza-mayor.jpg")
+# file2 = URI.open("https://img.theculturetrip.com/1440x807/smart/wp-content/uploads/2017/03/1024px-plaza_mayor_de_madrid_06.jpg")
+# file3 = URI.open("https://traveldigg.com/wp-content/uploads/2016/09/Plaza-Mayor-Cafe.jpg")
+
+# activity1.photo.attach(io: file1, filename: "PlazaMayor.jpg", content_type: "image/jpeg")
+# activity1.photo.attach(io: file2, filename: "PlazaMayor2.jpg", content_type: "image/jpeg")
+# activity1.photo.attach(io: file3, filename: "PlazaMayor3.jpg", content_type: "image/jpeg")
 
 
 puts "Creating activity #2..."
@@ -84,8 +97,17 @@ activity2 = Activity.create!(
   country: "Espagne",
   duration: 4
 )
-file = URI.open("https://photo620x400.mnstatic.com/63b94c01337b9c7cad49217264b406d2/parc-du-retiro.jpg")
-activity2.photo.attach(io: file, filename: "ParcDuRetiro.jpg", content_type: "image/jpeg")
+["https://photo620x400.mnstatic.com/63b94c01337b9c7cad49217264b406d2/parc-du-retiro.jpg",
+  "http://www.joliscircuits.com/wp-content/uploads/2016/11/DSC09744-1024x680.jpg",
+  "https://audrey-laure.com/wp-content/uploads/2017/06/parc-du-retiro-madrid.jpg"].each_with_index do |image_url, index|
+  file = URI.open(image_url)
+  activity2.photos.attach(io: file, filename: "#{activity2.name.downcase.gsub(' ', '_')}_#{index + 1}.jpg", content_type: "image/jpeg")
+end
+
+# activity2.photos.attach(io: file1, filename: "ParcDuRetiro.jpg", content_type: "image/jpeg")
+# activity2.photos.attach(io: file2, filename: "ParcDuRetiro2.jpg", content_type: "image/jpeg")
+# activity2.photos.attach(io: file3, filename: "ParcDuRetiro3.jpg", content_type: "image/jpeg")
+
 
 
 puts "Creating activity #3..."
@@ -103,8 +125,13 @@ activity3 = Activity.create!(
   country: "Espagne",
   duration: 3.5
 )
-file = URI.open("https://cdn.generationvoyage.fr/2017/03/interieur-musee-prado-madrid.jpg")
-activity3.photo.attach(io: file, filename: "MuseeDuPrado.jpg", content_type: "image/jpeg")
+
+["https://cdn.generationvoyage.fr/2017/03/interieur-musee-prado-madrid.jpg",
+  "https://www.spain.info/export/sites/segtur/.content/images/cabeceras-grandes/madrid/Museo-Prado-2-c-Jose-Barea-Turismo-Madrid.jpg",
+  "https://madrid-discovery.com/wp-content/uploads/2020/05/museo-del-prado.jpg"].each_with_index do |image_url, index|
+  file = URI.open(image_url)
+  activity3.photos.attach(io: file, filename: "#{activity3.name.downcase.gsub(' ', '_')}_#{index + 1}.jpg", content_type: "image/jpeg")
+end
 
 
 puts "Creating activity #4..."
@@ -122,8 +149,13 @@ activity4 = Activity.create!(
   country: "Espagne",
   duration: 1.5
 )
-file = URI.open("https://www.antoon.fr/wp-content/uploads/2022/04/palais-royal-madrid.jpg")
-activity4.photo.attach(io: file, filename: "PalaisRoyal.jpg", content_type: "image/jpeg")
+
+["https://www.antoon.fr/wp-content/uploads/2022/04/palais-royal-madrid.jpg",
+  "https://traveldigg.com/wp-content/uploads/2016/09/Royal-Palace-of-Madrid-Pictures.jpg",
+  "https://traveldigg.com/wp-content/uploads/2016/09/Royal-Palace-of-Madrid-Inside-Photo.jpg"].each_with_index do |image_url, index|
+  file = URI.open(image_url)
+  activity4.photos.attach(io: file, filename: "#{activity4.name.downcase.gsub(' ', '_')}_#{index + 1}.jpg", content_type: "image/jpeg")
+end
 
 
 puts "Creating activity #5..."
@@ -140,8 +172,12 @@ activity5 = Activity.create!(
   country: "Espagne",
   duration: 1.5
 )
-file = URI.open("https://guias-viajar.com/madrid/wp-content/uploads/sites/7/2018/04/madrid-mercado-san-miguel-17.jpg")
-activity5.photo.attach(io: file, filename: "MarcheSanMiguel.jpg", content_type: "image/jpeg")
+["https://guias-viajar.com/madrid/wp-content/uploads/sites/7/2018/04/madrid-mercado-san-miguel-17.jpg",
+  "https://mercadodesanmiguel.es/wp-content/uploads/2018/08/El-Se%C3%B1or-Mart%C3%ADn.jpg",
+  "https://t9n5u6t8.rocketcdn.me/wp-content/uploads/2020/04/Mercado-de-San-Miguel-Madrid.jpg"].each_with_index do |image_url, index|
+  file = URI.open(image_url)
+  activity5.photos.attach(io: file, filename: "#{activity5.name.downcase.gsub(' ', '_')}_#{index + 1}.jpg", content_type: "image/jpeg")
+end
 
 
 puts "Creating activity #6..."
@@ -160,8 +196,12 @@ activity6 = Activity.create!(
   country: "Espagne",
   duration: 2.5
 )
-file = URI.open("https://cdn-imgix.headout.com/tour/29151/TOUR-IMAGE/d074498b-a347-4558-bf6b-ea991d7f8034-15563-madrid-reina-sofi-a-museum-guided-tour-with-proffesional-guide-01.jpg")
-activity6.photo.attach(io: file, filename: "MuseeReinaSofia.jpg", content_type: "image/jpeg")
+["https://cdn-imgix.headout.com/tour/29151/TOUR-IMAGE/d074498b-a347-4558-bf6b-ea991d7f8034-15563-madrid-reina-sofi-a-museum-guided-tour-with-proffesional-guide-01.jpg",
+  "https://tourscanner.com/blog/wp-content/uploads/2019/05/Reina-Sofia-Museum-tickets-price.png",
+  "https://tourscanner.com/blog/wp-content/uploads/2019/05/Reina-Sofia-Museum-tickets-price.png"].each_with_index do |image_url, index|
+  file = URI.open(image_url)
+  activity6.photos.attach(io: file, filename: "#{activity6.name.downcase.gsub(' ', '_')}_#{index + 1}.jpg", content_type: "image/jpeg")
+end
 
 
 puts "Creating activity #7..."
@@ -180,8 +220,13 @@ activity7 = Activity.create!(
   country: "Espagne",
   duration: 1.5
 )
-file = URI.open("https://espagnefascinante.fr/wp-content/uploads/shutterstock_1223904955-1.jpg")
-activity7.photo.attach(io: file, filename: "MuseeScorolla.jpg", content_type: "image/jpeg")
+["https://espagnefascinante.fr/wp-content/uploads/shutterstock_1223904955-1.jpg",
+  "https://media.cntraveler.com/photos/580fd2e06b5a595447204a55/16:9/w_2240,c_limit/MuseoSorolla-Getty460862363.jpg",
+  "https://www.shmadrid.com/blog/en/wp-content/uploads/2015/08/garden.jpg"].each_with_index do |image_url, index|
+  file = URI.open(image_url)
+  activity7.photos.attach(io: file, filename: "#{activity7.name.downcase.gsub(' ', '_')}_#{index + 1}.jpg", content_type: "image/jpeg")
+end
+
 
 puts "Creating activity #8..."
 activity8 = Activity.create!(
@@ -195,8 +240,13 @@ activity8 = Activity.create!(
   country: "Espagne",
   duration: 2
 )
-file = URI.open("https://fotografias.lasexta.com/clipping/cmsimages01/2021/11/22/80443BD5-CFE6-4395-8585-D36F147B3053/98.jpg")
-activity8.photo.attach(io: file, filename: "PuertaDelSol.jpg", content_type: "image/jpeg")
+["https://fotografias.lasexta.com/clipping/cmsimages01/2021/11/22/80443BD5-CFE6-4395-8585-D36F147B3053/98.jpg",
+  "https://sites.google.com/site/visiteguideedemadrid/_/rsrc/1418993523684/puerta-del-sol/2013-April-17-Puerta-del-Sol-Madrid-2104.jpg",
+  "https://upload.wikimedia.org/wikipedia/commons/1/12/Madrid-_Puerta_del_Sol_-_51454839271.jpg"].each_with_index do |image_url, index|
+  file = URI.open(image_url)
+  activity8.photos.attach(io: file, filename: "#{activity8.name.downcase.gsub(' ', '_')}_#{index + 1}.jpg", content_type: "image/jpeg")
+end
+
 
 
 puts "Creating activity #9..."
@@ -214,8 +264,12 @@ activity9 = Activity.create!(
   country: "Espagne",
   duration: 1
 )
-file = URI.open("https://a.travel-assets.com/findyours-php/viewfinder/images/res70/348000/348735-Almudena-Cathedral.jpg")
-activity9.photo.attach(io: file, filename: "CathedraleAlmudena.jpg", content_type: "image/jpeg")
+["https://a.travel-assets.com/findyours-php/viewfinder/images/res70/348000/348735-Almudena-Cathedral.jpg",
+  "https://www.tapasinthesun.com/wp-content/uploads/RHG5522.jpg",
+  "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Catedral_de_la_Almudena_2008.jpg/1200px-Catedral_de_la_Almudena_2008.jpg"].each_with_index do |image_url, index|
+  file = URI.open(image_url)
+  activity9.photos.attach(io: file, filename: "#{activity9.name.downcase.gsub(' ', '_')}_#{index + 1}.jpg", content_type: "image/jpeg")
+end
 
 
 puts "Creating activity #10..."
@@ -233,8 +287,13 @@ activity10 = Activity.create!(
   country: "Espagne",
   duration: 2.5
 )
-file = URI.open("https://www.spain.info/export/sites/segtur/.content/imagenes/cabeceras-grandes/madrid/general-jardin-botanico-10-c-foto-rjb.jpg")
-activity10.photo.attach(io: file, filename: "JardinBotanique.jpg", content_type: "image/jpeg")
+
+["https://www.spain.info/export/sites/segtur/.content/imagenes/cabeceras-grandes/madrid/general-jardin-botanico-10-c-foto-rjb.jpg",
+  "https://mywowo.net/media/images/cache/madrid_giardino_botanico_01_introduzione_jpg_1200_630_cover_85.jpg",
+  "https://upload.wikimedia.org/wikipedia/commons/b/b6/Rosaleda_HRM1.JPG"].each_with_index do |image_url, index|
+  file = URI.open(image_url)
+  activity10.photos.attach(io: file, filename: "#{activity10.name.downcase.gsub(' ', '_')}_#{index + 1}.jpg", content_type: "image/jpeg")
+end
 
 
 puts "Creating activity #11..."
@@ -252,8 +311,12 @@ activity11 = Activity.create!(
   country: "Royaume-Uni",
   duration: 2.5
 )
-file = URI.open("https://cdn.mos.cms.futurecdn.net/pGNC93VDpzqKQHPgRkDXnB-1920-80.jpg")
-activity11.photo.attach(io: file, filename: "PalaisBuckingham.jpg", content_type: "image/jpeg")
+["https://cdn.mos.cms.futurecdn.net/pGNC93VDpzqKQHPgRkDXnB-1920-80.jpg",
+  "https://cdn-lnp.dataweavers.io/-/media/images/london/visit/whats-on/event-pages/buckinghampalace1920x1080.jpg",
+  "https://www.washingtonpost.com/resizer/HHgfORzma4uEcFYa0ZuZJgNBhNM=/arc-anglerfish-washpost-prod-washpost/public/SO5V6KXABEI6XIT7RMUUSMHJLM.jpg"].each_with_index do |image_url, index|
+  file = URI.open(image_url)
+  activity11.photos.attach(io: file, filename: "#{activity11.name.downcase.gsub(' ', '_')}_#{index + 1}.jpg", content_type: "image/jpeg")
+end
 
 
 puts "Creating activity #12..."
@@ -270,8 +333,13 @@ activity12 = Activity.create!(
   country: "Royaume-Uni",
   duration: 2.0
 )
-file = URI.open("https://a.cdn-hotels.com/gdcs/production107/d879/5fbac677-8a47-456a-9549-c4386914cd27.jpg")
-activity12.photo.attach(io: file, filename: "CoventGarden.jpg", content_type: "image/jpeg")
+
+["https://a.cdn-hotels.com/gdcs/production107/d879/5fbac677-8a47-456a-9549-c4386914cd27.jpg",
+  "https://upload.wikimedia.org/wikipedia/commons/4/42/Covent_Garden_Interior_May_2006_crop.jpg",
+  "https://image.arrivalguides.com/1230x800/00/8c1c6572149c02c751d2beefb33e9d6b.jpg"].each_with_index do |image_url, index|
+  file = URI.open(image_url)
+  activity12.photos.attach(io: file, filename: "#{activity12.name.downcase.gsub(' ', '_')}_#{index + 1}.jpg", content_type: "image/jpeg")
+end
 
 puts "Creating activity #13..."
 activity13 = Activity.create!(
@@ -286,9 +354,12 @@ activity13 = Activity.create!(
   country: "Royaume-Uni",
   duration: 2.5
 )
-file = URI.open("https://cdn.jumeirah.com/-/mediadh/dh/hospitality/jumeirah/article/stories/london/a-guide-to-hyde-park/herooo.jpg?h=1080&w=1620")
-activity13.photo.attach(io: file, filename: "HydePark.jpg", content_type: "image/jpeg")
-
+["https://cdn.jumeirah.com/-/mediadh/dh/hospitality/jumeirah/article/stories/london/a-guide-to-hyde-park/herooo.jpg?h=1080&w=1620",
+  "https://a.cdn-hotels.com/gdcs/production97/d1326/d94b74a4-8fc1-4b00-99b8-e6db53199ac8.jpg",
+  "https://d1e00ek4ebabms.cloudfront.net/production/7787c61a-0de8-4295-b9bc-b1e308bf05b1.jpg"].each_with_index do |image_url, index|
+  file = URI.open(image_url)
+  activity13.photos.attach(io: file, filename: "#{activity13.name.downcase.gsub(' ', '_')}_#{index + 1}.jpg", content_type: "image/jpeg")
+end
 
 puts "Creating activity #14..."
 activity14 = Activity.create!(
@@ -305,9 +376,13 @@ activity14 = Activity.create!(
   country: "Royaume-Uni",
   duration: 2.0
 )
-file = URI.open("https://www.montcalm.co.uk/blog/wp-content/uploads/2018/01/Madame-Tussauds-Museum-London.jpg")
-activity14.photo.attach(io: file, filename: "MadameTrussauds.jpg", content_type: "image/jpeg")
 
+["https://www.montcalm.co.uk/blog/wp-content/uploads/2018/01/Madame-Tussauds-Museum-London.jpg",
+  "https://www.london-forever.com/wp-content/uploads/2020/09/madame-tussauds-5.jpg",
+  "https://media.timeout.com/images/102899900/image.jpg"].each_with_index do |image_url, index|
+  file = URI.open(image_url)
+  activity14.photos.attach(io: file, filename: "#{activity14.name.downcase.gsub(' ', '_')}_#{index + 1}.jpg", content_type: "image/jpeg")
+end
 
 puts "Creating activity #15..."
 activity15 = Activity.create!(
@@ -322,9 +397,13 @@ activity15 = Activity.create!(
   country: "Royaume-Uni",
   duration: 3.5
 )
-  file = URI.open("https://www.themontcalm.com/blog/wp-content/uploads/2015/04/Your-Guide-To-The-British-Museum-London.jpg")
-activity15.photo.attach(io: file, filename: "BritishMuseum.jpg", content_type: "image/jpeg")
 
+["https://www.themontcalm.com/blog/wp-content/uploads/2015/04/Your-Guide-To-The-British-Museum-London.jpg",
+  "https://static01.nyt.com/images/2017/02/01/arts/british-museum-finals-slide-FUP5/british-museum-finals-slide-FUP5-jumbo.jpg",
+  "https://assets.gocity.com/files/groot_london/files/styles/crop_freeform/public/blog/British-Museum.jpg"].each_with_index do |image_url, index|
+  file = URI.open(image_url)
+  activity15.photos.attach(io: file, filename: "#{activity15.name.downcase.gsub(' ', '_')}_#{index + 1}.jpg", content_type: "image/jpeg")
+end
 
 puts "Creating activity #16..."
 activity16 = Activity.create!(
@@ -339,8 +418,12 @@ activity16 = Activity.create!(
   country: "Royaume-Uni",
   duration: 2.5
 )
-  file = URI.open("https://www.theindustry.fashion/wp-content/uploads/2023/01/Harrods-Louis-Vuitton.jpg")
-activity16.photo.attach(io: file, filename: "Harrods.jpg", content_type: "image/jpeg")
+["https://www.theindustry.fashion/wp-content/uploads/2023/01/Harrods-Louis-Vuitton.jpg",
+  "https://robbreport.com/wp-content/uploads/2021/05/Harrods_Chocolate_Hall_Wide.jpg",
+  "https://www.harrods.com/BWStaticContent/50000/50000/9b86bd1a-72cf-423a-a4a1-62ae51378b50_d-food-halls-in-store-experience-13-vegetable-counter.jpg"].each_with_index do |image_url, index|
+  file = URI.open(image_url)
+  activity16.photos.attach(io: file, filename: "#{activity16.name.downcase.gsub(' ', '_')}_#{index + 1}.jpg", content_type: "image/jpeg")
+end
 
 puts "Creating activity #17..."
 activity17 = Activity.create!(
@@ -357,9 +440,12 @@ activity17 = Activity.create!(
   country: "Espagne",
   duration: 1.0
 )
-
-  file = URI.open("https://monbarcelone.com/wp-content/uploads/2022/07/Flamenco_03.jpeg")
-activity17.photo.attach(io: file, filename: "Flamenco.jpg", content_type: "image/jpeg")
+["https://monbarcelone.com/wp-content/uploads/2022/07/Flamenco_03.jpeg",
+  "https://madridpourvous.com/wp-content/uploads/2018/09/tablao-flamenco-915x515.jpg",
+  "https://a.cdn-hotels.com/gdcs/production98/d1518/fd8a39ca-fde9-4a2b-9050-c91bee268de2.jpg"].each_with_index do |image_url, index|
+  file = URI.open(image_url)
+  activity17.photos.attach(io: file, filename: "#{activity17.name.downcase.gsub(' ', '_')}_#{index + 1}.jpg", content_type: "image/jpeg")
+end
 
   activity1.category_list.add("Sites historiques", "Monuments et points d'intérêt")
   activity1.save
@@ -502,4 +588,4 @@ TripActivity.create!(
 )
 
 puts "#{Trip.first.activities.count} activities created for #{Trip.first.trip_name}"
-puts "#{Trip.third.activities.count} activities created for #{Trip.third.trip_name}"
+# puts "#{Trip.third.activities.count} activities created for #{Trip.third.trip_name}"
