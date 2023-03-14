@@ -1,0 +1,16 @@
+<div class="card-trip-show" data-url=<%= trip_activity_path(trip_activity.id) %>>
+  <div class="d-flex">
+      <%= cl_image_tag trip_activity.activity.photo.key, crop: :fill, class:"img-fluid" %>
+      <div class="card-trip-show-info">
+        <h3><%= truncate(trip_activity.activity.name, length: 20, separator: ' ', omission: '...') %></h3>
+        <div class="d-flex">
+          <p class="pe-4"><%= trip_activity.activity.address %></p>
+          <% if trip_activity.activity.price_per_visitor === 0 %>
+            <p>Gratuit</p>
+          <% else %>
+            <p><%= trip_activity.activity.price_per_visitor%>€</p>
+          <% end %>
+        </div>
+      </div>
+  </div>
+</div>

@@ -8,8 +8,7 @@ Rails.application.routes.draw do
   get :dashboard, to: 'pages#dashboard', as: "dashboard"
   resources :activities, only: %i[index show new create edit update destroy]
   resources :trips, only: %i[new create show edit update] do
-    resources :activities, only: %i[] do
-      resources :trip_activities, only: [:update]
-    end
+    # resources :activities
   end
+  resources :trip_activities, only: [:update]
 end

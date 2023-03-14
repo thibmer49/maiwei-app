@@ -2,7 +2,6 @@ class TripsController < ApplicationController
   before_action :set_trip, only: %i[show destroy]
 
   def new
-
     @trip = Trip.new
     @activities = Activity.all
     # authorize @trip
@@ -31,6 +30,7 @@ class TripsController < ApplicationController
 
   def show
     @trip = Trip.find(params[:id])
+    # @trip_activity = TripActivity.find(params[:trip_activity_id])
     @starting_date = @trip.starting_date.strftime('%A %-d %B %Y')
     @ending_date = @trip.ending_date.strftime('%A %-d %B %Y')
     @markers = @trip.activities.geocoded.map do |activity|
@@ -41,11 +41,10 @@ class TripsController < ApplicationController
     }
     end
     # authorize @trip
-    @dates = (@trip.starting_date..@trip.ending_date).to_a
-
-    # [
-    #   ["date du jour", [ la liste des activités que je dois afficher ce jour là]]
-    # ]
+    dates = (@trip.starting_date..@trip.ending_date).to_a
+    @dates = dates.map do |date|
+      [date, TripActivity.find_trip_activities(@trip.id, date).to_a]
+    end
   end
 
   def edit
