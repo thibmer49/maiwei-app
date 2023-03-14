@@ -5,7 +5,7 @@
       <%= link_to "Modifier mon séjour", edit_trip_path(@trip) %>
       <h1 >Votre séjour à <%= @trip.trip_name %></h1>
       <h4>Du <%= @starting_date %> au <%= @ending_date %></h4>
-      <h4>Budget : <%= @trip.budget %></h4>
+      <h4>Budget : <%= @trip.budget %>€</h4>
       <h6>Vous pouvez désormais déplacer chaque étape de votre programme en fonction de votre préférence.</h6>
       <div class="d-flex align-item-center" data-controller="sortable">
         <div class="first_column">
@@ -24,7 +24,7 @@
             <% @trip.activities.each do |activity| %>
               <div class="card-trip-show">
                 <div class="d-flex">
-                    <%= cl_image_tag activity.photo.key, crop: :fill, class:"img-fluid" %>
+                    <%= cl_image_tag activity.photos.key, crop: :fill, class:"img-fluid" %>
                     <div class="card-trip-show-info">
                       <h3><%= truncate(activity.name, length: 20, separator: ' ', omission: '...') %></h3>
                       <div class="d-flex">
