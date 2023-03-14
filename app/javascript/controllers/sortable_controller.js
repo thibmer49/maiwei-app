@@ -13,6 +13,7 @@ export default class extends Controller {
         draggable: ".card-trip-show",
         onEnd: (event) => {
           // 1. Je dois trouver la date dans laquelle la carte est droppée
+
           // 2. Je fetch la trip_activity_trip_activity_path
           // 3. J'enlève le callout
         }
