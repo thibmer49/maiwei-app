@@ -19,6 +19,9 @@
                 </div>
                 <p class="address"><i class="fa-solid fa-location-pin"></i><%= truncate(activity.address, length: 80, separator: ' ', omission: '...') %></p>
                 <p class="description"><%= activity.description %></p>
+                <div class="cards-tag">
+                  <%= collection_check_boxes(:activity, :categories, activity.categories, :name, :name, { include_hidden: false }, { class: "tag-selector", data: { activities_update_target: "checkbox", action: "change->activities-update#update"} }) %>
+                </div>
               </div>
             </div>
           </label>

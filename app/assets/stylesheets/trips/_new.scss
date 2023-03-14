@@ -1,3 +1,46 @@
+.label-city {
+  margin: 10px 0px
+}
+
+.label-city label {
+  margin-bottom: 10px
+}
+
+.label-city-btn {
+  margin: 10px 0px;
+  padding: 10px;
+  border: 2px solid #16697A;
+  border-radius: 50px;
+  color: #16697A;
+  font-size: small;
+  background-color: #EDE7E3;
+}
+
+.label-city-btn:hover {
+  border-radius: 50px;
+  color: #EDE7E3;
+  background-color: #16697A;
+  font-size: small;
+}
+
+.submit-button {
+  margin: 10px 0px;
+  padding: 10px;
+  border: 2px solid #16697A;
+  border-radius: 50px;
+  color: #16697A;
+  font-size: small;
+  background-color: #EDE7E3;
+}
+
+#label-destination {
+  margin-bottom: 10px;
+}
+
+.form-control {
+  width: 100%;
+}
+
 .activities-options {
   .card-selector + label {
     width: 100%;
@@ -14,5 +57,11 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 1em;
+  }
+
+  input {
+    #trip_query {
+    margin-bottom: 10px;
+    }
   }
 }
