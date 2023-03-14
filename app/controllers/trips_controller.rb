@@ -1,16 +1,40 @@
 class TripsController < ApplicationController
   before_action :set_trip, only: %i[show destroy]
 
-  def new
-
-    @trip = Trip.new
+  def index
     @activities = Activity.all
+    if params[:query].present?
+      @activities = @activities.where(city: params[:query].capitalize)
+    end
+    if params.dig(:activity, :categories).present?
+      @activities = @activities.tagged_with(params.dig(:activity, :categories), any: true)
+    end
+    render partial: "trips/activity_list", locals: { filtered_activities: @activities }, layout: false, formats: :html
+  end
+
+  def filter_activities
+    @activities = Activity.all
+    if params[:city].present?
+      @activities = @activities.where(city: params[:city].capitalize)
+    end
+
+    categories = URI.decode_www_form_component(params[:categories]).split(",")
+    if !categories.blank?
+      @activities = @activities.tagged_with(categories, any: true)
+    end
+    render partial: "trips/activity_list", locals: { filtered_activities: @activities }, layout: false, formats: :html
+
+  end
+
+  def new
+    @trip = Trip.new
+    @activities = params[:query].present? ? Activity.where(city: params[:query].capitalize) : Activity.all
     # authorize @trip
     @trip.category_list.add(params[:activity][:categories]) if params[:activity].present?
     @categories = @trip.category_list
 
     # 1. Filtrer les activités en fonction de @categories
-    @filtered_activities = Activity.tagged_with(@categories, any: true).where(city: params[:city])
+    @filtered_activities = @categories.blank? ? @activities : @activities.tagged_with(@categories, any: true)
   end
 
   def create
