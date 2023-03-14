@@ -588,4 +588,4 @@ TripActivity.create!(
 )
 
 puts "#{Trip.first.activities.count} activities created for #{Trip.first.trip_name}"
-# puts "#{Trip.third.activities.count} activities created for #{Trip.third.trip_name}"
+puts "#{Trip.third.activities.count} activities created for #{Trip.third.trip_name}"

@@ -687,7 +687,9 @@ node-releases@^2.0.8:
 
 nouislider@^15.7.0:
   version "15.7.0"
+
   resolved "https://registry.yarnpkg.com/nouislider/-/nouislider-15.7.0.tgz#3d8ec43c6f767ceb7f17afc555016ef907cedc3d"
+
   integrity sha512-aJVEULBPOUwq32/s7xnLNyLvo4kuzYJJsNp2PNGW932AQ0uuDAbLShAqswtxRzJc5n/dLJXNlYSLOZ57bcUg1w==
 
 p-limit@^2.2.0:
