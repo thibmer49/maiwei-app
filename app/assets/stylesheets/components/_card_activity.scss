@@ -30,6 +30,14 @@
 
 
 .activity_description {
+  padding: 30px 20px 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  > div {
+    flex-grow: 1;
+  }
+
   padding: 30px 20px 10px;
   .address, .duration, .rating, .price {
     color: rgb(66, 66, 66);
@@ -39,7 +47,7 @@
     margin-right: 10px;
   }
 
-  > div {
+  > div > div {
     display: flex;
     justify-content: space-between;
 

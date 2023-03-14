@@ -1,16 +1,20 @@
 <div class="container my-3 mt-4">
-  <h1 class="text-center">Où souhaitez-vous aller ?</h1>
+  <h1 class="text-center">Que souhaitez-vous découvrir ?</h1>
   <%# SEARCH BAR %>
   <%= form_with url: activities_path, method: :get, class: "d-flex justify-content-center mt-3 mb-4" do %>
     <%= text_field_tag :query,
       params[:query],
       class: "form-control",
-      placeholder: "Votre prochaine destination"
+      placeholder: "Renseignez la ville à visiter et découvrez les activités"
     %>
     <%= submit_tag "Recherchez", class: "btn-destination" %>
   <% end %>
   <%# FIN SEARCH BAR %>
   <%# Modal%>
+  <div class="container my-3 mt-4">
+    <div class="category-selected my-4">
+      <div class=category-name-selected>
+        <h2>Musées</h2>
   <div class="cards my-4">
     <% @activities.each do |activity| %>
       <div class="card_activity" data-bs-toggle="modal" data-bs-target=<%= "#activity-#{activity.id}" %> >
@@ -29,18 +33,51 @@
           <%# <p><%= truncate(activity.description, length: 110, separator: ' ', omission: '...') %>
         </div>
       </div>
-      <div class="modal fade modal-activity-show" id=<%= "activity-#{activity.id}"%> tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <i class="fa-solid fa-circle-xmark close-modal" data-bs-dismiss="modal" ></i>
-            <div class="modal-body">
-              <%= render "activity-show", activity: activity %>
-            </div>
-          </div>
-        </div>
+      <div class="cards my-4">
+        <% @activities.tagged_with("Musées").each do |activity| %>
+          <%= render "activity-selected-category", activity: activity %>
+        <% end %>
       </div>
-    <% end %>
+    </div>
+    <div class="category-selected my-4">
+      <div class="category-name-selected">
+        <h2>Monuments et points d'intérêt</h2>
+      </div>
+      <div class="cards my-4">
+        <% @activities.tagged_with("Monuments et points d'intérêt").each do |activity| %>
+        <%= render "activity-selected-category", activity: activity %>
+        <% end %>
+      </div>
+    </div>
+    <div class="category-selected my-4">
+      <div class="category-name-selected">
+        <h2>Sites historiques</h2>
+      </div>
+      <div class="cards my-4">
+        <% @activities.tagged_with("Sites historiques").each do |activity| %>
+        <%= render "activity-selected-category", activity: activity %>
+        <% end %>
+      </div>
+    </div>
+    <div class="category-selected my-4">
+      <div class="category-name-selected">
+        <h2>Marchés</h2>
+      </div>
+      <div class="cards my-4">
+        <% @activities.tagged_with("Marchés").each do |activity| %>
+        <%= render "activity-selected-category", activity: activity %>
+        <% end %>
+      </div>
+    </div>
+    <div class="category-selected my-4">
+      <div class="category-name-selected">
+        <h2>Théâtres</h2>
+      </div>
+      <div class="cards my-4">
+        <% @activities.tagged_with("Théâtres").each do |activity| %>
+          <%= render "activity-selected-category", activity: activity %>
+        <% end %>
+      </div>
+    </div>
   </div>
-  <%# Modal%>
-  <!-- card -->
 </div>

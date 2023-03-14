@@ -7,6 +7,9 @@
   .modal-content {
     border-radius: 5px;
     overflow: hidden;
+    > i {
+      z-index: 10000;
+    }
   }
 
   .modal-body {
