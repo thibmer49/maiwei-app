@@ -2,11 +2,10 @@
   margin: 40px;
 }
 
-.card-trip-show {
+.card-trip-show-new {
   background-color: white;
   margin-top: 3px;
-  width: 200px;
-  height: 100px;
+  width: 600px;
   margin-bottom: 10px;
   border-radius: 5px;
   align-items: center;
@@ -14,34 +13,19 @@
 }
 
 .card-trip-show h1, h2, h3, h4, h5 {
-  color:black;
-  font-size: calc(0.6rem + 0.6vw);
+  color:black
 }
 
 .card-trip-show p {
   font-size: smaller;
 }
 
-.card-trip-show a {
-  text-decoration: none;
-  color: #FFA62B;
-}
-
 .card-trip-show-info {
   padding: 10px;
-  display:flex;
-  justify-content: space-around;
 }
 
 .card-trip-show img {
   object-fit: cover;
   width: 165px;
   // height: 100%;
-}
-
-.card-title-price {
-  display: block;
-  text-align: center;
-  align-items:end;
-  justify-content:baseline;
 }
