@@ -15,10 +15,19 @@
     <%= f.input :ending_date, label: "Jusqu'au :", as: :string, input_html: { id: "ending_date", data: { flatpickr_target: "endingDate" } }, wrapper_html: { class: 'flatpickr-input' } %>
 
     <%= f.input :budget, label: 'Quel budget souhaitez-vous ne pas dépasser ?', placeholder: '300€' %>
-    <div class="range-slider">
-      <input class="range-slider__range" type="range" value="100" min="0" max="4000" step="100">
-      <span class="range-slider__value">0</span>
+
+    <%# SLIDER %>
+     <div class="slider-container" data-controller="slider">
+      <div class="slider-labels">
+        <span class="min-value">0</span>
+        <span class="max-value">1000</span>
+      </div>
+      <div class="slider-input">
+        <input type="range" min="0" max="1000" step="50" data-slider-target="range" data-action="input->slider#updateValue">
+      </div>
+      <div class="slider-value" data-slider-target="value"></div>
     </div>
+    <%# SLIDER %>
 
     <h5 class="text-blue">Quel type d'activités souhaitez-vous faire ?</h5>
     <section class="activities-filter mb-4" data-url="<%= filter_activities_trips_path %>" data-activities-update-target="form">
