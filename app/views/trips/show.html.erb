@@ -4,7 +4,6 @@
           <div class="list-group list-group-horizontal float-end">
             <p><%= link_to "Modifier mon séjour", edit_trip_path(@trip), class:'text-decoration-none btn btn-blue me-4' %></p>
             <p><%= link_to "Sauvegarder mon séjour", "#", class:'text-decoration-none btn btn-blue me-4' %></p>
-            <p><%= link_to "Retour à l'accueil", root_path, class:'text-decoration-none btn btn-blue me-4'%></p>
           </div>
       <h1 >Votre séjour à <%= @trip.trip_name %></h1>
       <h4>Du <%= @starting_date %> au <%= @ending_date %></h4>
