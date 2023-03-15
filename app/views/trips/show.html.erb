@@ -7,10 +7,8 @@
           </div>
       <h1 >Votre séjour à <%= @trip.trip_name %></h1>
       <h4>Du <%= @starting_date %> au <%= @ending_date %></h4>
-      <div class="d-flex">
-        <h4 class="p-6">Budget : <%= @trip.budget %>€</h4>
-        <h4>Budget restant : <%= @trip.budget %>€</h4>
-      </div>
+        <h4>Budget : <%= @trip.budget %>€</h4>
+        <h4>Budget restant : €</h4>
       <h6>Vous pouvez désormais déplacer chaque étape de votre programme en fonction de votre préférence.</h6>
       <div class="d-flex align-item-center" data-controller="sortable">
         <div class="first_column" data-sortable-target="dayTripList">
