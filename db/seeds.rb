@@ -117,7 +117,7 @@ activity3 = Activity.create!(
   opening_hour: DateTime.now.beginning_of_day + 9.hour,
   closing_hour: DateTime.now.beginning_of_day + 19.hour,
   name: "Musée du Prado",
-  address: "C. de Ruiz de Alarcón, 23, 28014 Madrid, Espagne",
+  address: "P.º del Prado, 28014 Madrid, Espagne",
   description: "Le Musée du Prado est le musée le plus célèbre de Madrid et un des musées d'art les plus importants du monde. Il a été construit par Juan de Villanueva et a été inauguré en 1819.",
   phone_number: "+34 913 30 28 00",
   website: "https://www.museodelprado.es/",
