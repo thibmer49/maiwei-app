@@ -38,6 +38,11 @@
     flex-grow: 1;
   }
 
+  > .all-description {
+    display:flex;
+    justify-content: space-between;
+  }
+
   .address, .duration, .rating, .price {
     color: rgb(66, 66, 66);
     font-weight: 100;
@@ -160,7 +165,6 @@
   position: absolute;
   top: 15px;
   justify-content: center;
-  opacity: 0.8;
 }
 
 

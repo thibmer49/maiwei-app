@@ -12,7 +12,7 @@
                 <h5><%= truncate(activity.name, length: 40, separator: ' ', omission: '...') %></h5>
               </div>
               <div class="activity_description">
-                <div>
+                <div class="all-description">
                   <p class="rating"><i class="fa-solid fa-star"></i><%= activity.average_rating%>/5</p>
                   <p class="duration"><i class="fa-solid fa-stopwatch"></i><%= activity.duration%>h</p>
                   <p class="price"><i class="fa-solid fa-coins"></i> <%= activity.price_per_visitor %>€</p>
