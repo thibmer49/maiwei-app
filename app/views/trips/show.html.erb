@@ -10,22 +10,8 @@
       <h4>Budget : <%= @trip.budget %>€</h4>
       <h6>Vous pouvez désormais déplacer chaque étape de votre programme en fonction de votre préférence.</h6>
       <div class="d-flex align-item-center" data-controller="sortable">
-        <div class="first_column">
-          <% @dates.each do |date| %>
-            <section class="day-trip-list">
-              <h3><%= date[0].strftime('%A %-d %B') %></h3>
-              <div data-sortable-target="list" data-trip-id="<%= @trip.id %>" data-date="<%= date[0] %>">
-                <% date[1].each do |trip_activity| %>
-                  <p><strong>De <%= trip_activity.start_at.strftime('%Hh%M') %> à <%= trip_activity.end_at.strftime('%Hh%M') %></strong></p>
-                  <%= render "trips/trip_activity_card", trip_activity: trip_activity %>
-                <% end %>
-              </div>
-              <% if date[1].empty? %>
-                <div class="callout"></div>
-              <% end %>
-            </section>
-          <% end %>
-
+        <div class="first_column" data-sortable-target="dayTripList">
+          <%= render "day_trip_list", trip: @trip, dates: @dates %>
         </div>
         <div class="second_column mt-4">
           <section class="trip-activities-list" data-sortable-target="list">
