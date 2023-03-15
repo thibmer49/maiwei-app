@@ -27,7 +27,7 @@ class TripsController < ApplicationController
   end
 
   def new
-    @trip = Trip.new
+    @trip = Trip.new()
     @activities = params[:query].present? ? Activity.where(city: params[:query].capitalize) : Activity.all
     # authorize @trip
     @trip.category_list.add(params[:activity][:categories]) if params[:activity].present?
@@ -99,6 +99,6 @@ class TripsController < ApplicationController
   end
 
   def trip_params
-    params.require(:trip).permit(:user_id, :budget, :starting_date, :ending_date, :category_list, :photo, activity_ids: [])
+    params.require(:trip).permit(:user_id, :budget, :starting_date, :ending_date, :category_list, :photo, :trip_name, activity_ids: [])
   end
 end
