@@ -1,0 +1,5 @@
+meta_product_name: "Maïweï"
+meta_title: "Maïweï | Planifiez et organisez vos voyages facilement"
+meta_description: "Organisez vos voyages en toute simplicité avec MaiweiApp. Découvrez des activités, créez des itinéraires personnalisés et partagez vos expériences avec vos amis et votre famille. Essayez MaiweiApp dès aujourd'hui !"
+meta_image: "og-img.jpg" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards
