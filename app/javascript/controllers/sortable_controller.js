@@ -10,7 +10,7 @@ export default class extends Controller {
   }
 
   listTargetConnected(list) {
-    // console.log("sortable connected!")
+    console.log("sortable connected!")
 
     Sortable.create(list, {
       group: 'shared',

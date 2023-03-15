@@ -1,6 +1,6 @@
 
-<div data-controller="timeline-update" class="card-trip-wrapper" data-url="<%= trip_activity_path(trip_activity.id) %>">
-  <p data-timeline-update-target="time">
+<div class="card-trip-wrapper" data-url="<%= trip_activity_path(trip_activity.id) %>">
+  <p>
     <% if trip_activity.start_at %>
       <strong>De <%= trip_activity.start_at.strftime('%Hh%M') %> à <%= trip_activity.end_at.strftime('%Hh%M') %></strong>
     <% end %>

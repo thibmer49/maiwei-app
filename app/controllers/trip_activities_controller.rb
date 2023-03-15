@@ -13,7 +13,7 @@ class TripActivitiesController < ApplicationController
     end
     # 3. Si aucune, je précise que la trip_activity commencera le matin
     if date_trip_activities.blank?
-      @trip_activity.start_at = @date.beginning_of_day + 8.hours
+      @trip_activity.start_at = @date.beginning_of_day + 9.hours
     else
       # 4. Si il y en a, Je dois vérifie s'il y a de la place sur ce jour
       remaining_hours = remaining_hours(date_trip_activities)
@@ -49,7 +49,7 @@ class TripActivitiesController < ApplicationController
   end
 
   def all_day_hours
-    get_hours(@date.beginning_of_day + 8.hours, @date.beginning_of_day + 21.hours)
+    get_hours(@date.beginning_of_day + 9.hours, @date.beginning_of_day + 22.hours)
   end
 
   def get_hours(start_at, end_at)
