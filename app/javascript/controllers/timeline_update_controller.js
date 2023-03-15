@@ -14,8 +14,9 @@ export default class extends Controller {
     const url = `${event.item.dataset.url}?date=${date}`;
     const times = this.timeTargets
     event.preventDefault()
-    times.forEach((time) =>
+    // times.forEach((time) =>
     console.log(url)
+
     fetch(url, {
       method: "PATCH",
       headers: { "X-CSRF-TOKEN": this.token }

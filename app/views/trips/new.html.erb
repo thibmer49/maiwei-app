@@ -1,10 +1,10 @@
 
-<div class="container" data-controller="activities-update">
+<div class="container" data-controller="activities-update slider">
   <h1 class="text-blue mt-3">Parlez moi de votre futur séjour</h1>
 
   <%= simple_form_for @trip, data: { controller: 'flatpickr' } do |f| %>
     <%= f.label "Choisissez votre destination ✈️", id: "label-destination"%>
-    <%= f.text_field :query, class: "form-control", placeholder:
+    <%= f.text_field :trip_name, class: "form-control", placeholder:
                       "Entrez le nom d'une ville", value: params[:query],
                       data: {
                           activities_update_target: "input",
@@ -13,21 +13,22 @@
     <br>
     <%= f.input :starting_date, label: "A partir du :", as: :string, input_html: { id: "starting_date", data: { flatpickr_target: "startingDate" } }, wrapper_html: { class: 'flatpickr-input' } %>
     <%= f.input :ending_date, label: "Jusqu'au :", as: :string, input_html: { id: "ending_date", data: { flatpickr_target: "endingDate" } }, wrapper_html: { class: 'flatpickr-input' } %>
-
-    <%= f.input :budget, label: 'Quel budget souhaitez-vous ne pas dépasser ?', placeholder: '300€' %>
+    <br>
+    <%= f.label "Quel budget souhaitez-vous ne pas dépasser ?" %>
 
     <%# SLIDER %>
-     <div class="slider-container" data-controller="slider">
-      <div class="slider-labels">
-        <span class="min-value">0</span>
-        <span class="max-value">1000</span>
-      </div>
+     <div class="slider-container">
       <div class="slider-input">
         <input type="range" min="0" max="1000" step="50" data-slider-target="range" data-action="input->slider#updateValue">
       </div>
-      <div class="slider-value" data-slider-target="value"></div>
+      <div class="slider-labels">
+        <span class="min-value">0 €</span>
+        <span class="max-value">1 000 €</span>
+      </div>
     </div>
     <%# SLIDER %>
+
+    <%= f.input :budget, placeholder: '300€', input_html: { data: { slider_target: "budget" } } %>
 
     <h5 class="text-blue">Quel type d'activités souhaitez-vous faire ?</h5>
     <section class="activities-filter mb-4" data-url="<%= filter_activities_trips_path %>" data-activities-update-target="form">
