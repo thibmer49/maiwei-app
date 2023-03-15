@@ -10,11 +10,14 @@ application.register("activities-update", ActivitiesUpdateController)
 import FlatpickrController from "./flatpickr_controller"
 application.register("flatpickr", FlatpickrController)
 
-import SliderController from "./slider_controller"
-application.register("slider", SliderController)
-
 import MapController from "./map_controller"
 application.register("map", MapController)
 
+import SliderController from "./slider_controller"
+application.register("slider", SliderController)
+
 import SortableController from "./sortable_controller"
 application.register("sortable", SortableController)
+
+import TimelineUpdateController from "./timeline_update_controller"
+application.register("timeline-update", TimelineUpdateController)
