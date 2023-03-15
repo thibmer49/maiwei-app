@@ -30,9 +30,15 @@ class TripActivitiesController < ApplicationController
 
     @trip_activity.save
 
+    dates = (@trip.starting_date..@trip.ending_date).to_a
+
+    @dates = dates.map do |date|
+      [date, TripActivity.find_trip_activities(@trip.id, date).to_a]
+    end
+
     respond_to do |format|
       format.html # Follow regular flow of Rails
-      format.text { render partial: , locals: {trip_activity: @trip_activity}, formats: [:html] }
+      format.text { render partial: "trips/day_trip_list", locals: { trip: @trip, dates: @dates }, formats: [:html] }
     end
   end
 
