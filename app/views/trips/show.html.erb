@@ -20,12 +20,13 @@
               <%= render "trips/trip_activity_card", trip_activity: trip_activity %>
             <% end %>
           </section>
-          <div class="sticky" style="width: 500px; height: 500px;"
-                data-controller="map"
-                data-map-markers-value="<%= @markers.to_json %>"
-                data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-          </div>
         </div>
+        <div class="third_column">
+          <div class="map-card-trip" style="width: 500px; height: 500px;"
+                  data-controller="map"
+                  data-map-markers-value="<%= @markers.to_json %>"
+                  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+            </div></div>
       </div>
 
     </div>
