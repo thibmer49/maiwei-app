@@ -21,6 +21,3 @@ application.register("slider", SliderController)
 
 import SortableController from "./sortable_controller"
 application.register("sortable", SortableController)
-
-import TimelineUpdateController from "./timeline_update_controller"
-application.register("timeline-update", TimelineUpdateController)
