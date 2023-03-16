@@ -113,9 +113,9 @@
 
 
 .card_activity_h3 {
-  font-size: 25px;
-  font-weight: normal;
-
+  font-size: 35px;
+  font-weight:400;
+  letter-spacing: 3px;
   color: black;
   text-align: center;
 }
@@ -179,6 +179,7 @@
   flex-direction: column;
   height: 100%;
   text-align: center;
+  z-index: 1;
 }
 
 .activity_tuto_description {
