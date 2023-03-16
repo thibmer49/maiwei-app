@@ -1,3 +1,1 @@
- <%= cl_image_tag activity.photos.first.key, crop: :fill, class:"img-fluid" %>
-<h2 class="text-center mt-2"><%= activity.name %></h2>
-<p><%= activity.average_rating %></p>
+<%= render "activities/activity-show", activity: activity %>

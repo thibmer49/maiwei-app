@@ -1,0 +1,19 @@
+.trip-activity-popup {
+  border-radius: 6px;
+  overflow: hidden;
+
+  .mapboxgl-popup-content {
+    padding: 0;
+    height: 320px;
+    overflow-y: auto;
+  }
+
+  .carousel-inner {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+  }
+
+  .carousel-inner img {
+    object-fit: cover;
+  }
+}
