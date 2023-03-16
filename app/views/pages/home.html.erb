@@ -2,7 +2,7 @@
 
   <div class="banner position-relative">
     <div class="wrapper">
-<%= video_tag("monaco-31661.mp4", autoplay: true, loop: true, muted: true, playsinline: true, style: "width: 100%; object-fit: cover;" ) %>
+      <%= video_tag("monaco-31661.mp4", autoplay: true, loop: true, muted: true, playsinline: true, style: "width: 100%; object-fit: cover;" ) %>
     </div>
 
     <div class="container p-5 position-absolute">
@@ -25,11 +25,15 @@
       </div>
     </div>
   </div>
-  <%# END SEARCH BAR %>
 
 
-  <div class="bg-white p-4">
-      <h3 class="card_activity_h3" >Partez à la découverte du monde</h3>
+  <div class="bg-white p-4 home-background" data-controller="homepage">
+    <i class="fa-solid fa-plae" data-homepage-target="plane" id="plane"></i>
+    <div data-homepage-target="path" id="path">
+      <div class="dashed-line"></div>
+    </div>
+
+    <h3 class="card_activity_h3" >Partez à la découverte du monde</h3>
     <div class="activity-cards-container p-4">
       <div class="card_activity_tuto">
         <div class="card_name">

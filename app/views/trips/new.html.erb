@@ -3,35 +3,43 @@
   <h1 class="text-blue mt-3">Parlez moi de votre futur séjour</h1>
 
   <%= simple_form_for @trip, data: { controller: 'flatpickr' } do |f| %>
-    <%= f.label "Choisissez votre destination ✈️", id: "label-destination"%>
-    <%= f.text_field :trip_name, class: "form-control", placeholder:
-                      "Entrez le nom d'une ville", value: params[:query],
-                      data: {
-                          activities_update_target: "input",
-                          action: "keyup->activities-update#update"
-                        } %>
-    <br>
-    <%= f.input :starting_date, label: "A partir du :", as: :string, input_html: { id: "starting_date", data: { flatpickr_target: "startingDate" } }, wrapper_html: { class: 'flatpickr-input' } %>
-    <%= f.input :ending_date, label: "Jusqu'au :", as: :string, input_html: { id: "ending_date", data: { flatpickr_target: "endingDate" } }, wrapper_html: { class: 'flatpickr-input' } %>
-    <br>
-    <%= f.label "Quel budget souhaitez-vous ne pas dépasser ?" %>
-
-    <%# SLIDER %>
-     <div class="slider-container">
-      <div class="slider-input">
-        <input type="range" min="0" max="1000" step="50" data-slider-target="range" data-action="input->slider#updateValue">
-      </div>
-      <div class="slider-labels">
-        <span class="min-value">0 €</span>
-        <span class="max-value">1 000 €</span>
+    <div class="form-container">
+      <div class="form-groups">
+        <div class="form-group">
+          <%= f.label "Choisissez votre destination ✈️", id: "label-destination"%>
+          <%= f.text_field :trip_name, class: "form-control", placeholder:
+                            "Entrez le nom d'une ville", value: params[:query],
+                            data: {
+                                activities_update_target: "input",
+                                action: "keyup->activities-update#update"
+                              } %>
+        </div>
+        <div class="form-group">
+          <%= f.input :starting_date, label: "A partir du :", as: :string, input_html: { id: "starting_date", data: { flatpickr_target: "startingDate" } }, wrapper_html: { class: 'flatpickr-input' } %>
+        </div>
+        <div class="form-group">
+          <%= f.input :ending_date, label: "Jusqu'au :", as: :string, input_html: { id: "ending_date", data: { flatpickr_target: "endingDate" } }, wrapper_html: { class: 'flatpickr-input' } %>
+        </div>
+        <div class="form-group">
+          <%= f.label "Quel est votre budget ?" %>
+          <span class="budget" data-slider-target="number">500 €</span>
+          <%= f.input :budget, as: :hidden, placeholder: 'Faites glisseer le curseur', label: false, input_html: { data: { slider_target: "budget" } } %>
+          <%# SLIDER %>
+          <div class="slider-container">
+            <div class="slider-input">
+              <input type="range" min="0" max="1000" step="50" data-slider-target="range" data-action="input->slider#updateValue">
+            </div>
+            <div class="slider-labels">
+              <span class="min-value">0 €</span>
+              <span class="max-value">1 000 €</span>
+            </div>
+          </div>
+          <%# SLIDER %>
+        </div>
       </div>
     </div>
-    <%# SLIDER %>
-
-    <%= f.input :budget, placeholder: '300€', input_html: { data: { slider_target: "budget" } } %>
-
-    <h5 class="text-blue">Quel type d'activités souhaitez-vous faire ?</h5>
-    <section class="activities-filter mb-4" data-url="<%= filter_activities_trips_path %>" data-activities-update-target="form">
+    <h5 class="text-blue" id="all-tags-trip">Quel type d'activités souhaitez-vous faire ?</h5>
+    <section class="activities-filter mb-4 "id="all-tags-trip" data-url="<%= filter_activities_trips_path %>" data-activities-update-target="form">
       <%= collection_check_boxes(:activity, :categories, ActsAsTaggableOn::Tag.for_context(:categories), :name, :name, { include_hidden: false }, { class: "tag-selector", data: { activities_update_target: "checkbox", action: "change->activities-update#update"} }) %>
       <br>
     </section>

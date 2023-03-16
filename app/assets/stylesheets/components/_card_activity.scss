@@ -86,6 +86,7 @@
     position: absolute;
     left: 50%;
     transform: translate(-50%, -50%);
+    align-items: center;
   }
 }
 
@@ -114,7 +115,7 @@
 .card_activity_h3 {
   font-size: 25px;
   font-weight: normal;
-  margin: 0px auto 40px;
+
   color: black;
   text-align: center;
 }

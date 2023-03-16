@@ -10,6 +10,9 @@ application.register("activities-update", ActivitiesUpdateController)
 import FlatpickrController from "./flatpickr_controller"
 application.register("flatpickr", FlatpickrController)
 
+import HomepageController from "./homepage_controller"
+application.register("homepage", HomepageController)
+
 import MapController from "./map_controller"
 application.register("map", MapController)
 
