@@ -488,6 +488,26 @@ activity19 = Activity.create!(
   activity19.photos.attach(io: file, filename: "#{activity19.name.downcase.gsub(' ', '_')}_#{index + 1}.jpg", content_type: "image/jpeg")
 end
 
+puts "Creating activity #20..."
+activity19 = Activity.create!(
+  average_rating: 4.6,
+  opening_hour: DateTime.now.beginning_of_day,
+  closing_hour: DateTime.now.end_of_day,
+  name: "The Shard",
+  address: "32 London Bridge St, London SE1 9SG, United Kingdom",
+  description: "The Shard est un gratte-ciel de 310 mètres de haut, situé dans l'arrondissement de Southwark, sur la rive sud de la Tamise et face à la Cité de Londres. Le belvédère de l'édifice, connu sous le nom de “The View”, ainsi que le London Eye, offrent les meilleures vues panoramiques de Londres.",
+  website: "https://www.the-shard.com",
+  city: "Londres",
+  country: "Royaume-Uni",
+  duration: 1.0
+)
+["https://www.shaftesburyhotels.com/blog/wp-content/uploads/2023/02/The-Shard.jpg",
+  "https://www.civitatis.com/f/reino-unido/londres/galeria/big/the-shard-tower-bridge.jpg",
+  "https://www.theviewfromtheshard.com/content/uploads/2020/12/17-Night-view-across-river-770x513.jpg"].each_with_index do |image_url, index|
+  file = URI.open(image_url)
+  activity20.photos.attach(io: file, filename: "#{activity20.name.downcase.gsub(' ', '_')}_#{index + 1}.jpg", content_type: "image/jpeg")
+end
+
 
   activity1.category_list.add("Sites historiques", "Monuments et points d'intérêt")
   activity1.save
@@ -527,6 +547,8 @@ end
   activity18.save
   activity19.category_list.add("Monuments et points d'intérêt", "Sites historiques")
   activity19.save
+  activity20.category_list.add("Monuments et points d'intérêt")
+  activity20.save
 
 puts "#{Activity.all.count} activities created"
 
