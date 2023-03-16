@@ -15,7 +15,11 @@
                 <div class="all-description">
                   <p class="rating"><i class="fa-solid fa-star"></i><%= activity.average_rating%>/5</p>
                   <p class="duration"><i class="fa-solid fa-stopwatch"></i><%= activity.duration%>h</p>
+                   <% if activity.price_per_visitor.nil? %>
+                    <p class="price mb-0">Gratuit</p>
+                  <% else %>
                   <p class="price"><i class="fa-solid fa-coins"></i> <%= activity.price_per_visitor %>€</p>
+                  <% end %>
                 </div>
                 <p class="address"><i class="fa-solid fa-location-pin"></i><%= truncate(activity.address, length: 80, separator: ' ', omission: '...') %></p>
                 <p class="description"><%= activity.description %></p>
