@@ -24,3 +24,29 @@
 
 
 }
+
+// POUR LE TRACE DE L'AVION SUR LA HOMEPAGE
+
+
+.home-background {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+}
+
+#plane {
+  position: absolute;
+  font-size: 4rem;
+}
+
+#path {
+  position: absolute;
+  overflow: hidden;
+}
+
+.dashed-line {
+  position: absolute;
+  top: 50%;
+  border-top: 1px dashed #16697A;
+}
