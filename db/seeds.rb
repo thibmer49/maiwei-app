@@ -489,7 +489,7 @@ activity19 = Activity.create!(
 end
 
 puts "Creating activity #20..."
-activity19 = Activity.create!(
+activity20 = Activity.create!(
   average_rating: 4.6,
   opening_hour: DateTime.now.beginning_of_day,
   closing_hour: DateTime.now.end_of_day,
