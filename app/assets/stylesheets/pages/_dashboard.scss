@@ -1,10 +1,24 @@
-.first-column {
+
+.card_dashboard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1em;
+}
+.rounded-circle {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin-bottom: 25px;
+}
+
+  .first-column {
+  height: 50%;
   margin: 20px;
   padding: 20px;
   background-color: #16697A;
   border-radius: 15px;
   box-shadow: 5px 5px 5px grey;
-  width: 160px;
+  width: 100%;
 }
 
 .second-column {
@@ -14,14 +28,16 @@
 
 .third-column {
   padding: 20px;
+  text-align: center;
 }
 
 .second-column-trips {
+  height: 100%;
   padding: 20px;
-  width: 500px;
   background-color: #98C1D9;
   border-radius: 15px;
   box-shadow: 5px 5px 5px grey;
+  width: 100%
 }
 
 .second-column-trip {
@@ -31,13 +47,47 @@
 
 }
 
-.third-column-map {
+.third-column-trips {
+  height: 100%;
+  padding: 20px;
+  background-color: #98C1D9;
+  border-radius: 15px;
+  box-shadow: 5px 5px 5px grey;
+  width: 100%
+}
+.third-column-trip {
   padding: 20px;
   background-color: #E0FBFC;
   border-radius: 15px;
+
 }
 
-.hello {
-  margin-top: 15px;
-  text-align: center;
+.third-column-map {
+  padding: 20px;
+  width: 500px;
+  background-color: #98C1D9;
+  border-radius: 15px;
+  box-shadow: 5px 5px 5px grey;
+}
+
+
+.card-trip-dashboard {
+  background-color: white;
+  margin-top: 3px;
+  width: 305px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  align-items: center;
+  cursor: move;
+  padding: 10px;
+}
+.card-trip-dashboard h3 {
+  background-color:#ffa62b;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.card-trip-dashboard p {
+  font-size: smaller;
 }
