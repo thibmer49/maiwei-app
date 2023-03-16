@@ -4,26 +4,27 @@
           <div class="list-group list-group-horizontal float-end">
             <p><%= link_to "Modifier mon séjour", edit_trip_path(@trip), class:'text-decoration-none btn btn-blue me-4' %></p>
             <p><%= link_to "Sauvegarder mon séjour", "#", class:'text-decoration-none btn btn-blue me-4' %></p>
-            <p><%= link_to "Retour à l'accueil", root_path, class:'text-decoration-none btn btn-blue me-4'%></p>
           </div>
       <h1 >Votre séjour à <%= @trip.trip_name %></h1>
       <h4>Du <%= @starting_date %> au <%= @ending_date %></h4>
-      <h4>Budget : <%= @trip.budget %>€</h4>
+        <h4>Budget : <%= @trip.budget %>€</h4>
       <h6>Vous pouvez désormais déplacer chaque étape de votre programme en fonction de votre préférence.</h6>
-      <div class="d-flex align-item-center" data-controller="sortable">
+      <div class="align-item-center" data-controller="sortable">
+        <div class="second_column mt-3">
+          <section class="trip-activities-list d-flex" data-sortable-target="list">
+            <% @trip.trip_activities.where("start_at IS NULL").each do |trip_activity| %>
+              <%= render "trips/trip_activity_todrop", trip_activity: trip_activity %>
+            <% end %>
+          </section>
+        </div>
         <div class="first_column" data-sortable-target="dayTripList">
           <%= render "day_trip_list", trip: @trip, dates: @dates %>
         </div>
-        <div class="second_column mt-4">
-          <section class="trip-activities-list" data-sortable-target="list">
-            <% @trip.trip_activities.where("start_at IS NULL").each do |trip_activity| %>
-              <%= render "trips/trip_activity_card", trip_activity: trip_activity %>
-            <% end %>
-          </section>
-          <div class="sticky" style="width: 500px; height: 500px;"
-                data-controller="map"
-                data-map-markers-value="<%= @markers.to_json %>"
-                data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+        <div class="third_column">
+          <div class="map-card-trip" style="width: 1000px; height: 500px;"
+                  data-controller="map"
+                  data-map-markers-value="<%= @markers.to_json %>"
+                  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
           </div>
         </div>
       </div>

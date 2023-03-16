@@ -19,3 +19,17 @@
   padding: 10px 30px;
   border: none;
 }
+
+.btn-default {
+  align-items: center;
+  content: "\f002";
+  font-size: 30px;
+  color: #16697A;
+  justify-content: center;
+  padding: 5px 5px 5px;
+  margin-top: 10px;
+}
+
+.btn-default:hover {
+  color: #489FB5;
+}

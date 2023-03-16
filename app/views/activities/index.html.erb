@@ -2,19 +2,23 @@
   <h1 class="text-center">Que souhaitez-vous découvrir ?</h1>
   <%# SEARCH BAR %>
   <div class="container my-3 mt-4" data-controller="search">
-    <div class="d-flex justify-content-between mt-3 mb-4">
-      <%= form_with url: activities_path, method: :get, class: "d-flex justify-content-start mt-3 mb-4" do %>
-        <%= text_field_tag :query,
-          params[:query],
-          class: "form-control",
-          placeholder: "Ville à visiter",
-          data: { action: "keyup->search#search", search_target: "input" }
-        %>
-        <%= submit_tag "Recherchez", class: "btn btn-destination" %>
-      <% end %>
-      <div class="d-flex justify-content-end mt-3 mb-4">
-      <%= link_to "Créez votre séjour", new_trip_path, class: "btn btn-destination", data: { search_target: "cta" } %>
+    <div class="search-icon">
+      <div class="d-flex justify-content-between align-items-center mt-3 mb-4">
+        <%= form_with url: activities_path, method: :get, class: "d-flex justify-content-start mt-3 mb-4" do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control-icon",
+            placeholder: "Ville à visiter",
+            data: { action: "keyup->search#search", search_target: "input" }
+          %>
+          <%= button_tag type: "submit", class: "btn btn-default" do %>
+            <i class="fa-solid fa-magnifying-glass"></i>
+          <% end %>
+        <% end %>
+        <%= link_to "Créez votre séjour", new_trip_path, class: "btn btn-destination", data: { search_target: "cta" } %>
+      </div>
     </div>
+
   </div>
     <%# FIN SEARCH BAR %>
   <%# Modal%>
@@ -22,7 +26,7 @@
   <div class="container my-3 mt-4">
     <div class="category-selected my-4">
       <div class=category-name-selected>
-        <h2>Musées</h2>
+        <h1>Musées</h1>
       </div>
       <div class="cards my-4">
         <% @activities.tagged_with("Musées").each do |activity| %>
@@ -32,7 +36,7 @@
     </div>
     <div class="category-selected my-4">
       <div class="category-name-selected">
-        <h2>Monuments et points d'intérêt</h2>
+        <h1>Monuments et points d'intérêt</h1>
       </div>
       <div class="cards my-4">
         <% @activities.tagged_with("Monuments et points d'intérêt").each do |activity| %>
@@ -42,7 +46,7 @@
     </div>
     <div class="category-selected my-4">
       <div class="category-name-selected">
-        <h2>Sites historiques</h2>
+        <h1>Sites historiques</h1>
       </div>
       <div class="cards my-4">
         <% @activities.tagged_with("Sites historiques").each do |activity| %>
@@ -52,7 +56,7 @@
     </div>
     <div class="category-selected my-4">
       <div class="category-name-selected">
-        <h2>Marchés</h2>
+        <h1>Marchés</h1>
       </div>
       <div class="cards my-4">
         <% @activities.tagged_with("Marchés").each do |activity| %>
@@ -62,7 +66,7 @@
     </div>
     <div class="category-selected my-4">
       <div class="category-name-selected">
-        <h2>Théâtres</h2>
+        <h1>Théâtres</h>
       </div>
       <div class="cards my-4">
         <% @activities.tagged_with("Théâtres").each do |activity| %>
