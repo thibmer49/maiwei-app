@@ -6,8 +6,9 @@
             <p><%= link_to "Sauvegarder mon séjour", "#", class:'text-decoration-none btn btn-blue me-4' %></p>
           </div>
       <h1 >Votre séjour à <%= @trip.trip_name %></h1>
-      <h4>Du <%= @trip.formated_starting_date %> au <%= @trip.formated_end_date %></h4>
+      <h3>Du <%= @trip.formated_starting_date %> au <%= @trip.formated_end_date %></h3>
         <h4>Budget : <%= @trip.budget %> €</h4>
+        <h4>Il vous restera <strong><%= @budget_updated.to_i %>€</strong></h4>
       <h6>Vous pouvez désormais déplacer chaque étape de votre programme en fonction de votre préférence.</h6>
       <div class="align-item-center" data-controller="sortable">
         <div class="second_column mt-3">
@@ -17,16 +18,16 @@
             <% end %>
           </section>
         </div>
-        <div class="first_column" data-sortable-target="dayTripList">
-          <%= render "day_trip_list", trip: @trip, dates: @dates %>
-        </div>
-        <div class="third_column">
-          <div class="map-card-trip" style="width: 1000px; height: 500px;"
-                  data-controller="map"
-                  data-map-markers-value="<%= @markers.to_json %>"
-                  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-          </div>
-        </div>
+    <div class="first_column" data-sortable-target="dayTripList">
+      <%= render "day_trip_list", trip: @trip, dates: @dates %>
+    </div>
+  <div class="third_column">
+    <div class="map-card-trip" style="width: 1200px; height: 500px;"
+            data-controller="map"
+            data-map-markers-value="<%= @markers.to_json %>"
+            data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
       </div>
 
     </div>

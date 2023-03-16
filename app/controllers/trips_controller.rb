@@ -71,6 +71,8 @@ class TripsController < ApplicationController
       [date, TripActivity.find_trip_activities(@trip.id, date).to_a]
     end
 
+    @total_cost = @trip.activities.sum(:price_per_visitor)
+    @budget_updated = (@trip.budget - @trip.activities.sum(:price_per_visitor) )
   end
 
   def edit
@@ -101,10 +103,5 @@ class TripsController < ApplicationController
 
   def trip_params
     params.require(:trip).permit(:user_id, :budget, :starting_date, :ending_date, :category_list, :photo, :trip_name, activity_ids: [])
-  end
-
-  def total_cost
-    sum = 0
-    sum += @trip_activity.trip.activity.price_per_visitor
   end
 end

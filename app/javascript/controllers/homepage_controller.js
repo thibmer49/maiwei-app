@@ -11,23 +11,20 @@ export default class extends Controller {
   animatePlane() {
     const plane = this.planeTarget;
     const path = this.pathTarget;
-    const dashedLine = document.createElement("div");
-    dashedLine.classList.add("dashed-line");
-
-    path.appendChild(dashedLine);
 
     const windowHeight = window.innerHeight;
     const windowWidth = window.innerWidth;
 
-    const initialTop = windowHeight * 0.1;
+    const initialTop = windowHeight * 0.609;
     const initialLeft = -plane.clientWidth;
 
-    const finalTop = windowHeight * 0.7;
+    const finalTop = windowHeight * 0.6;
     const finalLeft = windowWidth;
 
-    const duration = 10000;
+    const duration = 20000;
 
     let progress = 0;
+    let lastDash = 0;
 
     path.style.top = `${initialTop}px`;
 
@@ -47,9 +44,19 @@ export default class extends Controller {
         plane.style.top = `${top}px`;
         plane.style.left = `${left}px`;
 
-        // Animer le tracé en pointillés
-        dashedLine.style.left = `${left - 100}px`;
-        dashedLine.style.width = `${left + 100}px`;
+        if (left > windowWidth * 0.75 - 60) {
+          plane.style.zIndex = "2"; // Avion et tracé derrière la dernière carte
+          path.style.zIndex = "2";
+        } else if (left > windowWidth * 0.5 - 30) {
+          plane.style.zIndex = "0"; // Avion et tracé devant la dernière carte
+          path.style.zIndex = "0";
+        } else if (left > windowWidth * 0.25 - 30) {
+          plane.style.zIndex = "2"; // Avion et tracé derrière la dernière carte
+          path.style.zIndex = "2";
+        } else {
+          plane.style.zIndex = "0"; // Avion et tracé devant la dernière carte
+          path.style.zIndex = "0";
+        }
 
         requestAnimationFrame(updateAnimation);
       } else {
@@ -60,6 +67,7 @@ export default class extends Controller {
         requestAnimationFrame(updateAnimation);
       }
     };
+
 
     updateAnimation();
   }

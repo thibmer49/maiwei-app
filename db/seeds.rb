@@ -453,7 +453,7 @@ activity18 = Activity.create!(
   opening_hour: DateTime.now.beginning_of_day + 8.hour,
   closing_hour: DateTime.now.beginning_of_day + 17.hour,
   name: "Tower Bridge",
-  address: "Tower Bridge Rd, London SE1 2UP, United Kingdom",
+  address: "Tower Bridge Rd, Londres, Royaume-Uni",
   description: "Ce pont est célèbre dans le monde entier grâce à son architecture très particulière, de style néogothique. Il est situé près de la tour de Londres dont il tire son nom.",
   website: "http://www.towerbridge.org.uk",
   city: "Londres",
@@ -474,7 +474,7 @@ activity19 = Activity.create!(
   closing_hour: DateTime.now.beginning_of_day + 16.hour,
   closed_day: [6, 7],
   name: "Palais de Westminster et Big Ben",
-  address: "3 St Margaret St, London SW1P 3JX, United Kingdom",
+  address: "3 St Margaret St, Londres, Royaume-Uni",
   description: "Le palais de Westminster, également désigné sous le nom de Chambres du Parlement (Houses of Parliament), est le lieu où siège le Parlement du Royaume-Uni. Big Ben est le surnom de la grande cloche se trouvant au sommet de la tour horloge du palais de Westminster. Il s'agit d'un symbole de la ville de Londres.",
   website: "https://www.parliament.uk/about/living-heritage/building/palace/",
   city: "Londres",
@@ -489,12 +489,12 @@ activity19 = Activity.create!(
 end
 
 puts "Creating activity #20..."
-activity19 = Activity.create!(
+activity20 = Activity.create!(
   average_rating: 4.6,
   opening_hour: DateTime.now.beginning_of_day,
   closing_hour: DateTime.now.end_of_day,
   name: "The Shard",
-  address: "32 London Bridge St, London SE1 9SG, United Kingdom",
+  address: "32 London Bridge St, Londres, Royaume-Uni",
   description: "The Shard est un gratte-ciel de 310 mètres de haut, situé dans l'arrondissement de Southwark, sur la rive sud de la Tamise et face à la Cité de Londres. Le belvédère de l'édifice, connu sous le nom de “The View”, ainsi que le London Eye, offrent les meilleures vues panoramiques de Londres.",
   website: "https://www.the-shard.com",
   city: "Londres",
@@ -508,6 +508,25 @@ activity19 = Activity.create!(
   activity20.photos.attach(io: file, filename: "#{activity20.name.downcase.gsub(' ', '_')}_#{index + 1}.jpg", content_type: "image/jpeg")
 end
 
+puts "Creating activity #21..."
+activity21 = Activity.create!(
+  average_rating: 4.6,
+  opening_hour: DateTime.now.beginning_of_day + 9.hour,
+  closing_hour: DateTime.now.beginning_of_day + 17.hour,
+  name: "National Gallery",
+  address: "St Martin's Place, Londres, Royaume-Uni",
+  description: "Le musée abrite les portraits d'importants personnages historiques britanniques, sélectionnés en fonction de la notoriété de la personne représentée. Les collections comprennent des peintures, des gravures, des photographies, des caricatures, des dessins et des sculptures.",
+  website: "https://www.npg.org.uk",
+  city: "Londres",
+  country: "Royaume-Uni",
+  duration: 2.0
+)
+["https://lp-cms-production.imgix.net/image_browser/national%20portrait%20gallery.jpg",
+  "https://npg.org.uk/assets/image-cache//npg-image-crops/mobile.7172ffdf.1920_npg_forecourt.0065591f.jpg",
+  "https://cdn.britannica.com/28/145328-050-CB35D73F/National-Portrait-Gallery-London.jpg"].each_with_index do |image_url, index|
+  file = URI.open(image_url)
+  activity21.photos.attach(io: file, filename: "#{activity21.name.downcase.gsub(' ', '_')}_#{index + 1}.jpg", content_type: "image/jpeg")
+end
 
   activity1.category_list.add("Sites historiques", "Monuments et points d'intérêt")
   activity1.save
@@ -549,6 +568,8 @@ end
   activity19.save
   activity20.category_list.add("Monuments et points d'intérêt")
   activity20.save
+  activity21.category_list.add("Musées")
+  activity21.save
 
 puts "#{Activity.all.count} activities created"
 
