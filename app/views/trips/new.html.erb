@@ -1,6 +1,6 @@
 
 <div class="container" data-controller="activities-update slider">
-  <h1 class="text-blue mt-3">Parlez moi de votre futur séjour</h1>
+  <h1 class="mt-3">Parlez moi de votre futur séjour</h1>
 
   <%= simple_form_for @trip, data: { controller: 'flatpickr' } do |f| %>
     <div class="form-container">
@@ -23,7 +23,7 @@
         <div class="form-group">
           <%= f.label "Quel est votre budget ?" %>
           <span class="budget" data-slider-target="number">500 €</span>
-          <%= f.input :budget, as: :hidden, placeholder: 'Faites glisseer le curseur', label: false, input_html: { data: { slider_target: "budget" } } %>
+          <%= f.input :budget, as: :hidden, label: false, input_html: { data: { slider_target: "budget" } } %>
           <%# SLIDER %>
           <div class="slider-container">
             <div class="slider-input">
