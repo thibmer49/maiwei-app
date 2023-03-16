@@ -1,4 +1,4 @@
-<div class="container my-3 mt-4">
+<div class="container my-3 mt-5">
   <h1 class="text-center">Que souhaitez-vous découvrir ?</h1>
   <%# SEARCH BAR %>
   <div class="container my-3 mt-4" data-controller="search">
@@ -25,8 +25,8 @@
 
   <div class="container my-3 mt-4">
     <div class="category-selected my-4">
-      <div class=category-name-selected>
-        <h1>Musées</h1>
+      <div class="category-name-selected">
+        <h1 class="Musées"><i class="fa-solid fa-landmark"></i> Musées</h1>
       </div>
       <div class="cards my-4">
         <% @activities.tagged_with("Musées").each do |activity| %>
@@ -36,7 +36,7 @@
     </div>
     <div class="category-selected my-4">
       <div class="category-name-selected">
-        <h1>Monuments et points d'intérêt</h1>
+        <h1 class="Monuments et points d'intérêt"><i class="fa-solid fa-location-dot"></i> Monuments et points d'intérêt</h1>
       </div>
       <div class="cards my-4">
         <% @activities.tagged_with("Monuments et points d'intérêt").each do |activity| %>
@@ -46,7 +46,7 @@
     </div>
     <div class="category-selected my-4">
       <div class="category-name-selected">
-        <h1>Sites historiques</h1>
+        <h1 class="Sites historiques"><i class="fa-brands fa-fort-awesome"></i> Sites historiques</h1>
       </div>
       <div class="cards my-4">
         <% @activities.tagged_with("Sites historiques").each do |activity| %>
@@ -56,7 +56,17 @@
     </div>
     <div class="category-selected my-4">
       <div class="category-name-selected">
-        <h1>Marchés</h1>
+        <h1 class="Parcs et jardins"><i class="fa-solid fa-tree"></i> Parcs et jardins</h1>
+      </div>
+      <div class="cards my-4">
+        <% @activities.tagged_with("Parcs et jardins").each do |activity| %>
+          <%= render "activity-selected-category", activity: activity %>
+        <% end %>
+      </div>
+    </div>
+    <div class="category-selected my-4">
+      <div class="category-name-selected">
+        <h1 class="Marchés"><i class="fa-solid fa-store"></i> Marchés</h1>
       </div>
       <div class="cards my-4">
         <% @activities.tagged_with("Marchés").each do |activity| %>
@@ -66,7 +76,7 @@
     </div>
     <div class="category-selected my-4">
       <div class="category-name-selected">
-        <h1>Théâtres</h>
+        <h1 class="Théâtres"><i class="fa-solid fa-masks-theater"></i> Théâtres</h1>
       </div>
       <div class="cards my-4">
         <% @activities.tagged_with("Théâtres").each do |activity| %>

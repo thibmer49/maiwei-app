@@ -22,10 +22,13 @@ class TripActivity < ApplicationRecord
     end
   end
 
+  def formated_date
+    I18n.l(start_at, format: "%A %e %B")
+  end
+
   private
 
   def get_hours(start_at, end_at)
     (start_at.to_i..end_at.to_i).step(30.minutes).to_a.map{|date| Time.at(date).to_datetime }
   end
-
 end

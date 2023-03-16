@@ -1,6 +1,6 @@
 <div class="card-trip-wrapper" data-url="<%= trip_activity_path(trip_activity.id) %>">
   <div class="card-trip-show">
-    <p>
+    <p class="ps-2 pt-1">
       <% if trip_activity.start_at %>
         <strong>De <%= trip_activity.start_at.strftime('%Hh%M') %> à <%= trip_activity.end_at.strftime('%Hh%M') %></strong>
       <% end %>
@@ -11,7 +11,7 @@
          <a href="#"><i class="fa-solid fa-location-dot"></i></a>
        <% end %>
       <% if trip_activity.activity.category_list.include?("Sites historiques") %>
-       <a href="#"><i class="fa-solid fa-fort"></i></a>
+       <a href="#"><i class="fa-brands fa-fort-awesome"></i></a>
        <% end %>
       <% if trip_activity.activity.category_list.include?("Parcs et jardins") %>
           <a href="#"><i class="fa-solid fa-tree"></i></a>

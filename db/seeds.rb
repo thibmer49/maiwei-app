@@ -453,7 +453,7 @@ activity18 = Activity.create!(
   opening_hour: DateTime.now.beginning_of_day + 8.hour,
   closing_hour: DateTime.now.beginning_of_day + 17.hour,
   name: "Tower Bridge",
-  address: "Tower Bridge Rd, London SE1 2UP, United Kingdom",
+  address: "Tower Bridge Rd, Londres, Royaume-Uni",
   description: "Ce pont est célèbre dans le monde entier grâce à son architecture très particulière, de style néogothique. Il est situé près de la tour de Londres dont il tire son nom.",
   website: "http://www.towerbridge.org.uk",
   city: "Londres",
@@ -474,7 +474,7 @@ activity19 = Activity.create!(
   closing_hour: DateTime.now.beginning_of_day + 16.hour,
   closed_day: [6, 7],
   name: "Palais de Westminster et Big Ben",
-  address: "3 St Margaret St, London SW1P 3JX, United Kingdom",
+  address: "3 St Margaret St, Londres, Royaume-Uni",
   description: "Le palais de Westminster, également désigné sous le nom de Chambres du Parlement (Houses of Parliament), est le lieu où siège le Parlement du Royaume-Uni. Big Ben est le surnom de la grande cloche se trouvant au sommet de la tour horloge du palais de Westminster. Il s'agit d'un symbole de la ville de Londres.",
   website: "https://www.parliament.uk/about/living-heritage/building/palace/",
   city: "Londres",
@@ -486,6 +486,26 @@ activity19 = Activity.create!(
   "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/London_-_The_Parliament_-_2779.jpg/1280px-London_-_The_Parliament_-_2779.jpg"].each_with_index do |image_url, index|
   file = URI.open(image_url)
   activity19.photos.attach(io: file, filename: "#{activity19.name.downcase.gsub(' ', '_')}_#{index + 1}.jpg", content_type: "image/jpeg")
+end
+
+puts "Creating activity #20..."
+activity20 = Activity.create!(
+  average_rating: 4.6,
+  opening_hour: DateTime.now.beginning_of_day,
+  closing_hour: DateTime.now.end_of_day,
+  name: "The Shard",
+  address: "32 London Bridge St, Londres, Royaume-Uni",
+  description: "The Shard est un gratte-ciel de 310 mètres de haut, situé dans l'arrondissement de Southwark, sur la rive sud de la Tamise et face à la Cité de Londres. Le belvédère de l'édifice, connu sous le nom de “The View”, ainsi que le London Eye, offrent les meilleures vues panoramiques de Londres.",
+  website: "https://www.the-shard.com",
+  city: "Londres",
+  country: "Royaume-Uni",
+  duration: 1.0
+)
+["https://www.shaftesburyhotels.com/blog/wp-content/uploads/2023/02/The-Shard.jpg",
+  "https://www.civitatis.com/f/reino-unido/londres/galeria/big/the-shard-tower-bridge.jpg",
+  "https://www.theviewfromtheshard.com/content/uploads/2020/12/17-Night-view-across-river-770x513.jpg"].each_with_index do |image_url, index|
+  file = URI.open(image_url)
+  activity20.photos.attach(io: file, filename: "#{activity20.name.downcase.gsub(' ', '_')}_#{index + 1}.jpg", content_type: "image/jpeg")
 end
 
 
@@ -527,6 +547,8 @@ end
   activity18.save
   activity19.category_list.add("Monuments et points d'intérêt", "Sites historiques")
   activity19.save
+  activity20.category_list.add("Monuments et points d'intérêt")
+  activity20.save
 
 puts "#{Activity.all.count} activities created"
 
