@@ -1,29 +1,40 @@
 <div class="container">
-  <div class="d-flex">
-    <div class="first-column">
-      <img src="UserPhoto.png" class="rounded-circle" style="width: 50px; height: 50px; object-fit: cover">
-      <ul class="list-inline">
-        <li><h5>Mes voyages</h5></li>
-        <li><h5>Mes informations personnelles</h5></li>
-      </ul>
-    </div>
-    <div class="second-column">
-      <div class="second-column-trips">
-        <h5>Mes voyages</h5>
-          <% @trips.each do |trip| %>
-          <div class="card-trip-show mt-4">
-            <div class="card-trip-show-info">
-              <h3><%= trip.trip_name %></h3>
-              <p><%= trip.budget %>€</p>
-              <p>Du<%= trip.starting_date %>au <%= trip.ending_date %></p>
-            </div>
-            <p><%= link_to "Détail du voyage", trip_path(trip) %></p>
+  <div class="dashboard-cards-container p-3">
+    <div class="card_dashboard">
+      <div class="d-flex">
+        <div class="first-column">
+          <%= image_tag "UserPhoto.png", class: "rounded-circle"%>
+          <ul class="list-inline">
+            <li><h5>Mes voyages</h5></li>
+            <li><h5>Mes informations personnelles</h5></li>
+          </ul>
+        </div>
+        <div class="second-column">
+          <div class="second-column-trips">
+            <h5>Mes voyages à venir</h5>
+            <% @trips.each do |trip| %>
+              <div class="card-trip-dashboard mt-4">
+                <h3><%= trip.trip_name %></h3>
+                <p><%= trip.budget %> €</p>
+                <p>Du <%= trip.starting_date %> au <%= trip.ending_date %></p>
+                <p><%= link_to "Détail du voyage", trip_path(trip) %></p>
+              </div>
             <% end %>
           </div>
         </div>
-      <h6>Mes futurs voyages</h6>
-      <h6>Mes voyages passés</h6>
-        <%# FIN ITERATION %>
+        <div class="third-column">
+          <div class="third-column-trips">
+            <h5>Mes voyages passés</h5>
+            <% @trips.each do |trip| %>
+              <div class="card-trip-dashboard mt-4">
+                <h3><%= trip.trip_name %></h3>
+                <p><%= trip.budget %> €</p>
+                <p>Du <%= trip.starting_date %> au <%= trip.ending_date %></p>
+                <p><%= link_to "Détail du voyage", trip_path(trip) %></p>
+              </div>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
