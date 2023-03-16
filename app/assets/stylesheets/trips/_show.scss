@@ -1,9 +1,8 @@
 .first_column {
   display: grid;
   flex-grow: 1;
-  grid-gap: 16px;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  margin-right: 1em;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr;
   width: 100%;
 }
 
@@ -46,7 +45,7 @@
 }
 
 .third_column {
-  align-items: center;
+  justify-content: center;
 }
 
 
