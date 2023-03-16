@@ -1,6 +1,6 @@
 <div class="card-trip-wrapper" data-url="<%= trip_activity_path(trip_activity.id) %>">
   <div class="card-trip-show">
-    <p class="ps-2 pt-1">
+    <p class="ps-2 pt-1 mb-0">
       <% if trip_activity.start_at %>
         <strong>De <%= trip_activity.start_at.strftime('%Hh%M') %> à <%= trip_activity.end_at.strftime('%Hh%M') %></strong>
       <% end %>
