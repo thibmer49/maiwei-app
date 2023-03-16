@@ -1,6 +1,6 @@
 <% dates.each do |date| %>
   <section class="day-trip-list">
-    <h3><%= date[0].strftime('%A %-d %B') %></h3>
+    <h2><%= date[0].strftime('%A %-d %B') %></h2>
     <div data-sortable-target="list" data-trip-id="<%= trip.id %>" data-date="<%= date[0] %>">
       <% date[1].each do |trip_activity| %>
           <%= render "trips/trip_activity_card", trip_activity: trip_activity %>

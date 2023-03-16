@@ -1,0 +1,88 @@
+.first_column {
+  display: grid;
+  flex-grow: 1;
+  grid-gap: 16px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin-right: 1em;
+  width: 100%;
+}
+
+// .second_column {
+//   display: grid;
+//   flex-grow: 1;
+//   grid-gap: 10px;
+//   grid-template-columns: 1fr 1fr 1fr 1fr;
+//   margin-right: 1em;
+//   width: 100%;
+// }
+
+.trip-activities-list {
+  display: grid;
+  flex-grow: 1;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-right: 1em;
+  width: 100%;
+  overflow-y: auto;
+  padding-bottom: 1rem;
+}
+
+.card-trip-show-drag {
+  background-color: white;
+  margin-top: 3px;
+  width: 300px;
+  border-radius: 5px;
+  align-items: center;
+  cursor: move;
+}
+
+.card-trip-show-drag a {
+  text-decoration: none;
+  color: #FFA62B;
+}
+
+.card-trip-show-info-drag {
+  padding: 5px
+}
+
+.third_column {
+  align-items: center;
+}
+
+
+
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .cards-trip-show .card-trip-show-drag-trip-show .card-trip-show-drag {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .cards-trip-show .card-trip-show-drag {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .cards-trip-show .card-trip-show-drag {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .cards-trip-show .card-trip-show-drag {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .cards-trip-show .card-trip-show-drag {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

@@ -213,7 +213,7 @@ activity7 = Activity.create!(
   closed_day: 1,
   name: "Musée Sorolla",
   address: "P.º del Gral. Martínez Campos, 37, 28010 Madrid, Espagne",
-  description: "Situé dans un agréable Hotêl Particulier entouré d'un jardin particulier buccolique, le Musée de Sorolla est une maison musée qui conserve encore une grande partie de sa décoration. C'est un véritable plaisir de parcourir les séjours du musée tout en admirant les pièces maîtresses de l'artiste.",
+  description: "Situé dans un agréable hotêl particulier, entouré d'un jardin bucolique, le Musée de Sorolla est une maison musée qui conserve encore une grande partie de sa décoration. C'est un véritable plaisir de parcourir les séjours du musée tout en admirant les pièces maîtresses de l'artiste.",
   phone_number: "+34 913 10 15 84",
   website: "https://www.culturaydeporte.gob.es/msorolla/inicio.html",
   city: "Madrid",
@@ -447,6 +447,48 @@ activity17 = Activity.create!(
   activity17.photos.attach(io: file, filename: "#{activity17.name.downcase.gsub(' ', '_')}_#{index + 1}.jpg", content_type: "image/jpeg")
 end
 
+puts "Creating activity #18..."
+activity18 = Activity.create!(
+  average_rating: 4.7,
+  opening_hour: DateTime.now.beginning_of_day + 8.hour,
+  closing_hour: DateTime.now.beginning_of_day + 17.hour,
+  name: "Tower Bridge",
+  address: "Tower Bridge Rd, London SE1 2UP, United Kingdom",
+  description: "Ce pont est célèbre dans le monde entier grâce à son architecture très particulière, de style néogothique. Il est situé près de la tour de Londres dont il tire son nom.",
+  website: "http://www.towerbridge.org.uk",
+  city: "Londres",
+  country: "Royaume-Uni",
+  duration: 1.5
+)
+["https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Tower_Bridge_London_Feb_2006.jpg/1280px-Tower_Bridge_London_Feb_2006.jpg",
+  "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Tower_Bridge%2CLondon_Getting_Opened_1.jpg/1024px-Tower_Bridge%2CLondon_Getting_Opened_1.jpg",
+  "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Tower.bridge.4.roadtraffic.london.arp.jpg/1024px-Tower.bridge.4.roadtraffic.london.arp.jpg"].each_with_index do |image_url, index|
+  file = URI.open(image_url)
+  activity18.photos.attach(io: file, filename: "#{activity18.name.downcase.gsub(' ', '_')}_#{index + 1}.jpg", content_type: "image/jpeg")
+end
+
+puts "Creating activity #19..."
+activity19 = Activity.create!(
+  average_rating: 4.6,
+  opening_hour: DateTime.now.beginning_of_day + 8.hour,
+  closing_hour: DateTime.now.beginning_of_day + 16.hour,
+  closed_day: [6, 7],
+  name: "Palais de Westminster et Big Ben",
+  address: "3 St Margaret St, London SW1P 3JX, United Kingdom",
+  description: "Le palais de Westminster, également désigné sous le nom de Chambres du Parlement (Houses of Parliament), est le lieu où siège le Parlement du Royaume-Uni. Big Ben est le surnom de la grande cloche se trouvant au sommet de la tour horloge du palais de Westminster. Il s'agit d'un symbole de la ville de Londres.",
+  website: "https://www.parliament.uk/about/living-heritage/building/palace/",
+  city: "Londres",
+  country: "Royaume-Uni",
+  duration: 2.0
+)
+["https://www.shaftesburyhotels.com/blog/wp-content/uploads/2023/02/The-Houses-of-Parliament-Big-Ben.jpg",
+  "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/London_Parlament-20090730-RM-110352.jpg/1024px-London_Parlament-20090730-RM-110352.jpg",
+  "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/London_-_The_Parliament_-_2779.jpg/1280px-London_-_The_Parliament_-_2779.jpg"].each_with_index do |image_url, index|
+  file = URI.open(image_url)
+  activity19.photos.attach(io: file, filename: "#{activity19.name.downcase.gsub(' ', '_')}_#{index + 1}.jpg", content_type: "image/jpeg")
+end
+
+
   activity1.category_list.add("Sites historiques", "Monuments et points d'intérêt")
   activity1.save
   activity2.category_list.add("Parcs et jardins")
@@ -481,6 +523,10 @@ end
   activity16.save
   activity17.category_list.add("Monuments et points d'intérêt", "Théâtres")
   activity17.save
+  activity18.category_list.add("Monuments et points d'intérêt")
+  activity18.save
+  activity19.category_list.add("Monuments et points d'intérêt", "Sites historiques")
+  activity19.save
 
 puts "#{Activity.all.count} activities created"
 
