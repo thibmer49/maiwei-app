@@ -71,7 +71,6 @@ class TripsController < ApplicationController
       [date, TripActivity.find_trip_activities(@trip.id, date).to_a]
     end
 
-
   end
 
   def edit
