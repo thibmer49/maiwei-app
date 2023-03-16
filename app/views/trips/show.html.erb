@@ -6,7 +6,7 @@
             <p><%= link_to "Sauvegarder mon séjour", "#", class:'text-decoration-none btn btn-blue me-4' %></p>
           </div>
       <h1 >Votre séjour à <%= @trip.trip_name %></h1>
-      <h4>Du <%= @starting_date %> au <%= @ending_date %></h4>
+      <h4>Du <%= @trip.formated_starting_date %> au <%= @trip.formated_end_date %></h4>
         <h4>Budget : <%= @trip.budget %>€</h4>
       <h6>Vous pouvez désormais déplacer chaque étape de votre programme en fonction de votre préférence.</h6>
       <div class="align-item-center" data-controller="sortable">
