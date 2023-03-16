@@ -508,6 +508,25 @@ activity20 = Activity.create!(
   activity20.photos.attach(io: file, filename: "#{activity20.name.downcase.gsub(' ', '_')}_#{index + 1}.jpg", content_type: "image/jpeg")
 end
 
+puts "Creating activity #21..."
+activity21 = Activity.create!(
+  average_rating: 4.6,
+  opening_hour: DateTime.now.beginning_of_day + 9.hour,
+  closing_hour: DateTime.now.beginning_of_day + 17.hour,
+  name: "National Gallery",
+  address: "St Martin's Place, Londres, Royaume-Uni",
+  description: "Le musée abrite les portraits d'importants personnages historiques britanniques, sélectionnés en fonction de la notoriété de la personne représentée. Les collections comprennent des peintures, des gravures, des photographies, des caricatures, des dessins et des sculptures.",
+  website: "https://www.npg.org.uk",
+  city: "Londres",
+  country: "Royaume-Uni",
+  duration: 2.0
+)
+["https://lp-cms-production.imgix.net/image_browser/national%20portrait%20gallery.jpg",
+  "https://npg.org.uk/assets/image-cache//npg-image-crops/mobile.7172ffdf.1920_npg_forecourt.0065591f.jpg",
+  "https://cdn.britannica.com/28/145328-050-CB35D73F/National-Portrait-Gallery-London.jpg"].each_with_index do |image_url, index|
+  file = URI.open(image_url)
+  activity21.photos.attach(io: file, filename: "#{activity21.name.downcase.gsub(' ', '_')}_#{index + 1}.jpg", content_type: "image/jpeg")
+end
 
   activity1.category_list.add("Sites historiques", "Monuments et points d'intérêt")
   activity1.save
@@ -549,6 +568,8 @@ end
   activity19.save
   activity20.category_list.add("Monuments et points d'intérêt")
   activity20.save
+  activity21.category_list.add("Musées")
+  activity21.save
 
 puts "#{Activity.all.count} activities created"
 
