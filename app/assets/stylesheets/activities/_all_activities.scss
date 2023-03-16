@@ -1,4 +1,19 @@
-.category-name-selected h1{
-  font-size: 16px;
-  color: black;
+.category-name-selected h1 {
+  i {
+    color: #16697A;
+    font-size: 2rem;
+    position: relative;
+    top: -3px;
+  }
+}
+
+.search-icon form {
+  width: 50%;
+  position: relative;
+  button[type=submit] {
+    position: absolute;
+    right: 0;
+    top: -1px;
+    opacity: 0.4;
+  }
 }
