@@ -1,34 +1,41 @@
-<div class="container mt-5">
-  <div class="row justify-content-center">
-    <div class="col-12 col-md-10 col-lg-12">
-      <div class="list-group list-group-horizontal float-end">
-        <p><%= link_to "Modifier mon séjour", edit_trip_path(@trip), class:'text-decoration-none btn btn-blue me-4' %></p>
-        <p><%= link_to "Sauvegarder mon séjour", "#", class:'text-decoration-none btn btn-blue me-4' %></p>
-      </div>
-      <h1 >Votre séjour à <%= @trip.trip_name %></h1>
-      <h4>Du <%= @trip.formated_starting_date %> au <%= @trip.formated_end_date %></h4>
-      <h4>Budget : <%= @trip.budget %>€</h4>
-      <h4>Il vous restera <strong><%= @budget_updated.to_i %>€</strong></h4>
-      <h6>Vous pouvez désormais déplacer chaque étape de votre programme en fonction de votre préférence.</h6>
-      <div class="align-item-center" data-controller="sortable">
-        <div class="second_column mt-3">
-          <section class="trip-activities-list d-flex" data-sortable-target="list">
-            <% @trip.trip_activities.where("start_at IS NULL").each do |trip_activity| %>
-              <%= render "trips/trip_activity_todrop", trip_activity: trip_activity %>
-            <% end %>
-          </section>
+<div data-controller="map" data-map-markers-value="<%= @markers.to_json %>"
+          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10 col-lg-12">
+        <div class="list-group list-group-horizontal float-end">
+          <p><%= link_to "Modifier mon séjour", edit_trip_path(@trip), class:'text-decoration-none btn btn-blue me-4' %></p>
+          <p><%= link_to "Sauvegarder mon séjour", "#", class:'text-decoration-none btn btn-blue me-4' %></p>
         </div>
-        <div class="first_column" data-sortable-target="dayTripList">
-          <%= render "day_trip_list", trip: @trip, dates: @dates %>
+        <div class="trip-show-main-stats">
+          <h1 >Votre séjour à <%= @trip.trip_name %></h1>
+          <h4>Du <%= @trip.formated_starting_date %> au <%= @trip.formated_end_date %></h4>
+          <h4>Budget : <%= @trip.budget %>€</h4>
+          <h4>Il vous restera <strong><%= @budget_updated.to_i %>€</strong></h4>
+          <div class="toggler">
+            <%= check_box_tag :show_map, 1, false, {class: "toggle", data: {action: "change->map#loadMap"}} %>
+            <%= label_tag :show_map do %>
+              <i class="fa-regular fa-map"></i>
+            <% end %>
+          </div>
+        </div>
+        <div class="align-item-center trip-programme active" data-controller="sortable" data-map-target="tripProgramme">
+          <h6>Vous pouvez désormais déplacer chaque étape de votre programme en fonction de votre préférence.</h6>
+          <div class="second_column mt-3">
+            <section class="trip-activities-list d-flex" data-sortable-target="list">
+              <% @trip.trip_activities.where("start_at IS NULL").each do |trip_activity| %>
+                <%= render "trips/trip_activity_todrop", trip_activity: trip_activity %>
+              <% end %>
+            </section>
+          </div>
+          <div class="first_column" data-sortable-target="dayTripList">
+            <%= render "day_trip_list", trip: @trip, dates: @dates %>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<%= check_box_tag :show_map, 1, false, class: "toggle" %>
-<%= label_tag :show_map %>
-<div class="map-card-trip" style="width: 100%; height: 80vh;"
-        data-controller="map"
-        data-map-markers-value="<%= @markers.to_json %>"
-        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  <div class="map-card-trip" style="width: 100vw; height: 80vh;"
+          data-map-target="map">
+  </div>
 </div>

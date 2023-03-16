@@ -4,6 +4,7 @@
   grid-gap: 10px;
   grid-template-columns: 1fr 1fr 1fr;
   width: 100%;
+  position: relative;
 }
 
 // .second_column {
@@ -46,6 +47,27 @@
 
 .third_column {
   justify-content: center;
+}
+
+.trip-show-main-stats {
+  position: relative;
+  .toggler {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+.map-card-trip {
+  display: none;
+  &.active {
+    display: block;
+   }
+}
+
+.trip-programme {
+  display: none;
+  &.active { display: block}
 }
 
 // Smallest device

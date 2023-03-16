@@ -23,7 +23,7 @@
 }
 
 .toggle:checked + label::before {
-  background-color: #1EDD88;
+  background-color: $orange;
 }
 
 .toggle + label::after {
@@ -42,4 +42,8 @@
 
 .toggle:checked + label::after {
   left: 18px;
+}
+
+.toggle:checked + label i {
+  color: $orange;
 }

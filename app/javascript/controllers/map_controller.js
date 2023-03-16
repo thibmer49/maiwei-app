@@ -8,16 +8,27 @@ export default class extends Controller {
     markers: Array
   }
 
+  static targets = ["map", "tripProgramme"]
+
   connect() {
+
+  }
+
+  loadMap() {
+    this.mapTarget.classList.toggle("active");
     mapboxgl.accessToken = this.apiKeyValue
 
     this.map = new mapboxgl.Map({
-      container: this.element,
+      container: this.mapTarget,
       style: "mapbox://styles/mapbox/streets-v10",
+      trackResize: false
     })
+
+    this.tripProgrammeTarget.classList.toggle("active");
 
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
+
   }
 
   #addMarkersToMap() {
@@ -25,7 +36,8 @@ export default class extends Controller {
       const popup = new mapboxgl.Popup({
         closeButton: false,
         className: 'trip-activity-popup',
-        maxWidth: '400px'
+        maxWidth: '400px',
+        anchor: 'left'
       }).setHTML(marker.info_window_html)
       new mapboxgl.Marker()
       .setLngLat([marker.lng, marker.lat])
