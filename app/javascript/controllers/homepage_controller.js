@@ -19,7 +19,7 @@ export default class extends Controller {
     const windowHeight = window.innerHeight;
     const windowWidth = window.innerWidth;
 
-    const initialTop = windowHeight * 0.5;
+    const initialTop = windowHeight * 0.1;
     const initialLeft = -plane.clientWidth;
 
     const finalTop = windowHeight * 0.7;

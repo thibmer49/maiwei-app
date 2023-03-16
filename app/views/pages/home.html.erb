@@ -25,54 +25,50 @@
       </div>
     </div>
   </div>
-  <%# END SEARCH BAR %>
-  <!-- app/views/pages/home.html.erb -->
 
 
-  <div class="bg-white p-4">
-    <div class="home-background" data-controller="homepage">
-      <i class="fa-solid fa-plane" data-homepage-target="plane" id="plane"></i>
-      <div data-homepage-target="path" id="path">
-        <div class="dashed-line"></div>
+  <div class="bg-white p-4 home-background" data-controller="homepage">
+    <i class="fa-solid fa-plae" data-homepage-target="plane" id="plane"></i>
+    <div data-homepage-target="path" id="path">
+      <div class="dashed-line"></div>
+    </div>
+
+    <h3 class="card_activity_h3" >Partez à la découverte du monde</h3>
+    <div class="activity-cards-container p-4">
+      <div class="card_activity_tuto">
+        <div class="card_name">
+          <%= image_tag "mapemonde.jpg", alt: "Mapemonde", class:"img-fluid" %>
+          <h5>Étape 1</h5>
+        </div>
+        <div class="activity_tuto_description">
+          <p>Choisissez votre destination</p>
+        </div>
       </div>
-
-      <h3 class="card_activity_h3" >Partez à la découverte du monde</h3>
-      <div class="activity-cards-container p-4">
-        <div class="card_activity_tuto">
-          <div class="card_name">
-            <%= image_tag "mapemonde.jpg", alt: "Mapemonde", class:"img-fluid" %>
-            <h5>Étape 1</h5>
-          </div>
-          <div class="activity_tuto_description">
-            <p>Choisissez votre destination</p>
-          </div>
+      <div class="card_activity_tuto">
+        <div class="card_name">
+          <%= image_tag "paris.jpg", alt: "Paris", class:"img-fluid" %>
+          <h5>Étape 2</h5>
         </div>
-        <div class="card_activity_tuto">
-          <div class="card_name">
-            <%= image_tag "paris.jpg", alt: "Paris", class:"img-fluid" %>
-            <h5>Étape 2</h5>
-          </div>
-          <div class="activity_tuto_description">
-            <p>Renseignez les informations de votre séjour et sélectionnez vos activités </p>
-          </div>
+        <div class="activity_tuto_description">
+          <p>Renseignez les informations de votre séjour et sélectionnez vos activités </p>
         </div>
-        <div class="card_activity_tuto">
-          <div class="card_name">
-            <%= image_tag "planning.jpg", alt: "Planning", class:"img-fluid" %>
-            <h5>Étape 3</h5>
-          </div>
-          <div class="activity_tuto_description">
-              <p>Créez votre programme</p>
-          </div>
+      </div>
+      <div class="card_activity_tuto">
+        <div class="card_name">
+          <%= image_tag "planning.jpg", alt: "Planning", class:"img-fluid" %>
+          <h5>Étape 3</h5>
         </div>
-        <div class="card_activity_tuto">
-          <div class="card_name">
-            <%= image_tag "avion.jpg", alt: "Avion", class:"img-fluid" %>
-            <h5>Étape 4</h5>
-          </div>
-          <div class="activity_tuto_description">
-            <p>Vous êtes prêt à partir... Bon voyage ! </p>
-          </div>
+        <div class="activity_tuto_description">
+            <p>Créez votre programme</p>
+        </div>
+      </div>
+      <div class="card_activity_tuto">
+        <div class="card_name">
+          <%= image_tag "avion.jpg", alt: "Avion", class:"img-fluid" %>
+          <h5>Étape 4</h5>
+        </div>
+        <div class="activity_tuto_description">
+          <p>Vous êtes prêt à partir... Bon voyage ! </p>
         </div>
       </div>
     </div>
