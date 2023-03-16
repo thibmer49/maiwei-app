@@ -22,10 +22,6 @@ class TripActivity < ApplicationRecord
     end
   end
 
-  def formated_date
-    I18n.l(start_at, format: "%A %e %B")
-  end
-
   private
 
   def get_hours(start_at, end_at)
