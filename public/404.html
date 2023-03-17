@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>The page you were looking for doesn't exist (404)</title>
+  <title>Oops... un petit problème(404)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta charset="utf-8">
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;600&display=swap');
 .new-class {
 
   font-family: "League Spartan","Helvetica";
@@ -14,26 +14,40 @@
 }
 
 .new-class h1 {
-
+  padding: 10px;
 color:#16697A;
 
 }
+
+.new-class h2 {
+  padding: 5px;
+color:#16697A;
+
+}
+.new-class a {
+color:#16697A;
+text-decoration: none
+}
+
+body {
+			background-image: url('images/image404.jpeg');
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
   </style>
 </head>
 
-
 <body class="new-class">
-
-  <!-- This file lives in public/404.html -->
+  <!-- This file lives in public/500.html -->
   <div class="dialog", style="text-align:center">
-    <div class>
-      <h1>La page que vous cherchez n'existe pas.</h1>
-      <p>Peut-être avez-vous mal défini votre requête ou alors la page a changé de route.</p>
-    </div>
-    <p>Si vous êtes le propriétaire de l'application, nous vous conseillons de regarder la configuration.</p>
-  <img src="images/avion.jpg", style="width: 200px; height: 200px", alt="Avion">
-  <div><a href="./">Retour à la page d'accueil</a></div>
-</div>
-</body>
+    <div>
+      <h1>Ooops... Il n' y a rien à voir ici! </h1>
 
+      <h2>Pour retourner à l'accueil...</h2>
+    </div>
+
+    <div style="padding-left: 90px"><a href="./"> <h2>... c'est par là!</h2></a></div>
+  </div>
+
+</body>
 </html>
