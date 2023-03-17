@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>We're sorry, but something went wrong (500)</title>
+  <title>Oops... un petit problème(500)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta charset="utf-8">
   <style>
@@ -13,10 +13,26 @@
 }
 
 .new-class h1 {
-
+  padding: 10px;
 color:#16697A;
 
 }
+
+.new-class h2 {
+  padding: 5px;
+color:#16697A;
+
+}
+.new-class a {
+color:#16697A;
+text-decoration: none
+}
+
+body {
+			background-image: url('images/image404.jpeg');
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
   </style>
 </head>
 
@@ -24,11 +40,12 @@ color:#16697A;
   <!-- This file lives in public/500.html -->
   <div class="dialog", style="text-align:center">
     <div>
-      <h1>Nous avons rencontré un problème. Pas de panique !</h1>
+      <h1>Ooops... Il n'y a rien à voir ici! </h1>
+
+      <h2>Pour retourner à l'accueil...</h2>
     </div>
-    <p>Si vous êtes propriétaire de l'application, nous vous conseillons de regarder votre configuration.</p>
-    <img src="images/avion.jpg", style="width: 200px; height: 200px", alt="Avion">
-    <div><a href="./">Retour à la page d'accueil</a></div>
+
+    <div style="padding-left: 90px"><a href="./"> <h2>... c'est par là!</h2></a></div>
   </div>
 
 </body>
