@@ -1,0 +1,71 @@
+body {
+  margin: 0px;
+}
+
+.photo img {
+  width: 612px;
+  height: 100%;
+  object-fit: cover;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.session {
+  margin: 18px;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border-radius: 10px;
+}
+
+.register-form {
+  padding: 40px 20px;
+  width: 700px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  text-align: center;
+
+  h2 {
+    font-weight: bold;
+    text-align: center;
+    padding: 140px;
+  }
+
+  .form-signing {
+    margin-top: 60px;
+  }
+
+  .form-label-group {
+    justify-content: center;
+  }
+
+  #connexion {
+    text-align: center;
+  }
+
+  .form-control {
+    display: block;
+    margin: 0 auto;
+    width: 400px;
+    border-radius: 10px;
+    background-color: #dbeef1;
+  }
+
+  .btn {
+    width: 170px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    border-radius: 5px;
+  }
+
+  .links {
+    display: flex;
+    justify-content: center;
+    margin: 6px;
+
+    a {
+      text-decoration: none;
+      margin: 10px;
+      margin-top: 0
+    }
+  }
+}
