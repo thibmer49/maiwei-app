@@ -1,0 +1,12 @@
+.lmj-banner {
+  display: flex;
+  color: black;
+  text-align: right;
+  padding: 32px;
+  border-bottom: solid 3px black;
+  justify-content: end;
+}
+
+.lmj-logo {
+  width: 88px;
+}
